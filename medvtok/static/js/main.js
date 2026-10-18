@@ -12,6 +12,17 @@ if (paperLink) {
   }
 }
 
+// Native lazy loading keeps offscreen figures idle. A selected panel loads immediately;
+// cube faces are decoded together so rotating does not reveal unloaded textures.
+function primeImages(container) {
+  if (!container) return;
+  for (const image of container.querySelectorAll("img")) {
+    image.loading = "eager";
+    image.decoding = "async";
+    if (image.classList.contains("cube-face") && image.decode) image.decode().catch(() => {});
+  }
+}
+
 // Plain JavaScript keeps file:// previews and static subdirectory hosting working.
 const tabs = Array.from(document.querySelectorAll("[data-tab]"));
 
@@ -20,7 +31,9 @@ function activateTab(tab) {
     const selected = candidate === tab;
     candidate.setAttribute("aria-selected", String(selected));
     candidate.tabIndex = selected ? 0 : -1;
-    document.getElementById(candidate.getAttribute("aria-controls")).hidden = !selected;
+    const panel = document.getElementById(candidate.getAttribute("aria-controls"));
+    panel.hidden = !selected;
+    if (selected) primeImages(panel);
   }
 }
 
@@ -88,7 +101,18 @@ for (const stage of document.querySelectorAll(".volume-stage")) {
   let pointer = null;
   let previousX = 0;
   let previousY = 0;
-  function render() { cube.style.transform = orientation.toString(); }
+  let frame = 0;
+  function paint() {
+    frame = 0;
+    cube.style.transform = orientation.toString();
+  }
+  function render() {
+    if (!frame) frame = requestAnimationFrame(paint);
+  }
+  function flush() {
+    if (frame) cancelAnimationFrame(frame);
+    paint();
+  }
   function rotate(dx, dy) {
     const distance = Math.hypot(dx, dy);
     if (!distance) return;
@@ -97,6 +121,7 @@ for (const stage of document.querySelectorAll(".volume-stage")) {
   }
   function finishDrag(event) {
     if (event.pointerId !== pointer) return;
+    flush();
     pointer = null;
     stage.classList.remove("is-dragging");
     if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
@@ -128,7 +153,7 @@ for (const stage of document.querySelectorAll(".volume-stage")) {
   new ResizeObserver(() => {
     if (stage.clientWidth) stage.style.setProperty("--cube-size", `${Math.min(160,stage.clientWidth * .48)}px`);
   }).observe(stage);
-  render();
+  paint();
 }
 
 // Discrete experiments from the paper, with no interpolated experiment values.
@@ -382,6 +407,18 @@ showBarReadout("task-ring-readout", taskRing.querySelector('[data-task="classifi
 
 // Native SVG pies and local image assets also work in an offline file:// preview.
 const training = document.getElementById("training-distribution");
+function primeTrainingPanel(panel) {
+  primeImages(panel.querySelector("[data-training-detail]:not([hidden])"));
+}
+// A small, targeted warmup when the visitor is about to select 3D.
+for (const button of training.querySelectorAll('[data-training-dimension="3d"]')) {
+  const warmVolume = () => {
+    if (!navigator.connection?.saveData) primeTrainingPanel(training.querySelector('[data-training-panel="3d"]'));
+  };
+  button.addEventListener("pointerenter", warmVolume, {once: true});
+  button.addEventListener("focus", warmVolume, {once: true});
+}
+
 function selectTrainingModality(panel, index) {
   for (const statistic of panel.querySelectorAll("[data-training-stat]")) {
     statistic.hidden = statistic.dataset.trainingStat !== index;
@@ -395,13 +432,20 @@ function selectTrainingModality(panel, index) {
     item.classList.toggle("is-selected", selected);
   }
   const active = panel.querySelector(`[data-training-detail="${index}"]`);
-  active.animate([{opacity:.2,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], {duration:matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 250,easing:"ease-out"});
+  primeImages(active);
+  // Avoid animating the ancestor of a 3D scene, which can flatten its layers.
+  if (!active.querySelector(".volume-stage") && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    active.animate([{opacity:.2,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], {duration:250,easing:"ease-out"});
+  }
 }
 training.addEventListener("click", (event) => {
   const dimensionButton = event.target.closest("[data-training-dimension]");
   if (dimensionButton) {
     const dimension = dimensionButton.dataset.trainingDimension;
-    for (const panel of training.querySelectorAll("[data-training-panel]")) panel.hidden = panel.dataset.trainingPanel !== dimension;
+    for (const panel of training.querySelectorAll("[data-training-panel]")) {
+      panel.hidden = panel.dataset.trainingPanel !== dimension;
+      if (!panel.hidden) primeTrainingPanel(panel);
+    }
     for (const button of training.querySelectorAll("[data-training-dimension]")) button.setAttribute("aria-pressed", String(button === dimensionButton));
     const total = document.getElementById("training-total");
     const count = document.createElement("strong");count.textContent = dimension === "2d" ? "> 28M" : "> 70K";
