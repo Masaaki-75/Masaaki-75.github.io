@@ -1,17 +1,11 @@
 # Generated Pages artifact and local preview output.
 /_site/
-/previews/
+
 /medvtok/previews/
-
-# Local maintenance instructions and synchronization helper.
-/README.md
-
-# Unused original method figure; the webpage uses framework.webp.
 /medvtok/assets/method.png
-
-# Chart intermediates already embedded in the HTML.
 /medvtok/assets/radial-*.svg
 /medvtok/assets/training-*.svg
+/medvtok/tools
 
 # Python caches, editor settings, and temporary files.
 __pycache__/
