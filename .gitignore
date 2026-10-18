@@ -1,0 +1,28 @@
+# Generated Pages artifact and local preview output.
+/_site/
+/previews/
+/medvtok/previews/
+
+# Local maintenance instructions and synchronization helper.
+/README.md
+
+# Unused original method figure; the webpage uses framework.webp.
+/medvtok/assets/method.png
+
+# Chart intermediates already embedded in the HTML.
+/medvtok/assets/radial-*.svg
+/medvtok/assets/training-*.svg
+
+# Python caches, editor settings, and temporary files.
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Keep .github/workflows/, .nojekyll, and the website HTML/CSS/JS.
+# Keep used images, detail-*.svg, source JSON, BibTeX, and licenses.

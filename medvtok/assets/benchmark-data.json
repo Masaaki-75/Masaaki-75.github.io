@@ -1,0 +1,618 @@
+{
+  "source": "meditokv2/docs/overleaf_arxiv/tables/",
+  "colors": {
+    "PUMIT": "#e0e6f4",
+    "MedVAE": "#c7d2eb",
+    "MedITok": "#a9bae0",
+    "AToken": "#879dcb",
+    "MedVTok": "#465c9b"
+  },
+  "task_models": [
+    "PUMIT",
+    "MedVAE",
+    "MedITok",
+    "MedVTok"
+  ],
+  "tasks": [
+    {
+      "key": "classification",
+      "title": "Classification",
+      "metric": "Accuracy (%) ↑",
+      "source": "tables/cls_ret.tex",
+      "decimals": 2,
+      "values": [
+        52.41,
+        51.32,
+        73.55,
+        80.23
+      ],
+      "domain": [
+        45,
+        85
+      ],
+      "reverse": false,
+      "breakdown": {
+        "categories": [
+          "Fundus",
+          "CT",
+          "Dermoscopy",
+          "Endoscopy",
+          "MRI",
+          "OCT",
+          "Histopathology",
+          "Ultrasound",
+          "X-ray"
+        ],
+        "values": {
+          "PUMIT": [
+            13.84,
+            43.78,
+            60.34,
+            45.85,
+            78.0,
+            59.52,
+            47.44,
+            43.44,
+            79.49
+          ],
+          "MedVAE": [
+            13.28,
+            45.25,
+            60.12,
+            45.34,
+            75.57,
+            57.56,
+            49.62,
+            41.76,
+            73.4
+          ],
+          "MedITok": [
+            74.29,
+            78.8,
+            72.82,
+            46.8,
+            91.23,
+            78.67,
+            74.23,
+            50.09,
+            95.03
+          ],
+          "MedVTok": [
+            90.25,
+            89.77,
+            74.16,
+            48.71,
+            94.23,
+            94.0,
+            82.69,
+            51.33,
+            96.9
+          ]
+        },
+        "description": "Paper-reported Accuracy (%) ↑ across the evaluated imaging modalities."
+      }
+    },
+    {
+      "key": "retrieval",
+      "title": "Retrieval",
+      "metric": "Recall@1 (%) ↑",
+      "source": "tables/cls_ret.tex",
+      "decimals": 2,
+      "values": [
+        52.53,
+        51.3,
+        74.43,
+        79.18
+      ],
+      "domain": [
+        45,
+        85
+      ],
+      "reverse": false,
+      "breakdown": {
+        "categories": [
+          "Fundus",
+          "CT",
+          "Dermoscopy",
+          "Endoscopy",
+          "MRI",
+          "OCT",
+          "Histopathology",
+          "Ultrasound",
+          "X-ray"
+        ],
+        "values": {
+          "PUMIT": [
+            15.88,
+            49.52,
+            58.66,
+            48.96,
+            89.8,
+            51.24,
+            38.52,
+            36.7,
+            83.49
+          ],
+          "MedVAE": [
+            12.45,
+            47.3,
+            56.15,
+            53.69,
+            88.9,
+            52.48,
+            38.52,
+            35.9,
+            76.28
+          ],
+          "MedITok": [
+            73.82,
+            87.62,
+            68.65,
+            52.52,
+            95.6,
+            80.75,
+            72.76,
+            46.01,
+            92.15
+          ],
+          "MedVTok": [
+            90.99,
+            90.16,
+            70.7,
+            52.59,
+            96.1,
+            93.79,
+            75.49,
+            47.61,
+            95.19
+          ]
+        },
+        "description": "Paper-reported Recall@1 (%) ↑ across the evaluated imaging modalities."
+      }
+    },
+    {
+      "key": "segmentation",
+      "title": "Segmentation",
+      "metric": "Dice (%) ↑",
+      "source": "tables/seg.tex",
+      "decimals": 2,
+      "values": [
+        53.63,
+        38.86,
+        71.99,
+        76.07
+      ],
+      "domain": [
+        30,
+        80
+      ],
+      "reverse": false,
+      "breakdown": {
+        "categories": [
+          "Fundus",
+          "CT",
+          "Dermoscopy",
+          "Endoscopy",
+          "MRI",
+          "Histopathology",
+          "Ultrasound",
+          "X-ray"
+        ],
+        "values": {
+          "PUMIT": [
+            40.05,
+            25.53,
+            77.94,
+            37.32,
+            36.69,
+            66.0,
+            90.73,
+            54.82
+          ],
+          "MedVAE": [
+            61.74,
+            12.57,
+            57.59,
+            19.73,
+            10.13,
+            36.4,
+            81.9,
+            30.81
+          ],
+          "MedITok": [
+            96.7,
+            40.52,
+            80.28,
+            66.07,
+            62.42,
+            75.8,
+            94.65,
+            59.47
+          ],
+          "MedVTok": [
+            97.44,
+            42.91,
+            90.25,
+            72.52,
+            69.62,
+            77.74,
+            96.91,
+            61.13
+          ]
+        },
+        "description": "Paper-reported Dice (%) ↑ across the evaluated imaging modalities."
+      }
+    },
+    {
+      "key": "synthesis",
+      "title": "Image synthesis",
+      "metric": "FID ↓",
+      "source": "tables/syn.tex",
+      "decimals": 2,
+      "values": [
+        227.51,
+        172.08,
+        109.76,
+        101.73
+      ],
+      "domain": [
+        90,
+        250
+      ],
+      "reverse": true,
+      "breakdown": {
+        "categories": [
+          "Fundus",
+          "CT",
+          "Dermoscopy",
+          "Endoscopy",
+          "MRI",
+          "Histopathology",
+          "X-ray"
+        ],
+        "values": {
+          "PUMIT": [
+            140.4,
+            183.49,
+            272.26,
+            191.49,
+            227.64,
+            377.12,
+            200.14
+          ],
+          "MedVAE": [
+            118.13,
+            154.42,
+            202.09,
+            170.29,
+            145.25,
+            325.87,
+            88.55
+          ],
+          "MedITok": [
+            90.65,
+            142.46,
+            176.94,
+            58.38,
+            122.96,
+            99.66,
+            77.24
+          ],
+          "MedVTok": [
+            59.85,
+            146.39,
+            142.87,
+            82.39,
+            116.78,
+            94.65,
+            69.17
+          ]
+        },
+        "description": "Paper-reported FID ↓ across the evaluated imaging modalities."
+      }
+    },
+    {
+      "key": "vqa",
+      "title": "Visual question answering",
+      "metric": "Accuracy (%) ↑",
+      "source": "tables/vqa.tex",
+      "decimals": 2,
+      "values": [
+        41.94,
+        39.93,
+        45.39,
+        46.48
+      ],
+      "domain": [
+        35,
+        50
+      ],
+      "reverse": false,
+      "breakdown": {
+        "categories": [
+          "Fundus",
+          "Skin",
+          "Endoscopy",
+          "Histopathology",
+          "Radiology",
+          "Mixed modalities"
+        ],
+        "values": {
+          "PUMIT": [
+            29.84,
+            34.74,
+            69.5,
+            52.97,
+            36.44,
+            28.16
+          ],
+          "MedVAE": [
+            28.39,
+            34.21,
+            66.64,
+            51.15,
+            31.57,
+            27.61
+          ],
+          "MedITok": [
+            31.29,
+            36.18,
+            70.63,
+            58.46,
+            45.61,
+            30.15
+          ],
+          "MedVTok": [
+            33.39,
+            37.49,
+            72.98,
+            57.24,
+            45.94,
+            31.81
+          ]
+        },
+        "description": "Accuracy on six VQA benchmarks, labeled by their associated modality. The radiology and mixed-modality benchmarks keep their original grouping.",
+        "benchmarks": [
+          "Fundus-MMBench",
+          "MM-Skin",
+          "Kvasir-VQA-x1",
+          "PathVQA",
+          "SLAKE",
+          "GMAI-MMBench"
+        ]
+      }
+    },
+    {
+      "key": "report",
+      "title": "Report generation",
+      "metric": "GREEN ↑",
+      "source": "tables/mrg.tex",
+      "decimals": 3,
+      "values": [
+        0.25,
+        0.23,
+        0.386,
+        0.413
+      ],
+      "domain": [
+        0.2,
+        0.45
+      ],
+      "reverse": false,
+      "breakdown": {
+        "categories": [
+          "Abdomen",
+          "Chest",
+          "Pelvis"
+        ],
+        "values": {
+          "PUMIT": [
+            0.421,
+            0.204,
+            0.124
+          ],
+          "MedVAE": [
+            0.401,
+            0.186,
+            0.105
+          ],
+          "MedITok": [
+            0.412,
+            0.256,
+            0.492
+          ],
+          "MedVTok": [
+            0.425,
+            0.3,
+            0.515
+          ]
+        },
+        "description": "GREEN scores for CT report generation, broken down by anatomical region. All three regions use the same CT modality."
+      }
+    }
+  ],
+  "reconstruction": {
+    "2d": {
+      "modalities": [
+        "Fundus",
+        "CT",
+        "Dermoscopy",
+        "Endoscopy",
+        "MRI",
+        "OCT",
+        "Histopathology",
+        "Ultrasound",
+        "X-ray"
+      ],
+      "models": [
+        "PUMIT",
+        "MedVAE",
+        "MedITok",
+        "AToken",
+        "MedVTok"
+      ],
+      "psnr": {
+        "PUMIT": [
+          32.03,
+          32.86,
+          27.05,
+          28.73,
+          32.88,
+          27.06,
+          19.43,
+          23.26,
+          26.69
+        ],
+        "MedVAE": [
+          17.11,
+          37.97,
+          22.42,
+          16.83,
+          35.72,
+          30.9,
+          20.13,
+          33.47,
+          37.04
+        ],
+        "MedITok": [
+          35.92,
+          35.61,
+          33.81,
+          32.42,
+          34.82,
+          30.26,
+          26.03,
+          32.62,
+          34.7
+        ],
+        "AToken": [
+          41.08,
+          41.6,
+          39.0,
+          39.69,
+          41.64,
+          32.94,
+          28.57,
+          39.41,
+          40.02
+        ],
+        "MedVTok": [
+          42.22,
+          44.75,
+          40.39,
+          41.42,
+          43.75,
+          35.04,
+          30.16,
+          42.08,
+          41.83
+        ]
+      },
+      "ssim": {
+        "PUMIT": [
+          88.09,
+          90.82,
+          84.84,
+          90.17,
+          90.92,
+          65.34,
+          57.92,
+          81.99,
+          89.3
+        ],
+        "MedVAE": [
+          77.26,
+          92.67,
+          86.63,
+          83.86,
+          93.87,
+          72.44,
+          54.18,
+          89.97,
+          92.9
+        ],
+        "MedITok": [
+          91.5,
+          92.74,
+          88.22,
+          93.47,
+          95.13,
+          73.81,
+          64.52,
+          92.95,
+          92.46
+        ],
+        "AToken": [
+          94.74,
+          96.24,
+          92.51,
+          96.98,
+          97.61,
+          80.6,
+          74.24,
+          97.13,
+          95.42
+        ],
+        "MedVTok": [
+          95.95,
+          97.86,
+          94.51,
+          97.9,
+          98.66,
+          86.54,
+          80.52,
+          98.28,
+          97.21
+        ]
+      }
+    },
+    "3d": {
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "models": [
+        "PUMIT",
+        "MedVAE",
+        "AToken",
+        "MedVTok"
+      ],
+      "psnr": {
+        "PUMIT": [
+          29.96,
+          31.87
+        ],
+        "MedVAE": [
+          25.89,
+          31.3
+        ],
+        "AToken": [
+          31.46,
+          35.68
+        ],
+        "MedVTok": [
+          31.77,
+          36.5
+        ]
+      },
+      "ssim": {
+        "PUMIT": [
+          85.2,
+          90.55
+        ],
+        "MedVAE": [
+          75.14,
+          90.44
+        ],
+        "AToken": [
+          85.19,
+          95.5
+        ],
+        "MedVTok": [
+          87.79,
+          95.65
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "source_tables": [
+    "training_datasets_2d.tex",
+    "training_datasets_3d.tex"
+  ],
+  "aggregation": "Final paper table counts; mixed-modality rows are split only where the original per-modality counts sum exactly to that row.",
+  "2d": {
+    "total": 28769502,
+    "unit": "images",
+    "modalities": [
+      {
+        "name": "CT",
+        "count": 9256955,
+        "description": "Computed tomography resolves internal anatomy through cross-sectional X-ray images. Here, the 2D collection represents individual slices.",
+        "media": {
+          "image": "assets/modalities/ct-axial.webp",
+          "faces": {
+            "axial": "assets/modalities/ct-axial.webp",
+            "coronal": "assets/modalities/ct-coronal.webp",
+            "sagittal": "assets/modalities/ct-sagittal.webp"
+          },
+          "author": "3D Slicer / Brigham and Women’s Hospital",
+          "source_url": "https://github.com/Slicer/Slicer/blob/main/Modules/Scripted/SampleData/SampleData.py",
+          "license": "3D Slicer license",
+          "license_url": "assets/modalities/Slicer-License.txt",
+          "caption": "An axial CT slice from the 3D Slicer sample data.",
+          "alt": "An axial CT slice from the 3D Slicer sample data.",
+          "display": {
+            "size": [
+              256,
+              256
+            ],
+            "crop": [
+              0,
+              0,
+              255,
+              224
+            ],
+            "flip_vertical": true
+          }
+        }
+      },
+      {
+        "name": "Histopathology",
+        "count": 5648763,
+        "description": "Microscopy of prepared tissue reveals cellular morphology and tissue architecture. The tokenizer represents these fine textures alongside larger-scale anatomy.",
+        "media": {
+          "image": "assets/modalities/pathology.webp",
+          "author": "Mikael Häggström, M.D.",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Histopathology_of_parathyroid_congestion.jpg",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "caption": "Histopathology micrograph of parathyroid congestion.",
+          "alt": "Histopathology micrograph of parathyroid congestion.",
+          "display": {
+            "size": [
+              500,
+              559
+            ],
+            "crop": [
+              0,
+              0,
+              500,
+              559
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "MRI",
+        "count": 3786062,
+        "description": "Magnetic resonance imaging provides rich soft-tissue contrast. Individual slices capture anatomical structures with a range of acquisition sequences and contrasts.",
+        "media": {
+          "image": "assets/modalities/mri-axial.webp",
+          "faces": {
+            "axial": "assets/modalities/mri-axial.webp",
+            "coronal": "assets/modalities/mri-coronal.webp",
+            "sagittal": "assets/modalities/mri-sagittal.webp"
+          },
+          "author": "3D Slicer / Brigham and Women’s Hospital",
+          "source_url": "https://github.com/Slicer/Slicer/blob/main/Modules/Scripted/SampleData/SampleData.py",
+          "license": "3D Slicer license",
+          "license_url": "assets/modalities/Slicer-License.txt",
+          "caption": "An axial MRI slice from the 3D Slicer sample data.",
+          "alt": "An axial MRI slice from the 3D Slicer sample data.",
+          "display": {
+            "size": [
+              256,
+              256
+            ],
+            "crop": [
+              43,
+              11,
+              169,
+              234
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "Fundus",
+        "count": 3050081,
+        "description": "Fundus photography records the retinal surface, including the optic disc, macula, and blood vessels, in a single color image.",
+        "media": {
+          "image": "assets/modalities/fundus.webp",
+          "author": "Mikael Häggström",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_left_eye.jpg",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "caption": "Fundus photograph of a normal left eye.",
+          "alt": "Fundus photograph of a normal left eye.",
+          "display": {
+            "size": [
+              500,
+              500
+            ],
+            "crop": [
+              1,
+              1,
+              496,
+              496
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "Endoscopy",
+        "count": 2861915,
+        "description": "A camera inside the body records the surface of organs and cavities. These images capture mucosal texture, folds, and local lesions.",
+        "media": {
+          "image": "assets/modalities/endoscopy.webp",
+          "author": "Samir at English Wikipedia",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Melanosis_coli.jpg",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "caption": "Colonoscopy image showing melanosis coli.",
+          "alt": "Colonoscopy image showing melanosis coli.",
+          "display": {
+            "size": [
+              500,
+              524
+            ],
+            "crop": [
+              0,
+              0,
+              500,
+              524
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "X-ray",
+        "count": 1590895,
+        "description": "Projection radiography compresses three-dimensional anatomy into a two-dimensional image. Bones and chest structures appear through differences in X-ray attenuation.",
+        "media": {
+          "image": "assets/modalities/xray.webp",
+          "author": "Mikael Häggström",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Normal_posteroanterior_%28PA%29_chest_radiograph_%28X-ray%29.jpg",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "caption": "Posteroanterior chest radiograph.",
+          "alt": "Posteroanterior chest radiograph.",
+          "display": {
+            "size": [
+              500,
+              572
+            ],
+            "crop": [
+              0,
+              0,
+              500,
+              572
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "Dermoscopy",
+        "count": 1255155,
+        "description": "Magnified skin imaging reveals pigment patterns and surface structures that are difficult to see with the unaided eye.",
+        "media": {
+          "image": "assets/modalities/dermoscopy.webp",
+          "author": "Raimundo Pastor",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nevus_melanoc%C3%ADtico_intrad%C3%A9rmico_%28RPS_09-12-2019%29_imagen_dermatosc%C3%B3pica.jpg",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "caption": "Dermoscopic photograph of an intradermal melanocytic nevus.",
+          "alt": "Dermoscopic photograph of an intradermal melanocytic nevus.",
+          "display": {
+            "size": [
+              500,
+              375
+            ],
+            "crop": [
+              0,
+              0,
+              500,
+              375
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "Ultrasound",
+        "count": 1001874,
+        "description": "Reflected sound waves reveal soft-tissue boundaries and internal organ structure. Characteristic speckle and acoustic shadows distinguish this modality.",
+        "media": {
+          "image": "assets/modalities/ultrasound.webp",
+          "author": "Mikael Häggström",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Ultrasonography_of_a_normal_liver.jpg",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "caption": "Ultrasound image of a normal liver.",
+          "alt": "Ultrasound image of a normal liver.",
+          "display": {
+            "size": [
+              500,
+              368
+            ],
+            "crop": [
+              3,
+              0,
+              497,
+              368
+            ],
+            "flip_vertical": false
+          }
+        }
+      },
+      {
+        "name": "OCT",
+        "count": 317802,
+        "description": "Optical coherence tomography uses light to resolve fine cross-sectional tissue layers, including the layered structure of the retina.",
+        "media": {
+          "image": "assets/modalities/oct.webp",
+          "author": "Wies6014",
+          "source_url": "https://commons.wikimedia.org/wiki/File:SD-OCT_Optic_Disc_Cross-Sections.png",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "caption": "OCT cross-sections of a healthy optic disc.",
+          "alt": "OCT cross-sections of a healthy optic disc.",
+          "display": {
+            "size": [
+              500,
+              496
+            ],
+            "crop": [
+              0,
+              0,
+              500,
+              496
+            ],
+            "flip_vertical": false
+          }
+        }
+      }
+    ]
+  },
+  "3d": {
+    "total": 70144,
+    "unit": "volumes",
+    "modalities": [
+      {
+        "name": "CT",
+        "count": 35257,
+        "description": "A CT volume preserves anatomy across a stack of X-ray slices. Native 3D tokenization captures spatial relationships between slices, beyond an isolated cross-section.",
+        "media": {
+          "image": "assets/modalities/ct-axial.webp",
+          "faces": {
+            "axial": "assets/modalities/ct-axial.webp",
+            "coronal": "assets/modalities/ct-coronal.webp",
+            "sagittal": "assets/modalities/ct-sagittal.webp"
+          },
+          "author": "3D Slicer / Brigham and Women’s Hospital",
+          "source_url": "https://github.com/Slicer/Slicer/blob/main/Modules/Scripted/SampleData/SampleData.py",
+          "license": "3D Slicer license",
+          "license_url": "assets/modalities/Slicer-License.txt",
+          "caption": "CT volume; three orthogonal slices form the cube.",
+          "alt": "An axial CT slice from the 3D Slicer sample data."
+        }
+      },
+      {
+        "name": "MRI",
+        "count": 34887,
+        "description": "An MRI volume preserves soft-tissue anatomy across three spatial dimensions. Native 3D tokens represent the volume as one input while retaining relationships between neighboring slices.",
+        "media": {
+          "image": "assets/modalities/mri-axial.webp",
+          "faces": {
+            "axial": "assets/modalities/mri-axial.webp",
+            "coronal": "assets/modalities/mri-coronal.webp",
+            "sagittal": "assets/modalities/mri-sagittal.webp"
+          },
+          "author": "3D Slicer / Brigham and Women’s Hospital",
+          "source_url": "https://github.com/Slicer/Slicer/blob/main/Modules/Scripted/SampleData/SampleData.py",
+          "license": "3D Slicer license",
+          "license_url": "assets/modalities/Slicer-License.txt",
+          "caption": "MRI volume; three orthogonal slices form the cube.",
+          "alt": "An axial MRI slice from the 3D Slicer sample data."
+        }
+      }
+    ]
+  }
+}

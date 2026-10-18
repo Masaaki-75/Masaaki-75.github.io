@@ -1,0 +1,547 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="576pt" height="1080pt" viewBox="0 0 576 1080" version="1.1" role="img" aria-labelledby="detail-vqa-title detail-vqa-description" class="benchmark-svg">
+ <desc id="detail-vqa-description">Accuracy on six VQA benchmarks, labeled by their associated modality. The radiology and mixed-modality benchmarks keep their original grouping. Each modality uses an independent nonzero axis.</desc><title id="detail-vqa-title">Visual question answering detailed comparison</title><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="detail-vqa-figure_1">
+  <g id="detail-vqa-patch_1">
+   <path d="M 0 1080  L 576 1080  L 576 0  L 0 0  L 0 1080  z " style="fill: none" />
+  </g>
+  <g id="detail-vqa-axes_1">
+   <g id="detail-vqa-patch_2">
+    <path d="M 97.92 121.170732  L 506.88 121.170732  L 506.88 21.6  L 97.92 21.6  L 97.92 121.170732  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_1">
+    <g id="detail-vqa-xtick_1">
+     <g id="detail-vqa-line2d_1">
+      <path d="M 97.92 121.170732  L 97.92 21.6  " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_2" />
+     <g id="detail-vqa-text_1">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="136.068388" transform="rotate(-0 97.92 136.068388)">20.00</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_2">
+     <g id="detail-vqa-line2d_3">
+      <path d="M 234.24 121.170732  L 234.24 21.6  " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_4" />
+     <g id="detail-vqa-text_2">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="136.068388" transform="rotate(-0 234.24 136.068388)">26.67</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_3">
+     <g id="detail-vqa-line2d_5">
+      <path d="M 370.56 121.170732  L 370.56 21.6  " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_6" />
+     <g id="detail-vqa-text_3">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="136.068388" transform="rotate(-0 370.56 136.068388)">33.33</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_4">
+     <g id="detail-vqa-line2d_7">
+      <path d="M 506.88 121.170732  L 506.88 21.6  " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_8" />
+     <g id="detail-vqa-text_4">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="136.068388" transform="rotate(-0 506.88 136.068388)">40.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_2">
+    <g id="detail-vqa-ytick_1">
+     <g id="detail-vqa-line2d_9" />
+     <g id="detail-vqa-text_5">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="39.368008" transform="rotate(-0 94.42 39.368008)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_2">
+     <g id="detail-vqa-line2d_10" />
+     <g id="detail-vqa-text_6">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="64.512132" transform="rotate(-0 94.42 64.512132)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_3">
+     <g id="detail-vqa-line2d_11" />
+     <g id="detail-vqa-text_7">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="89.656256" transform="rotate(-0 94.42 89.656256)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_4">
+     <g id="detail-vqa-line2d_12" />
+     <g id="detail-vqa-text_8">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="114.80038" transform="rotate(-0 94.42 114.80038)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-0" aria-label="Fundus · PUMIT: 29.84 %" tabindex="0" role="img">
+    <title>Fundus · PUMIT: 29.84 %</title><path d="M 97.92 26.125942  L 299.12832 26.125942  L 299.12832 41.212417  L 97.92 41.212417  z " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-0" aria-label="Fundus · MedVAE: 28.39 %" tabindex="0" role="img">
+    <title>Fundus · MedVAE: 28.39 %</title><path d="M 97.92 51.270067  L 269.47872 51.270067  L 269.47872 66.356541  L 97.92 66.356541  z " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-0" aria-label="Fundus · MedITok: 31.29 %" tabindex="0" role="img">
+    <title>Fundus · MedITok: 31.29 %</title><path d="M 97.92 76.414191  L 328.77792 76.414191  L 328.77792 91.500665  L 97.92 91.500665  z " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-0" aria-label="Fundus · MedVTok: 33.39 %" tabindex="0" role="img">
+    <title>Fundus · MedVTok: 33.39 %</title><path d="M 97.92 101.558315  L 371.71872 101.558315  L 371.71872 116.644789  L 97.92 116.644789  z " clip-path="url(#detail-vqa-p5f69bf2809)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_9">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="9.6" transform="rotate(-0 97.92 9.6)">Fundus · Fundus-MMBench</text>
+   </g>
+  </g>
+  <g id="detail-vqa-axes_2">
+   <g id="detail-vqa-patch_3">
+    <path d="M 97.92 305.376585  L 506.88 305.376585  L 506.88 205.805854  L 97.92 205.805854  L 97.92 305.376585  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_3">
+    <g id="detail-vqa-xtick_5">
+     <g id="detail-vqa-line2d_13">
+      <path d="M 97.92 305.376585  L 97.92 205.805854  " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_14" />
+     <g id="detail-vqa-text_10">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="320.274242" transform="rotate(-0 97.92 320.274242)">25.00</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_6">
+     <g id="detail-vqa-line2d_15">
+      <path d="M 234.24 305.376585  L 234.24 205.805854  " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_16" />
+     <g id="detail-vqa-text_11">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="320.274242" transform="rotate(-0 234.24 320.274242)">31.67</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_7">
+     <g id="detail-vqa-line2d_17">
+      <path d="M 370.56 305.376585  L 370.56 205.805854  " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_18" />
+     <g id="detail-vqa-text_12">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="320.274242" transform="rotate(-0 370.56 320.274242)">38.33</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_8">
+     <g id="detail-vqa-line2d_19">
+      <path d="M 506.88 305.376585  L 506.88 205.805854  " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_20" />
+     <g id="detail-vqa-text_13">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="320.274242" transform="rotate(-0 506.88 320.274242)">45.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_4">
+    <g id="detail-vqa-ytick_5">
+     <g id="detail-vqa-line2d_21" />
+     <g id="detail-vqa-text_14">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="223.573861" transform="rotate(-0 94.42 223.573861)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_6">
+     <g id="detail-vqa-line2d_22" />
+     <g id="detail-vqa-text_15">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="248.717986" transform="rotate(-0 94.42 248.717986)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_7">
+     <g id="detail-vqa-line2d_23" />
+     <g id="detail-vqa-text_16">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="273.86211" transform="rotate(-0 94.42 273.86211)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_8">
+     <g id="detail-vqa-line2d_24" />
+     <g id="detail-vqa-text_17">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="299.006234" transform="rotate(-0 94.42 299.006234)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-1" aria-label="Skin · PUMIT: 34.74 %" tabindex="0" role="img">
+    <title>Skin · PUMIT: 34.74 %</title><path d="M 97.92 210.331796  L 297.08352 210.331796  L 297.08352 225.418271  L 97.92 225.418271  z " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-1" aria-label="Skin · MedVAE: 34.21 %" tabindex="0" role="img">
+    <title>Skin · MedVAE: 34.21 %</title><path d="M 97.92 235.47592  L 286.24608 235.47592  L 286.24608 250.562395  L 97.92 250.562395  z " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-1" aria-label="Skin · MedITok: 36.18 %" tabindex="0" role="img">
+    <title>Skin · MedITok: 36.18 %</title><path d="M 97.92 260.620044  L 326.52864 260.620044  L 326.52864 275.706519  L 97.92 275.706519  z " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-1" aria-label="Skin · MedVTok: 37.49 %" tabindex="0" role="img">
+    <title>Skin · MedVTok: 37.49 %</title><path d="M 97.92 285.764169  L 353.31552 285.764169  L 353.31552 300.850643  L 97.92 300.850643  z " clip-path="url(#detail-vqa-p8a73071ed5)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_18">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="193.805854" transform="rotate(-0 97.92 193.805854)">Skin · MM-Skin</text>
+   </g>
+  </g>
+  <g id="detail-vqa-axes_3">
+   <g id="detail-vqa-patch_4">
+    <path d="M 97.92 489.582439  L 506.88 489.582439  L 506.88 390.011707  L 97.92 390.011707  L 97.92 489.582439  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_5">
+    <g id="detail-vqa-xtick_9">
+     <g id="detail-vqa-line2d_25">
+      <path d="M 97.92 489.582439  L 97.92 390.011707  " clip-path="url(#detail-vqa-pe077422146)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_26" />
+     <g id="detail-vqa-text_19">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="504.480095" transform="rotate(-0 97.92 504.480095)">60.00</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_10">
+     <g id="detail-vqa-line2d_27">
+      <path d="M 234.24 489.582439  L 234.24 390.011707  " clip-path="url(#detail-vqa-pe077422146)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_28" />
+     <g id="detail-vqa-text_20">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="504.480095" transform="rotate(-0 234.24 504.480095)">66.67</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_11">
+     <g id="detail-vqa-line2d_29">
+      <path d="M 370.56 489.582439  L 370.56 390.011707  " clip-path="url(#detail-vqa-pe077422146)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_30" />
+     <g id="detail-vqa-text_21">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="504.480095" transform="rotate(-0 370.56 504.480095)">73.33</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_12">
+     <g id="detail-vqa-line2d_31">
+      <path d="M 506.88 489.582439  L 506.88 390.011707  " clip-path="url(#detail-vqa-pe077422146)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_32" />
+     <g id="detail-vqa-text_22">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="504.480095" transform="rotate(-0 506.88 504.480095)">80.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_6">
+    <g id="detail-vqa-ytick_9">
+     <g id="detail-vqa-line2d_33" />
+     <g id="detail-vqa-text_23">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="407.779715" transform="rotate(-0 94.42 407.779715)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_10">
+     <g id="detail-vqa-line2d_34" />
+     <g id="detail-vqa-text_24">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="432.923839" transform="rotate(-0 94.42 432.923839)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_11">
+     <g id="detail-vqa-line2d_35" />
+     <g id="detail-vqa-text_25">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="458.067963" transform="rotate(-0 94.42 458.067963)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_12">
+     <g id="detail-vqa-line2d_36" />
+     <g id="detail-vqa-text_26">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="483.212088" transform="rotate(-0 94.42 483.212088)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-2" aria-label="Endoscopy · PUMIT: 69.50 %" tabindex="0" role="img">
+    <title>Endoscopy · PUMIT: 69.50 %</title><path d="M 97.92 394.53765  L 292.176 394.53765  L 292.176 409.624124  L 97.92 409.624124  z " clip-path="url(#detail-vqa-pe077422146)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-2" aria-label="Endoscopy · MedVAE: 66.64 %" tabindex="0" role="img">
+    <title>Endoscopy · MedVAE: 66.64 %</title><path d="M 97.92 419.681774  L 233.69472 419.681774  L 233.69472 434.768248  L 97.92 434.768248  z " clip-path="url(#detail-vqa-pe077422146)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-2" aria-label="Endoscopy · MedITok: 70.63 %" tabindex="0" role="img">
+    <title>Endoscopy · MedITok: 70.63 %</title><path d="M 97.92 444.825898  L 315.28224 444.825898  L 315.28224 459.912373  L 97.92 459.912373  z " clip-path="url(#detail-vqa-pe077422146)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-2" aria-label="Endoscopy · MedVTok: 72.98 %" tabindex="0" role="img">
+    <title>Endoscopy · MedVTok: 72.98 %</title><path d="M 97.92 469.970022  L 363.33504 469.970022  L 363.33504 485.056497  L 97.92 485.056497  z " clip-path="url(#detail-vqa-pe077422146)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_27">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="378.011707" transform="rotate(-0 97.92 378.011707)">Endoscopy · Kvasir-VQA-x1</text>
+   </g>
+  </g>
+  <g id="detail-vqa-axes_4">
+   <g id="detail-vqa-patch_5">
+    <path d="M 97.92 673.788293  L 506.88 673.788293  L 506.88 574.217561  L 97.92 574.217561  L 97.92 673.788293  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_7">
+    <g id="detail-vqa-xtick_13">
+     <g id="detail-vqa-line2d_37">
+      <path d="M 97.92 673.788293  L 97.92 574.217561  " clip-path="url(#detail-vqa-p881b74f549)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_38" />
+     <g id="detail-vqa-text_28">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="688.685949" transform="rotate(-0 97.92 688.685949)">45.00</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_14">
+     <g id="detail-vqa-line2d_39">
+      <path d="M 234.24 673.788293  L 234.24 574.217561  " clip-path="url(#detail-vqa-p881b74f549)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_40" />
+     <g id="detail-vqa-text_29">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="688.685949" transform="rotate(-0 234.24 688.685949)">51.67</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_15">
+     <g id="detail-vqa-line2d_41">
+      <path d="M 370.56 673.788293  L 370.56 574.217561  " clip-path="url(#detail-vqa-p881b74f549)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_42" />
+     <g id="detail-vqa-text_30">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="688.685949" transform="rotate(-0 370.56 688.685949)">58.33</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_16">
+     <g id="detail-vqa-line2d_43">
+      <path d="M 506.88 673.788293  L 506.88 574.217561  " clip-path="url(#detail-vqa-p881b74f549)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_44" />
+     <g id="detail-vqa-text_31">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="688.685949" transform="rotate(-0 506.88 688.685949)">65.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_8">
+    <g id="detail-vqa-ytick_13">
+     <g id="detail-vqa-line2d_45" />
+     <g id="detail-vqa-text_32">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="591.985569" transform="rotate(-0 94.42 591.985569)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_14">
+     <g id="detail-vqa-line2d_46" />
+     <g id="detail-vqa-text_33">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="617.129693" transform="rotate(-0 94.42 617.129693)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_15">
+     <g id="detail-vqa-line2d_47" />
+     <g id="detail-vqa-text_34">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="642.273817" transform="rotate(-0 94.42 642.273817)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_16">
+     <g id="detail-vqa-line2d_48" />
+     <g id="detail-vqa-text_35">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="667.417941" transform="rotate(-0 94.42 667.417941)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-3" aria-label="Pathology · PUMIT: 52.97 %" tabindex="0" role="img">
+    <title>Pathology · PUMIT: 52.97 %</title><path d="M 97.92 578.743503  L 260.89056 578.743503  L 260.89056 593.829978  L 97.92 593.829978  z " clip-path="url(#detail-vqa-p881b74f549)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-3" aria-label="Pathology · MedVAE: 51.15 %" tabindex="0" role="img">
+    <title>Pathology · MedVAE: 51.15 %</title><path d="M 97.92 603.887627  L 223.6752 603.887627  L 223.6752 618.974102  L 97.92 618.974102  z " clip-path="url(#detail-vqa-p881b74f549)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-3" aria-label="Pathology · MedITok: 58.46 %" tabindex="0" role="img">
+    <title>Pathology · MedITok: 58.46 %</title><path d="M 97.92 629.031752  L 373.15008 629.031752  L 373.15008 644.118226  L 97.92 644.118226  z " clip-path="url(#detail-vqa-p881b74f549)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-3" aria-label="Pathology · MedVTok: 57.24 %" tabindex="0" role="img">
+    <title>Pathology · MedVTok: 57.24 %</title><path d="M 97.92 654.175876  L 348.20352 654.175876  L 348.20352 669.26235  L 97.92 669.26235  z " clip-path="url(#detail-vqa-p881b74f549)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_36">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="562.217561" transform="rotate(-0 97.92 562.217561)">Pathology · PathVQA</text>
+   </g>
+  </g>
+  <g id="detail-vqa-axes_5">
+   <g id="detail-vqa-patch_6">
+    <path d="M 97.92 857.994146  L 506.88 857.994146  L 506.88 758.423415  L 97.92 758.423415  L 97.92 857.994146  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_9">
+    <g id="detail-vqa-xtick_17">
+     <g id="detail-vqa-line2d_49">
+      <path d="M 97.92 857.994146  L 97.92 758.423415  " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_50" />
+     <g id="detail-vqa-text_37">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="872.891803" transform="rotate(-0 97.92 872.891803)">25</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_18">
+     <g id="detail-vqa-line2d_51">
+      <path d="M 234.24 857.994146  L 234.24 758.423415  " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_52" />
+     <g id="detail-vqa-text_38">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="872.891803" transform="rotate(-0 234.24 872.891803)">35</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_19">
+     <g id="detail-vqa-line2d_53">
+      <path d="M 370.56 857.994146  L 370.56 758.423415  " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_54" />
+     <g id="detail-vqa-text_39">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="872.891803" transform="rotate(-0 370.56 872.891803)">45</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_20">
+     <g id="detail-vqa-line2d_55">
+      <path d="M 506.88 857.994146  L 506.88 758.423415  " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_56" />
+     <g id="detail-vqa-text_40">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="872.891803" transform="rotate(-0 506.88 872.891803)">55</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_10">
+    <g id="detail-vqa-ytick_17">
+     <g id="detail-vqa-line2d_57" />
+     <g id="detail-vqa-text_41">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="776.191422" transform="rotate(-0 94.42 776.191422)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_18">
+     <g id="detail-vqa-line2d_58" />
+     <g id="detail-vqa-text_42">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="801.335547" transform="rotate(-0 94.42 801.335547)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_19">
+     <g id="detail-vqa-line2d_59" />
+     <g id="detail-vqa-text_43">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="826.479671" transform="rotate(-0 94.42 826.479671)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_20">
+     <g id="detail-vqa-line2d_60" />
+     <g id="detail-vqa-text_44">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="851.623795" transform="rotate(-0 94.42 851.623795)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-4" aria-label="Radiology · PUMIT: 36.44 %" tabindex="0" role="img">
+    <title>Radiology · PUMIT: 36.44 %</title><path d="M 97.92 762.949357  L 253.87008 762.949357  L 253.87008 778.035831  L 97.92 778.035831  z " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-4" aria-label="Radiology · MedVAE: 31.57 %" tabindex="0" role="img">
+    <title>Radiology · MedVAE: 31.57 %</title><path d="M 97.92 788.093481  L 187.48224 788.093481  L 187.48224 803.179956  L 97.92 803.179956  z " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-4" aria-label="Radiology · MedITok: 45.61 %" tabindex="0" role="img">
+    <title>Radiology · MedITok: 45.61 %</title><path d="M 97.92 813.237605  L 378.87552 813.237605  L 378.87552 828.32408  L 97.92 828.32408  z " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-4" aria-label="Radiology · MedVTok: 45.94 %" tabindex="0" role="img">
+    <title>Radiology · MedVTok: 45.94 %</title><path d="M 97.92 838.381729  L 383.37408 838.381729  L 383.37408 853.468204  L 97.92 853.468204  z " clip-path="url(#detail-vqa-p7577e78f8b)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_45">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="746.423415" transform="rotate(-0 97.92 746.423415)">Radiology · SLAKE</text>
+   </g>
+  </g>
+  <g id="detail-vqa-axes_6">
+   <g id="detail-vqa-patch_7">
+    <path d="M 97.92 1042.2  L 506.88 1042.2  L 506.88 942.629268  L 97.92 942.629268  L 97.92 1042.2  z " style="fill: none" />
+   </g>
+   <g id="detail-vqa-matplotlib.axis_11">
+    <g id="detail-vqa-xtick_21">
+     <g id="detail-vqa-line2d_61">
+      <path d="M 97.92 1042.2  L 97.92 942.629268  " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_62" />
+     <g id="detail-vqa-text_46">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1057.097656" transform="rotate(-0 97.92 1057.097656)">20.00</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_22">
+     <g id="detail-vqa-line2d_63">
+      <path d="M 234.24 1042.2  L 234.24 942.629268  " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_64" />
+     <g id="detail-vqa-text_47">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1057.097656" transform="rotate(-0 234.24 1057.097656)">26.67</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_23">
+     <g id="detail-vqa-line2d_65">
+      <path d="M 370.56 1042.2  L 370.56 942.629268  " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_66" />
+     <g id="detail-vqa-text_48">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1057.097656" transform="rotate(-0 370.56 1057.097656)">33.33</text>
+     </g>
+    </g>
+    <g id="detail-vqa-xtick_24">
+     <g id="detail-vqa-line2d_67">
+      <path d="M 506.88 1042.2  L 506.88 942.629268  " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-vqa-line2d_68" />
+     <g id="detail-vqa-text_49">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1057.097656" transform="rotate(-0 506.88 1057.097656)">40.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-matplotlib.axis_12">
+    <g id="detail-vqa-ytick_21">
+     <g id="detail-vqa-line2d_69" />
+     <g id="detail-vqa-text_50">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="960.397276" transform="rotate(-0 94.42 960.397276)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_22">
+     <g id="detail-vqa-line2d_70" />
+     <g id="detail-vqa-text_51">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="985.5414" transform="rotate(-0 94.42 985.5414)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_23">
+     <g id="detail-vqa-line2d_71" />
+     <g id="detail-vqa-text_52">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1010.685524" transform="rotate(-0 94.42 1010.685524)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-vqa-ytick_24">
+     <g id="detail-vqa-line2d_72" />
+     <g id="detail-vqa-text_53">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1035.829649" transform="rotate(-0 94.42 1035.829649)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-vqa-bar-0-5" aria-label="Mixed modalities · PUMIT: 28.16 %" tabindex="0" role="img">
+    <title>Mixed modalities · PUMIT: 28.16 %</title><path d="M 97.92 947.155211  L 264.77568 947.155211  L 264.77568 962.241685  L 97.92 962.241685  z " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-vqa-bar-1-5" aria-label="Mixed modalities · MedVAE: 27.61 %" tabindex="0" role="img">
+    <title>Mixed modalities · MedVAE: 27.61 %</title><path d="M 97.92 972.299335  L 253.52928 972.299335  L 253.52928 987.385809  L 97.92 987.385809  z " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-vqa-bar-2-5" aria-label="Mixed modalities · MedITok: 30.15 %" tabindex="0" role="img">
+    <title>Mixed modalities · MedITok: 30.15 %</title><path d="M 97.92 997.443459  L 305.4672 997.443459  L 305.4672 1012.529933  L 97.92 1012.529933  z " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-vqa-bar-3-5" aria-label="Mixed modalities · MedVTok: 31.81 %" tabindex="0" role="img">
+    <title>Mixed modalities · MedVTok: 31.81 %</title><path d="M 97.92 1022.587583  L 339.41088 1022.587583  L 339.41088 1037.674058  L 97.92 1037.674058  z " clip-path="url(#detail-vqa-pbfa22653cb)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-vqa-text_54">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="930.629268" transform="rotate(-0 97.92 930.629268)">Mixed modalities · GMAI-MMBench</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="detail-vqa-p5f69bf2809">
+   <rect x="97.92" y="21.6" width="408.96" height="99.570732" />
+  </clipPath>
+  <clipPath id="detail-vqa-p8a73071ed5">
+   <rect x="97.92" y="205.805854" width="408.96" height="99.570732" />
+  </clipPath>
+  <clipPath id="detail-vqa-pe077422146">
+   <rect x="97.92" y="390.011707" width="408.96" height="99.570732" />
+  </clipPath>
+  <clipPath id="detail-vqa-p881b74f549">
+   <rect x="97.92" y="574.217561" width="408.96" height="99.570732" />
+  </clipPath>
+  <clipPath id="detail-vqa-p7577e78f8b">
+   <rect x="97.92" y="758.423415" width="408.96" height="99.570732" />
+  </clipPath>
+  <clipPath id="detail-vqa-pbfa22653cb">
+   <rect x="97.92" y="942.629268" width="408.96" height="99.570732" />
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,634 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="576pt" height="1260pt" viewBox="0 0 576 1260" version="1.1" role="img" aria-labelledby="detail-synthesis-title detail-synthesis-description" class="benchmark-svg">
+ <desc id="detail-synthesis-description">Paper-reported FID ↓ across the evaluated imaging modalities. Each modality uses an independent nonzero axis.</desc><title id="detail-synthesis-title">Image synthesis detailed comparison</title><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="detail-synthesis-figure_1">
+  <g id="detail-synthesis-patch_1">
+   <path d="M 0 1260  L 576 1260  L 576 0  L 0 0  L 0 1260  z " style="fill: none" />
+  </g>
+  <g id="detail-synthesis-axes_1">
+   <g id="detail-synthesis-patch_2">
+    <path d="M 97.92 123.604959  L 506.88 123.604959  L 506.88 25.2  L 97.92 25.2  L 97.92 123.604959  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_1">
+    <g id="detail-synthesis-xtick_1">
+     <g id="detail-synthesis-line2d_1">
+      <path d="M 97.92 123.604959  L 97.92 25.2  " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_2" />
+     <g id="detail-synthesis-text_1">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="138.502615" transform="rotate(-0 97.92 138.502615)">50</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_2">
+     <g id="detail-synthesis-line2d_3">
+      <path d="M 234.24 123.604959  L 234.24 25.2  " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_4" />
+     <g id="detail-synthesis-text_2">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="138.502615" transform="rotate(-0 234.24 138.502615)">85</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_3">
+     <g id="detail-synthesis-line2d_5">
+      <path d="M 370.56 123.604959  L 370.56 25.2  " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_6" />
+     <g id="detail-synthesis-text_3">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="138.502615" transform="rotate(-0 370.56 138.502615)">120</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_4">
+     <g id="detail-synthesis-line2d_7">
+      <path d="M 506.88 123.604959  L 506.88 25.2  " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_8" />
+     <g id="detail-synthesis-text_4">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="138.502615" transform="rotate(-0 506.88 138.502615)">155</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_2">
+    <g id="detail-synthesis-ytick_1">
+     <g id="detail-synthesis-line2d_9" />
+     <g id="detail-synthesis-text_5">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="42.826702" transform="rotate(-0 94.42 42.826702)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_2">
+     <g id="detail-synthesis-line2d_10" />
+     <g id="detail-synthesis-text_6">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="67.676439" transform="rotate(-0 94.42 67.676439)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_3">
+     <g id="detail-synthesis-line2d_11" />
+     <g id="detail-synthesis-text_7">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="92.526176" transform="rotate(-0 94.42 92.526176)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_4">
+     <g id="detail-synthesis-line2d_12" />
+     <g id="detail-synthesis-text_8">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="117.375913" transform="rotate(-0 94.42 117.375913)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-0" aria-label="Fundus · PUMIT: 140.40 " tabindex="0" role="img">
+    <title>Fundus · PUMIT: 140.40 </title><path d="M 97.92 29.672953  L 450.015086 29.672953  L 450.015086 44.582795  L 97.92 44.582795  z " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-0" aria-label="Fundus · MedVAE: 118.13 " tabindex="0" role="img">
+    <title>Fundus · MedVAE: 118.13 </title><path d="M 97.92 54.52269  L 363.276617 54.52269  L 363.276617 69.432532  L 97.92 69.432532  z " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-0" aria-label="Fundus · MedITok: 90.65 " tabindex="0" role="img">
+    <title>Fundus · MedITok: 90.65 </title><path d="M 97.92 79.372427  L 256.245943 79.372427  L 256.245943 94.282269  L 97.92 94.282269  z " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-0" aria-label="Fundus · MedVTok: 59.85 " tabindex="0" role="img">
+    <title>Fundus · MedVTok: 59.85 </title><path d="M 97.92 104.222164  L 136.284343 104.222164  L 136.284343 119.132006  L 97.92 119.132006  z " clip-path="url(#detail-synthesis-pc5c98f0651)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_9">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="13.2" transform="rotate(-0 97.92 13.2)">Fundus</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_2">
+   <g id="detail-synthesis-patch_3">
+    <path d="M 97.92 305.654132  L 506.88 305.654132  L 506.88 207.249174  L 97.92 207.249174  L 97.92 305.654132  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_3">
+    <g id="detail-synthesis-xtick_5">
+     <g id="detail-synthesis-line2d_13">
+      <path d="M 97.92 305.654132  L 97.92 207.249174  " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_14" />
+     <g id="detail-synthesis-text_10">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="320.551788" transform="rotate(-0 97.92 320.551788)">135.00</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_6">
+     <g id="detail-synthesis-line2d_15">
+      <path d="M 234.24 305.654132  L 234.24 207.249174  " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_16" />
+     <g id="detail-synthesis-text_11">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="320.551788" transform="rotate(-0 234.24 320.551788)">153.33</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_7">
+     <g id="detail-synthesis-line2d_17">
+      <path d="M 370.56 305.654132  L 370.56 207.249174  " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_18" />
+     <g id="detail-synthesis-text_12">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="320.551788" transform="rotate(-0 370.56 320.551788)">171.67</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_8">
+     <g id="detail-synthesis-line2d_19">
+      <path d="M 506.88 305.654132  L 506.88 207.249174  " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_20" />
+     <g id="detail-synthesis-text_13">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="320.551788" transform="rotate(-0 506.88 320.551788)">190.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_4">
+    <g id="detail-synthesis-ytick_5">
+     <g id="detail-synthesis-line2d_21" />
+     <g id="detail-synthesis-text_14">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="224.875875" transform="rotate(-0 94.42 224.875875)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_6">
+     <g id="detail-synthesis-line2d_22" />
+     <g id="detail-synthesis-text_15">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="249.725612" transform="rotate(-0 94.42 249.725612)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_7">
+     <g id="detail-synthesis-line2d_23" />
+     <g id="detail-synthesis-text_16">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="274.57535" transform="rotate(-0 94.42 274.57535)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_8">
+     <g id="detail-synthesis-line2d_24" />
+     <g id="detail-synthesis-text_17">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="299.425087" transform="rotate(-0 94.42 299.425087)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-1" aria-label="CT · PUMIT: 183.49 " tabindex="0" role="img">
+    <title>CT · PUMIT: 183.49 </title><path d="M 97.92 211.722126  L 458.474007 211.722126  L 458.474007 226.631968  L 97.92 226.631968  z " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-1" aria-label="CT · MedVAE: 154.42 " tabindex="0" role="img">
+    <title>CT · MedVAE: 154.42 </title><path d="M 97.92 236.571863  L 242.320058 236.571863  L 242.320058 251.481705  L 97.92 251.481705  z " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-1" aria-label="CT · MedITok: 142.46 " tabindex="0" role="img">
+    <title>CT · MedITok: 142.46 </title><path d="M 97.92 261.4216  L 153.389847 261.4216  L 153.389847 276.331443  L 97.92 276.331443  z " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-1" aria-label="CT · MedVTok: 146.39 " tabindex="0" role="img">
+    <title>CT · MedVTok: 146.39 </title><path d="M 97.92 286.271337  L 182.611898 286.271337  L 182.611898 301.18118  L 97.92 301.18118  z " clip-path="url(#detail-synthesis-p415271d5be)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_18">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="195.249174" transform="rotate(-0 97.92 195.249174)">CT</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_3">
+   <g id="detail-synthesis-patch_4">
+    <path d="M 97.92 487.703306  L 506.88 487.703306  L 506.88 389.298347  L 97.92 389.298347  L 97.92 487.703306  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_5">
+    <g id="detail-synthesis-xtick_9">
+     <g id="detail-synthesis-line2d_25">
+      <path d="M 97.92 487.703306  L 97.92 389.298347  " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_26" />
+     <g id="detail-synthesis-text_19">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="502.600962" transform="rotate(-0 97.92 502.600962)">125</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_10">
+     <g id="detail-synthesis-line2d_27">
+      <path d="M 234.24 487.703306  L 234.24 389.298347  " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_28" />
+     <g id="detail-synthesis-text_20">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="502.600962" transform="rotate(-0 234.24 502.600962)">180</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_11">
+     <g id="detail-synthesis-line2d_29">
+      <path d="M 370.56 487.703306  L 370.56 389.298347  " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_30" />
+     <g id="detail-synthesis-text_21">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="502.600962" transform="rotate(-0 370.56 502.600962)">235</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_12">
+     <g id="detail-synthesis-line2d_31">
+      <path d="M 506.88 487.703306  L 506.88 389.298347  " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_32" />
+     <g id="detail-synthesis-text_22">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="502.600962" transform="rotate(-0 506.88 502.600962)">290</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_6">
+    <g id="detail-synthesis-ytick_9">
+     <g id="detail-synthesis-line2d_33" />
+     <g id="detail-synthesis-text_23">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="406.925049" transform="rotate(-0 94.42 406.925049)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_10">
+     <g id="detail-synthesis-line2d_34" />
+     <g id="detail-synthesis-text_24">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="431.774786" transform="rotate(-0 94.42 431.774786)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_11">
+     <g id="detail-synthesis-line2d_35" />
+     <g id="detail-synthesis-text_25">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="456.624523" transform="rotate(-0 94.42 456.624523)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_12">
+     <g id="detail-synthesis-line2d_36" />
+     <g id="detail-synthesis-text_26">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="481.47426" transform="rotate(-0 94.42 481.47426)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-2" aria-label="Dermoscopy · PUMIT: 272.26 " tabindex="0" role="img">
+    <title>Dermoscopy · PUMIT: 272.26 </title><path d="M 97.92 393.7713  L 462.910604 393.7713  L 462.910604 408.681142  L 97.92 408.681142  z " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-2" aria-label="Dermoscopy · MedVAE: 202.09 " tabindex="0" role="img">
+    <title>Dermoscopy · MedVAE: 202.09 </title><path d="M 97.92 418.621037  L 288.991069 418.621037  L 288.991069 433.530879  L 97.92 433.530879  z " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-2" aria-label="Dermoscopy · MedITok: 176.94 " tabindex="0" role="img">
+    <title>Dermoscopy · MedITok: 176.94 </title><path d="M 97.92 443.470774  L 226.655651 443.470774  L 226.655651 458.380616  L 97.92 458.380616  z " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-2" aria-label="Dermoscopy · MedVTok: 142.87 " tabindex="0" role="img">
+    <title>Dermoscopy · MedVTok: 142.87 </title><path d="M 97.92 468.320511  L 142.211607 468.320511  L 142.211607 483.230353  L 97.92 483.230353  z " clip-path="url(#detail-synthesis-p09f758e4c9)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_27">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="377.298347" transform="rotate(-0 97.92 377.298347)">Dermoscopy</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_4">
+   <g id="detail-synthesis-patch_5">
+    <path d="M 97.92 669.752479  L 506.88 669.752479  L 506.88 571.347521  L 97.92 571.347521  L 97.92 669.752479  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_7">
+    <g id="detail-synthesis-xtick_13">
+     <g id="detail-synthesis-line2d_37">
+      <path d="M 97.92 669.752479  L 97.92 571.347521  " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_38" />
+     <g id="detail-synthesis-text_28">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="684.650136" transform="rotate(-0 97.92 684.650136)">40.0</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_14">
+     <g id="detail-synthesis-line2d_39">
+      <path d="M 234.24 669.752479  L 234.24 571.347521  " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_40" />
+     <g id="detail-synthesis-text_29">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="684.650136" transform="rotate(-0 234.24 684.650136)">96.7</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_15">
+     <g id="detail-synthesis-line2d_41">
+      <path d="M 370.56 669.752479  L 370.56 571.347521  " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_42" />
+     <g id="detail-synthesis-text_30">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="684.650136" transform="rotate(-0 370.56 684.650136)">153.3</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_16">
+     <g id="detail-synthesis-line2d_43">
+      <path d="M 506.88 669.752479  L 506.88 571.347521  " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_44" />
+     <g id="detail-synthesis-text_31">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="684.650136" transform="rotate(-0 506.88 684.650136)">210.0</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_8">
+    <g id="detail-synthesis-ytick_13">
+     <g id="detail-synthesis-line2d_45" />
+     <g id="detail-synthesis-text_32">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="588.974223" transform="rotate(-0 94.42 588.974223)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_14">
+     <g id="detail-synthesis-line2d_46" />
+     <g id="detail-synthesis-text_33">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="613.82396" transform="rotate(-0 94.42 613.82396)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_15">
+     <g id="detail-synthesis-line2d_47" />
+     <g id="detail-synthesis-text_34">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="638.673697" transform="rotate(-0 94.42 638.673697)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_16">
+     <g id="detail-synthesis-line2d_48" />
+     <g id="detail-synthesis-text_35">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="663.523434" transform="rotate(-0 94.42 663.523434)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-3" aria-label="Endoscopy · PUMIT: 191.49 " tabindex="0" role="img">
+    <title>Endoscopy · PUMIT: 191.49 </title><path d="M 97.92 575.820473  L 462.351473 575.820473  L 462.351473 590.730316  L 97.92 590.730316  z " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-3" aria-label="Endoscopy · MedVAE: 170.29 " tabindex="0" role="img">
+    <title>Endoscopy · MedVAE: 170.29 </title><path d="M 97.92 600.67021  L 411.351755 600.67021  L 411.351755 615.580053  L 97.92 615.580053  z " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-3" aria-label="Endoscopy · MedITok: 58.38 " tabindex="0" role="img">
+    <title>Endoscopy · MedITok: 58.38 </title><path d="M 97.92 625.519947  L 142.135793 625.519947  L 142.135793 640.42979  L 97.92 640.42979  z " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-3" aria-label="Endoscopy · MedVTok: 82.39 " tabindex="0" role="img">
+    <title>Endoscopy · MedVTok: 82.39 </title><path d="M 97.92 650.369684  L 199.895379 650.369684  L 199.895379 665.279527  L 97.92 665.279527  z " clip-path="url(#detail-synthesis-p714e295c96)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_36">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="559.347521" transform="rotate(-0 97.92 559.347521)">Endoscopy</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_5">
+   <g id="detail-synthesis-patch_6">
+    <path d="M 97.92 851.801653  L 506.88 851.801653  L 506.88 753.396694  L 97.92 753.396694  L 97.92 851.801653  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_9">
+    <g id="detail-synthesis-xtick_17">
+     <g id="detail-synthesis-line2d_49">
+      <path d="M 97.92 851.801653  L 97.92 753.396694  " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_50" />
+     <g id="detail-synthesis-text_37">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="866.699309" transform="rotate(-0 97.92 866.699309)">100.0</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_18">
+     <g id="detail-synthesis-line2d_51">
+      <path d="M 234.24 851.801653  L 234.24 753.396694  " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_52" />
+     <g id="detail-synthesis-text_38">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="866.699309" transform="rotate(-0 234.24 866.699309)">148.3</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_19">
+     <g id="detail-synthesis-line2d_53">
+      <path d="M 370.56 851.801653  L 370.56 753.396694  " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_54" />
+     <g id="detail-synthesis-text_39">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="866.699309" transform="rotate(-0 370.56 866.699309)">196.7</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_20">
+     <g id="detail-synthesis-line2d_55">
+      <path d="M 506.88 851.801653  L 506.88 753.396694  " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_56" />
+     <g id="detail-synthesis-text_40">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="866.699309" transform="rotate(-0 506.88 866.699309)">245.0</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_10">
+    <g id="detail-synthesis-ytick_17">
+     <g id="detail-synthesis-line2d_57" />
+     <g id="detail-synthesis-text_41">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="771.023396" transform="rotate(-0 94.42 771.023396)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_18">
+     <g id="detail-synthesis-line2d_58" />
+     <g id="detail-synthesis-text_42">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="795.873133" transform="rotate(-0 94.42 795.873133)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_19">
+     <g id="detail-synthesis-line2d_59" />
+     <g id="detail-synthesis-text_43">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="820.72287" transform="rotate(-0 94.42 820.72287)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_20">
+     <g id="detail-synthesis-line2d_60" />
+     <g id="detail-synthesis-text_44">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="845.572607" transform="rotate(-0 94.42 845.572607)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-4" aria-label="MRI · PUMIT: 227.64 " tabindex="0" role="img">
+    <title>MRI · PUMIT: 227.64 </title><path d="M 97.92 757.869647  L 457.917617 757.869647  L 457.917617 772.779489  L 97.92 772.779489  z " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-4" aria-label="MRI · MedVAE: 145.25 " tabindex="0" role="img">
+    <title>MRI · MedVAE: 145.25 </title><path d="M 97.92 782.719384  L 225.543724 782.719384  L 225.543724 797.629226  L 97.92 797.629226  z " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-4" aria-label="MRI · MedITok: 122.96 " tabindex="0" role="img">
+    <title>MRI · MedITok: 122.96 </title><path d="M 97.92 807.569121  L 162.676701 807.569121  L 162.676701 822.478963  L 97.92 822.478963  z " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-4" aria-label="MRI · MedVTok: 116.78 " tabindex="0" role="img">
+    <title>MRI · MedVTok: 116.78 </title><path d="M 97.92 832.418858  L 145.246543 832.418858  L 145.246543 847.3287  L 97.92 847.3287  z " clip-path="url(#detail-synthesis-p60d92935a8)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_45">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="741.396694" transform="rotate(-0 97.92 741.396694)">MRI</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_6">
+   <g id="detail-synthesis-patch_7">
+    <path d="M 97.92 1033.850826  L 506.88 1033.850826  L 506.88 935.445868  L 97.92 935.445868  L 97.92 1033.850826  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_11">
+    <g id="detail-synthesis-xtick_21">
+     <g id="detail-synthesis-line2d_61">
+      <path d="M 97.92 1033.850826  L 97.92 935.445868  " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_62" />
+     <g id="detail-synthesis-text_46">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1048.748483" transform="rotate(-0 97.92 1048.748483)">60.0</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_22">
+     <g id="detail-synthesis-line2d_63">
+      <path d="M 234.24 1033.850826  L 234.24 935.445868  " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_64" />
+     <g id="detail-synthesis-text_47">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1048.748483" transform="rotate(-0 234.24 1048.748483)">178.3</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_23">
+     <g id="detail-synthesis-line2d_65">
+      <path d="M 370.56 1033.850826  L 370.56 935.445868  " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_66" />
+     <g id="detail-synthesis-text_48">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1048.748483" transform="rotate(-0 370.56 1048.748483)">296.7</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_24">
+     <g id="detail-synthesis-line2d_67">
+      <path d="M 506.88 1033.850826  L 506.88 935.445868  " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_68" />
+     <g id="detail-synthesis-text_49">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1048.748483" transform="rotate(-0 506.88 1048.748483)">415.0</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_12">
+    <g id="detail-synthesis-ytick_21">
+     <g id="detail-synthesis-line2d_69" />
+     <g id="detail-synthesis-text_50">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="953.07257" transform="rotate(-0 94.42 953.07257)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_22">
+     <g id="detail-synthesis-line2d_70" />
+     <g id="detail-synthesis-text_51">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="977.922307" transform="rotate(-0 94.42 977.922307)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_23">
+     <g id="detail-synthesis-line2d_71" />
+     <g id="detail-synthesis-text_52">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1002.772044" transform="rotate(-0 94.42 1002.772044)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_24">
+     <g id="detail-synthesis-line2d_72" />
+     <g id="detail-synthesis-text_53">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1027.621781" transform="rotate(-0 94.42 1027.621781)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-5" aria-label="Pathology · PUMIT: 377.12 " tabindex="0" role="img">
+    <title>Pathology · PUMIT: 377.12 </title><path d="M 97.92 939.91882  L 463.24224 939.91882  L 463.24224 954.828663  L 97.92 954.828663  z " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-5" aria-label="Pathology · MedVAE: 325.87 " tabindex="0" role="img">
+    <title>Pathology · MedVAE: 325.87 </title><path d="M 97.92 964.768557  L 404.20224 964.768557  L 404.20224 979.6784  L 97.92 979.6784  z " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-5" aria-label="Pathology · MedITok: 99.66 " tabindex="0" role="img">
+    <title>Pathology · MedITok: 99.66 </title><path d="M 97.92 989.618295  L 143.60832 989.618295  L 143.60832 1004.528137  L 97.92 1004.528137  z " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-5" aria-label="Pathology · MedVTok: 94.65 " tabindex="0" role="img">
+    <title>Pathology · MedVTok: 94.65 </title><path d="M 97.92 1014.468032  L 137.8368 1014.468032  L 137.8368 1029.377874  L 97.92 1029.377874  z " clip-path="url(#detail-synthesis-p3dd29d2f6b)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_54">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="923.445868" transform="rotate(-0 97.92 923.445868)">Pathology</text>
+   </g>
+  </g>
+  <g id="detail-synthesis-axes_7">
+   <g id="detail-synthesis-patch_8">
+    <path d="M 97.92 1215.9  L 506.88 1215.9  L 506.88 1117.495041  L 97.92 1117.495041  L 97.92 1215.9  z " style="fill: none" />
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_13">
+    <g id="detail-synthesis-xtick_25">
+     <g id="detail-synthesis-line2d_73">
+      <path d="M 97.92 1215.9  L 97.92 1117.495041  " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_74" />
+     <g id="detail-synthesis-text_55">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1230.797656" transform="rotate(-0 97.92 1230.797656)">50.0</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_26">
+     <g id="detail-synthesis-line2d_75">
+      <path d="M 234.24 1215.9  L 234.24 1117.495041  " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_76" />
+     <g id="detail-synthesis-text_56">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1230.797656" transform="rotate(-0 234.24 1230.797656)">106.7</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_27">
+     <g id="detail-synthesis-line2d_77">
+      <path d="M 370.56 1215.9  L 370.56 1117.495041  " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_78" />
+     <g id="detail-synthesis-text_57">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1230.797656" transform="rotate(-0 370.56 1230.797656)">163.3</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-xtick_28">
+     <g id="detail-synthesis-line2d_79">
+      <path d="M 506.88 1215.9  L 506.88 1117.495041  " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-synthesis-line2d_80" />
+     <g id="detail-synthesis-text_58">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1230.797656" transform="rotate(-0 506.88 1230.797656)">220.0</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-matplotlib.axis_14">
+    <g id="detail-synthesis-ytick_25">
+     <g id="detail-synthesis-line2d_81" />
+     <g id="detail-synthesis-text_59">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1135.121743" transform="rotate(-0 94.42 1135.121743)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_26">
+     <g id="detail-synthesis-line2d_82" />
+     <g id="detail-synthesis-text_60">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1159.97148" transform="rotate(-0 94.42 1159.97148)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_27">
+     <g id="detail-synthesis-line2d_83" />
+     <g id="detail-synthesis-text_61">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1184.821217" transform="rotate(-0 94.42 1184.821217)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-synthesis-ytick_28">
+     <g id="detail-synthesis-line2d_84" />
+     <g id="detail-synthesis-text_62">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1209.670954" transform="rotate(-0 94.42 1209.670954)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-synthesis-bar-0-6" aria-label="X-ray · PUMIT: 200.14 " tabindex="0" role="img">
+    <title>X-ray · PUMIT: 200.14 </title><path d="M 97.92 1121.967994  L 459.103849 1121.967994  L 459.103849 1136.877836  L 97.92 1136.877836  z " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-synthesis-bar-1-6" aria-label="X-ray · MedVAE: 88.55 " tabindex="0" role="img">
+    <title>X-ray · MedVAE: 88.55 </title><path d="M 97.92 1146.817731  L 190.657694 1146.817731  L 190.657694 1161.727573  L 97.92 1161.727573  z " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-synthesis-bar-2-6" aria-label="X-ray · MedITok: 77.24 " tabindex="0" role="img">
+    <title>X-ray · MedITok: 77.24 </title><path d="M 97.92 1171.667468  L 163.449826 1171.667468  L 163.449826 1186.57731  L 97.92 1186.57731  z " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-synthesis-bar-3-6" aria-label="X-ray · MedVTok: 69.17 " tabindex="0" role="img">
+    <title>X-ray · MedVTok: 69.17 </title><path d="M 97.92 1196.517205  L 144.036254 1196.517205  L 144.036254 1211.427047  L 97.92 1211.427047  z " clip-path="url(#detail-synthesis-pd2a18652a1)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-synthesis-text_63">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="1105.495041" transform="rotate(-0 97.92 1105.495041)">X-ray</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="detail-synthesis-pc5c98f0651">
+   <rect x="97.92" y="25.2" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-p415271d5be">
+   <rect x="97.92" y="207.249174" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-p09f758e4c9">
+   <rect x="97.92" y="389.298347" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-p714e295c96">
+   <rect x="97.92" y="571.347521" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-p60d92935a8">
+   <rect x="97.92" y="753.396694" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-p3dd29d2f6b">
+   <rect x="97.92" y="935.445868" width="408.96" height="98.404959" />
+  </clipPath>
+  <clipPath id="detail-synthesis-pd2a18652a1">
+   <rect x="97.92" y="1117.495041" width="408.96" height="98.404959" />
+  </clipPath>
+ </defs>
+</svg>

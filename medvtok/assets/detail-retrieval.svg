@@ -1,0 +1,808 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns2="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" width="576pt" height="1620pt" viewBox="0 0 576 1620" version="1.1" role="img" aria-labelledby="detail-retrieval-title detail-retrieval-description" class="benchmark-svg">
+ <desc id="detail-retrieval-description">Paper-reported Recall@1 (%) ↑ across the evaluated imaging modalities. Each modality uses an independent nonzero axis.</desc><title id="detail-retrieval-title">Retrieval detailed comparison</title><metadata>
+  <rdf:RDF>
+   <ns2:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <ns2:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </ns2:Agent>
+    </dc:creator>
+   </ns2:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="detail-retrieval-figure_1">
+  <g id="detail-retrieval-patch_1">
+   <path d="M 0 1620  L 576 1620  L 576 0  L 0 0  L 0 1620  z " style="fill: none" />
+  </g>
+  <g id="detail-retrieval-axes_1">
+   <g id="detail-retrieval-patch_2">
+    <path d="M 97.92 129.292405  L 506.88 129.292405  L 506.88 32.4  L 97.92 32.4  L 97.92 129.292405  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_1">
+    <g id="detail-retrieval-xtick_1">
+     <g id="detail-retrieval-line2d_1">
+      <path d="M 97.92 129.292405  L 97.92 32.4  " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_2" />
+     <g id="detail-retrieval-text_1">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="144.190061" transform="rotate(-0 97.92 144.190061)">5.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_2">
+     <g id="detail-retrieval-line2d_3">
+      <path d="M 234.24 129.292405  L 234.24 32.4  " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_4" />
+     <g id="detail-retrieval-text_2">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="144.190061" transform="rotate(-0 234.24 144.190061)">36.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_3">
+     <g id="detail-retrieval-line2d_5">
+      <path d="M 370.56 129.292405  L 370.56 32.4  " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_6" />
+     <g id="detail-retrieval-text_3">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="144.190061" transform="rotate(-0 370.56 144.190061)">68.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_4">
+     <g id="detail-retrieval-line2d_7">
+      <path d="M 506.88 129.292405  L 506.88 32.4  " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_8" />
+     <g id="detail-retrieval-text_4">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="144.190061" transform="rotate(-0 506.88 144.190061)">100.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_2">
+    <g id="detail-retrieval-ytick_1">
+     <g id="detail-retrieval-line2d_9" />
+     <g id="detail-retrieval-text_5">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="49.843362" transform="rotate(-0 94.42 49.843362)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_2">
+     <g id="detail-retrieval-line2d_10" />
+     <g id="detail-retrieval-text_6">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="74.311141" transform="rotate(-0 94.42 74.311141)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_3">
+     <g id="detail-retrieval-line2d_11" />
+     <g id="detail-retrieval-text_7">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="98.77892" transform="rotate(-0 94.42 98.77892)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_4">
+     <g id="detail-retrieval-line2d_12" />
+     <g id="detail-retrieval-text_8">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="123.246699" transform="rotate(-0 94.42 123.246699)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-0" aria-label="Fundus · PUMIT: 15.88 %" tabindex="0" role="img">
+    <title>Fundus · PUMIT: 15.88 %</title><path d="M 97.92 36.8042  L 144.756682 36.8042  L 144.756682 51.484868  L 97.92 51.484868  z " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-0" aria-label="Fundus · MedVAE: 12.45 %" tabindex="0" role="img">
+    <title>Fundus · MedVAE: 12.45 %</title><path d="M 97.92 61.271979  L 129.991074 61.271979  L 129.991074 75.952647  L 97.92 75.952647  z " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-0" aria-label="Fundus · MedITok: 73.82 %" tabindex="0" role="img">
+    <title>Fundus · MedITok: 73.82 %</title><path d="M 97.92 85.739758  L 394.179234 85.739758  L 394.179234 100.420426  L 97.92 100.420426  z " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-0" aria-label="Fundus · MedVTok: 90.99 %" tabindex="0" role="img">
+    <title>Fundus · MedVTok: 90.99 %</title><path d="M 97.92 110.207537  L 468.093373 110.207537  L 468.093373 124.888205  L 97.92 124.888205  z " clip-path="url(#detail-retrieval-p8d273ab8e0)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_9">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="20.4" transform="rotate(-0 97.92 20.4)">Fundus</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_2">
+   <g id="detail-retrieval-patch_3">
+    <path d="M 97.92 308.543354  L 506.88 308.543354  L 506.88 211.650949  L 97.92 211.650949  L 97.92 308.543354  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_3">
+    <g id="detail-retrieval-xtick_5">
+     <g id="detail-retrieval-line2d_13">
+      <path d="M 97.92 308.543354  L 97.92 211.650949  " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_14" />
+     <g id="detail-retrieval-text_10">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="323.441011" transform="rotate(-0 97.92 323.441011)">40</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_6">
+     <g id="detail-retrieval-line2d_15">
+      <path d="M 234.24 308.543354  L 234.24 211.650949  " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_16" />
+     <g id="detail-retrieval-text_11">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="323.441011" transform="rotate(-0 234.24 323.441011)">60</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_7">
+     <g id="detail-retrieval-line2d_17">
+      <path d="M 370.56 308.543354  L 370.56 211.650949  " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_18" />
+     <g id="detail-retrieval-text_12">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="323.441011" transform="rotate(-0 370.56 323.441011)">80</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_8">
+     <g id="detail-retrieval-line2d_19">
+      <path d="M 506.88 308.543354  L 506.88 211.650949  " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_20" />
+     <g id="detail-retrieval-text_13">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="323.441011" transform="rotate(-0 506.88 323.441011)">100</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_4">
+    <g id="detail-retrieval-ytick_5">
+     <g id="detail-retrieval-line2d_21" />
+     <g id="detail-retrieval-text_14">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="229.094311" transform="rotate(-0 94.42 229.094311)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_6">
+     <g id="detail-retrieval-line2d_22" />
+     <g id="detail-retrieval-text_15">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="253.56209" transform="rotate(-0 94.42 253.56209)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_7">
+     <g id="detail-retrieval-line2d_23" />
+     <g id="detail-retrieval-text_16">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="278.02987" transform="rotate(-0 94.42 278.02987)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_8">
+     <g id="detail-retrieval-line2d_24" />
+     <g id="detail-retrieval-text_17">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="302.497649" transform="rotate(-0 94.42 302.497649)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-1" aria-label="CT · PUMIT: 49.52 %" tabindex="0" role="img">
+    <title>CT · PUMIT: 49.52 %</title><path d="M 97.92 216.05515  L 162.80832 216.05515  L 162.80832 230.735817  L 97.92 230.735817  z " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-1" aria-label="CT · MedVAE: 47.30 %" tabindex="0" role="img">
+    <title>CT · MedVAE: 47.30 %</title><path d="M 97.92 240.522929  L 147.6768 240.522929  L 147.6768 255.203596  L 97.92 255.203596  z " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-1" aria-label="CT · MedITok: 87.62 %" tabindex="0" role="img">
+    <title>CT · MedITok: 87.62 %</title><path d="M 97.92 264.990708  L 422.49792 264.990708  L 422.49792 279.671375  L 97.92 279.671375  z " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-1" aria-label="CT · MedVTok: 90.16 %" tabindex="0" role="img">
+    <title>CT · MedVTok: 90.16 %</title><path d="M 97.92 289.458487  L 439.81056 289.458487  L 439.81056 304.139154  L 97.92 304.139154  z " clip-path="url(#detail-retrieval-p6704301e00)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_18">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="199.650949" transform="rotate(-0 97.92 199.650949)">CT</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_3">
+   <g id="detail-retrieval-patch_4">
+    <path d="M 97.92 487.794304  L 506.88 487.794304  L 506.88 390.901899  L 97.92 390.901899  L 97.92 487.794304  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_5">
+    <g id="detail-retrieval-xtick_9">
+     <g id="detail-retrieval-line2d_25">
+      <path d="M 97.92 487.794304  L 97.92 390.901899  " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_26" />
+     <g id="detail-retrieval-text_19">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="502.69196" transform="rotate(-0 97.92 502.69196)">50</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_10">
+     <g id="detail-retrieval-line2d_27">
+      <path d="M 234.24 487.794304  L 234.24 390.901899  " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_28" />
+     <g id="detail-retrieval-text_20">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="502.69196" transform="rotate(-0 234.24 502.69196)">60</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_11">
+     <g id="detail-retrieval-line2d_29">
+      <path d="M 370.56 487.794304  L 370.56 390.901899  " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_30" />
+     <g id="detail-retrieval-text_21">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="502.69196" transform="rotate(-0 370.56 502.69196)">70</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_12">
+     <g id="detail-retrieval-line2d_31">
+      <path d="M 506.88 487.794304  L 506.88 390.901899  " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_32" />
+     <g id="detail-retrieval-text_22">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="502.69196" transform="rotate(-0 506.88 502.69196)">80</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_6">
+    <g id="detail-retrieval-ytick_9">
+     <g id="detail-retrieval-line2d_33" />
+     <g id="detail-retrieval-text_23">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="408.345261" transform="rotate(-0 94.42 408.345261)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_10">
+     <g id="detail-retrieval-line2d_34" />
+     <g id="detail-retrieval-text_24">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="432.81304" transform="rotate(-0 94.42 432.81304)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_11">
+     <g id="detail-retrieval-line2d_35" />
+     <g id="detail-retrieval-text_25">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="457.280819" transform="rotate(-0 94.42 457.280819)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_12">
+     <g id="detail-retrieval-line2d_36" />
+     <g id="detail-retrieval-text_26">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="481.748598" transform="rotate(-0 94.42 481.748598)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-2" aria-label="Dermoscopy · PUMIT: 58.66 %" tabindex="0" role="img">
+    <title>Dermoscopy · PUMIT: 58.66 %</title><path d="M 97.92 395.306099  L 215.97312 395.306099  L 215.97312 409.986766  L 97.92 409.986766  z " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-2" aria-label="Dermoscopy · MedVAE: 56.15 %" tabindex="0" role="img">
+    <title>Dermoscopy · MedVAE: 56.15 %</title><path d="M 97.92 419.773878  L 181.7568 419.773878  L 181.7568 434.454545  L 97.92 434.454545  z " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-2" aria-label="Dermoscopy · MedITok: 68.65 %" tabindex="0" role="img">
+    <title>Dermoscopy · MedITok: 68.65 %</title><path d="M 97.92 444.241657  L 352.1568 444.241657  L 352.1568 458.922325  L 97.92 458.922325  z " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-2" aria-label="Dermoscopy · MedVTok: 70.70 %" tabindex="0" role="img">
+    <title>Dermoscopy · MedVTok: 70.70 %</title><path d="M 97.92 468.709436  L 380.1024 468.709436  L 380.1024 483.390104  L 97.92 483.390104  z " clip-path="url(#detail-retrieval-p1186000dcb)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_27">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="378.901899" transform="rotate(-0 97.92 378.901899)">Dermoscopy</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_4">
+   <g id="detail-retrieval-patch_5">
+    <path d="M 97.92 667.045253  L 506.88 667.045253  L 506.88 570.152848  L 97.92 570.152848  L 97.92 667.045253  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_7">
+    <g id="detail-retrieval-xtick_13">
+     <g id="detail-retrieval-line2d_37">
+      <path d="M 97.92 667.045253  L 97.92 570.152848  " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_38" />
+     <g id="detail-retrieval-text_28">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="681.942909" transform="rotate(-0 97.92 681.942909)">40.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_14">
+     <g id="detail-retrieval-line2d_39">
+      <path d="M 234.24 667.045253  L 234.24 570.152848  " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_40" />
+     <g id="detail-retrieval-text_29">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="681.942909" transform="rotate(-0 234.24 681.942909)">46.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_15">
+     <g id="detail-retrieval-line2d_41">
+      <path d="M 370.56 667.045253  L 370.56 570.152848  " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_42" />
+     <g id="detail-retrieval-text_30">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="681.942909" transform="rotate(-0 370.56 681.942909)">53.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_16">
+     <g id="detail-retrieval-line2d_43">
+      <path d="M 506.88 667.045253  L 506.88 570.152848  " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_44" />
+     <g id="detail-retrieval-text_31">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="681.942909" transform="rotate(-0 506.88 681.942909)">60.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_8">
+    <g id="detail-retrieval-ytick_13">
+     <g id="detail-retrieval-line2d_45" />
+     <g id="detail-retrieval-text_32">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="587.59621" transform="rotate(-0 94.42 587.59621)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_14">
+     <g id="detail-retrieval-line2d_46" />
+     <g id="detail-retrieval-text_33">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="612.063989" transform="rotate(-0 94.42 612.063989)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_15">
+     <g id="detail-retrieval-line2d_47" />
+     <g id="detail-retrieval-text_34">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="636.531768" transform="rotate(-0 94.42 636.531768)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_16">
+     <g id="detail-retrieval-line2d_48" />
+     <g id="detail-retrieval-text_35">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="660.999547" transform="rotate(-0 94.42 660.999547)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-3" aria-label="Endoscopy · PUMIT: 48.96 %" tabindex="0" role="img">
+    <title>Endoscopy · PUMIT: 48.96 %</title><path d="M 97.92 574.557048  L 281.13408 574.557048  L 281.13408 589.237716  L 97.92 589.237716  z " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-3" aria-label="Endoscopy · MedVAE: 53.69 %" tabindex="0" role="img">
+    <title>Endoscopy · MedVAE: 53.69 %</title><path d="M 97.92 599.024827  L 377.85312 599.024827  L 377.85312 613.705495  L 97.92 613.705495  z " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-3" aria-label="Endoscopy · MedITok: 52.52 %" tabindex="0" role="img">
+    <title>Endoscopy · MedITok: 52.52 %</title><path d="M 97.92 623.492606  L 353.92896 623.492606  L 353.92896 638.173274  L 97.92 638.173274  z " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-3" aria-label="Endoscopy · MedVTok: 52.59 %" tabindex="0" role="img">
+    <title>Endoscopy · MedVTok: 52.59 %</title><path d="M 97.92 647.960386  L 355.36032 647.960386  L 355.36032 662.641053  L 97.92 662.641053  z " clip-path="url(#detail-retrieval-pc87439d5c0)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_36">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="558.152848" transform="rotate(-0 97.92 558.152848)">Endoscopy</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_5">
+   <g id="detail-retrieval-patch_6">
+    <path d="M 97.92 846.296203  L 506.88 846.296203  L 506.88 749.403797  L 97.92 749.403797  L 97.92 846.296203  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_9">
+    <g id="detail-retrieval-xtick_17">
+     <g id="detail-retrieval-line2d_49">
+      <path d="M 97.92 846.296203  L 97.92 749.403797  " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_50" />
+     <g id="detail-retrieval-text_37">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="861.193859" transform="rotate(-0 97.92 861.193859)">80.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_18">
+     <g id="detail-retrieval-line2d_51">
+      <path d="M 234.24 846.296203  L 234.24 749.403797  " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_52" />
+     <g id="detail-retrieval-text_38">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="861.193859" transform="rotate(-0 234.24 861.193859)">86.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_19">
+     <g id="detail-retrieval-line2d_53">
+      <path d="M 370.56 846.296203  L 370.56 749.403797  " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_54" />
+     <g id="detail-retrieval-text_39">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="861.193859" transform="rotate(-0 370.56 861.193859)">93.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_20">
+     <g id="detail-retrieval-line2d_55">
+      <path d="M 506.88 846.296203  L 506.88 749.403797  " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_56" />
+     <g id="detail-retrieval-text_40">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="861.193859" transform="rotate(-0 506.88 861.193859)">100.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_10">
+    <g id="detail-retrieval-ytick_17">
+     <g id="detail-retrieval-line2d_57" />
+     <g id="detail-retrieval-text_41">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="766.84716" transform="rotate(-0 94.42 766.84716)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_18">
+     <g id="detail-retrieval-line2d_58" />
+     <g id="detail-retrieval-text_42">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="791.314939" transform="rotate(-0 94.42 791.314939)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_19">
+     <g id="detail-retrieval-line2d_59" />
+     <g id="detail-retrieval-text_43">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="815.782718" transform="rotate(-0 94.42 815.782718)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_20">
+     <g id="detail-retrieval-line2d_60" />
+     <g id="detail-retrieval-text_44">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="840.250497" transform="rotate(-0 94.42 840.250497)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-4" aria-label="MRI · PUMIT: 89.80 %" tabindex="0" role="img">
+    <title>MRI · PUMIT: 89.80 %</title><path d="M 97.92 753.807998  L 298.3104 753.807998  L 298.3104 768.488665  L 97.92 768.488665  z " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-4" aria-label="MRI · MedVAE: 88.90 %" tabindex="0" role="img">
+    <title>MRI · MedVAE: 88.90 %</title><path d="M 97.92 778.275777  L 279.9072 778.275777  L 279.9072 792.956444  L 97.92 792.956444  z " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-4" aria-label="MRI · MedITok: 95.60 %" tabindex="0" role="img">
+    <title>MRI · MedITok: 95.60 %</title><path d="M 97.92 802.743556  L 416.9088 802.743556  L 416.9088 817.424223  L 97.92 817.424223  z " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-4" aria-label="MRI · MedVTok: 96.10 %" tabindex="0" role="img">
+    <title>MRI · MedVTok: 96.10 %</title><path d="M 97.92 827.211335  L 427.1328 827.211335  L 427.1328 841.892002  L 97.92 841.892002  z " clip-path="url(#detail-retrieval-p7abf3a1fcb)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_45">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="737.403797" transform="rotate(-0 97.92 737.403797)">MRI</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_6">
+   <g id="detail-retrieval-patch_7">
+    <path d="M 97.92 1025.547152  L 506.88 1025.547152  L 506.88 928.654747  L 97.92 928.654747  L 97.92 1025.547152  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_11">
+    <g id="detail-retrieval-xtick_21">
+     <g id="detail-retrieval-line2d_61">
+      <path d="M 97.92 1025.547152  L 97.92 928.654747  " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_62" />
+     <g id="detail-retrieval-text_46">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1040.444808" transform="rotate(-0 97.92 1040.444808)">45.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_22">
+     <g id="detail-retrieval-line2d_63">
+      <path d="M 234.24 1025.547152  L 234.24 928.654747  " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_64" />
+     <g id="detail-retrieval-text_47">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1040.444808" transform="rotate(-0 234.24 1040.444808)">63.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_23">
+     <g id="detail-retrieval-line2d_65">
+      <path d="M 370.56 1025.547152  L 370.56 928.654747  " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_66" />
+     <g id="detail-retrieval-text_48">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1040.444808" transform="rotate(-0 370.56 1040.444808)">81.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_24">
+     <g id="detail-retrieval-line2d_67">
+      <path d="M 506.88 1025.547152  L 506.88 928.654747  " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_68" />
+     <g id="detail-retrieval-text_49">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1040.444808" transform="rotate(-0 506.88 1040.444808)">100.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_12">
+    <g id="detail-retrieval-ytick_21">
+     <g id="detail-retrieval-line2d_69" />
+     <g id="detail-retrieval-text_50">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="946.098109" transform="rotate(-0 94.42 946.098109)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_22">
+     <g id="detail-retrieval-line2d_70" />
+     <g id="detail-retrieval-text_51">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="970.565888" transform="rotate(-0 94.42 970.565888)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_23">
+     <g id="detail-retrieval-line2d_71" />
+     <g id="detail-retrieval-text_52">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="995.033667" transform="rotate(-0 94.42 995.033667)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_24">
+     <g id="detail-retrieval-line2d_72" />
+     <g id="detail-retrieval-text_53">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1019.501446" transform="rotate(-0 94.42 1019.501446)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-5" aria-label="OCT · PUMIT: 51.24 %" tabindex="0" role="img">
+    <title>OCT · PUMIT: 51.24 %</title><path d="M 97.92 933.058947  L 144.318371 933.058947  L 144.318371 947.739614  L 97.92 947.739614  z " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-5" aria-label="OCT · MedVAE: 52.48 %" tabindex="0" role="img">
+    <title>OCT · MedVAE: 52.48 %</title><path d="M 97.92 957.526726  L 153.53856 957.526726  L 153.53856 972.207394  L 97.92 972.207394  z " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-5" aria-label="OCT · MedITok: 80.75 %" tabindex="0" role="img">
+    <title>OCT · MedITok: 80.75 %</title><path d="M 97.92 981.994505  L 363.744 981.994505  L 363.744 996.675173  L 97.92 996.675173  z " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-5" aria-label="OCT · MedVTok: 93.79 %" tabindex="0" role="img">
+    <title>OCT · MedVTok: 93.79 %</title><path d="M 97.92 1006.462284  L 460.704698 1006.462284  L 460.704698 1021.142952  L 97.92 1021.142952  z " clip-path="url(#detail-retrieval-p88a3ef31d3)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_54">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="916.654747" transform="rotate(-0 97.92 916.654747)">OCT</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_7">
+   <g id="detail-retrieval-patch_8">
+    <path d="M 97.92 1204.798101  L 506.88 1204.798101  L 506.88 1107.905696  L 97.92 1107.905696  L 97.92 1204.798101  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_13">
+    <g id="detail-retrieval-xtick_25">
+     <g id="detail-retrieval-line2d_73">
+      <path d="M 97.92 1204.798101  L 97.92 1107.905696  " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_74" />
+     <g id="detail-retrieval-text_55">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1219.695758" transform="rotate(-0 97.92 1219.695758)">30.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_26">
+     <g id="detail-retrieval-line2d_75">
+      <path d="M 234.24 1204.798101  L 234.24 1107.905696  " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_76" />
+     <g id="detail-retrieval-text_56">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1219.695758" transform="rotate(-0 234.24 1219.695758)">48.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_27">
+     <g id="detail-retrieval-line2d_77">
+      <path d="M 370.56 1204.798101  L 370.56 1107.905696  " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_78" />
+     <g id="detail-retrieval-text_57">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1219.695758" transform="rotate(-0 370.56 1219.695758)">66.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_28">
+     <g id="detail-retrieval-line2d_79">
+      <path d="M 506.88 1204.798101  L 506.88 1107.905696  " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_80" />
+     <g id="detail-retrieval-text_58">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1219.695758" transform="rotate(-0 506.88 1219.695758)">85.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_14">
+    <g id="detail-retrieval-ytick_25">
+     <g id="detail-retrieval-line2d_81" />
+     <g id="detail-retrieval-text_59">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1125.349058" transform="rotate(-0 94.42 1125.349058)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_26">
+     <g id="detail-retrieval-line2d_82" />
+     <g id="detail-retrieval-text_60">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1149.816837" transform="rotate(-0 94.42 1149.816837)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_27">
+     <g id="detail-retrieval-line2d_83" />
+     <g id="detail-retrieval-text_61">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1174.284616" transform="rotate(-0 94.42 1174.284616)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_28">
+     <g id="detail-retrieval-line2d_84" />
+     <g id="detail-retrieval-text_62">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1198.752395" transform="rotate(-0 94.42 1198.752395)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-6" aria-label="Pathology · PUMIT: 38.52 %" tabindex="0" role="img">
+    <title>Pathology · PUMIT: 38.52 %</title><path d="M 97.92 1112.309896  L 161.271622 1112.309896  L 161.271622 1126.990564  L 97.92 1126.990564  z " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-6" aria-label="Pathology · MedVAE: 38.52 %" tabindex="0" role="img">
+    <title>Pathology · MedVAE: 38.52 %</title><path d="M 97.92 1136.777675  L 161.271622 1136.777675  L 161.271622 1151.458343  L 97.92 1151.458343  z " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-6" aria-label="Pathology · MedITok: 72.76 %" tabindex="0" role="img">
+    <title>Pathology · MedITok: 72.76 %</title><path d="M 97.92 1161.245455  L 415.867811 1161.245455  L 415.867811 1175.926122  L 97.92 1175.926122  z " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-6" aria-label="Pathology · MedVTok: 75.49 %" tabindex="0" role="img">
+    <title>Pathology · MedVTok: 75.49 %</title><path d="M 97.92 1185.713234  L 436.167098 1185.713234  L 436.167098 1200.393901  L 97.92 1200.393901  z " clip-path="url(#detail-retrieval-pfca5247932)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_63">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="1095.905696" transform="rotate(-0 97.92 1095.905696)">Pathology</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_8">
+   <g id="detail-retrieval-patch_9">
+    <path d="M 97.92 1384.049051  L 506.88 1384.049051  L 506.88 1287.156646  L 97.92 1287.156646  L 97.92 1384.049051  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_15">
+    <g id="detail-retrieval-xtick_29">
+     <g id="detail-retrieval-line2d_85">
+      <path d="M 97.92 1384.049051  L 97.92 1287.156646  " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_86" />
+     <g id="detail-retrieval-text_64">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1398.946707" transform="rotate(-0 97.92 1398.946707)">30.00</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_30">
+     <g id="detail-retrieval-line2d_87">
+      <path d="M 234.24 1384.049051  L 234.24 1287.156646  " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_88" />
+     <g id="detail-retrieval-text_65">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1398.946707" transform="rotate(-0 234.24 1398.946707)">38.33</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_31">
+     <g id="detail-retrieval-line2d_89">
+      <path d="M 370.56 1384.049051  L 370.56 1287.156646  " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_90" />
+     <g id="detail-retrieval-text_66">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1398.946707" transform="rotate(-0 370.56 1398.946707)">46.67</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_32">
+     <g id="detail-retrieval-line2d_91">
+      <path d="M 506.88 1384.049051  L 506.88 1287.156646  " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_92" />
+     <g id="detail-retrieval-text_67">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1398.946707" transform="rotate(-0 506.88 1398.946707)">55.00</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_16">
+    <g id="detail-retrieval-ytick_29">
+     <g id="detail-retrieval-line2d_93" />
+     <g id="detail-retrieval-text_68">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1304.600008" transform="rotate(-0 94.42 1304.600008)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_30">
+     <g id="detail-retrieval-line2d_94" />
+     <g id="detail-retrieval-text_69">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1329.067787" transform="rotate(-0 94.42 1329.067787)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_31">
+     <g id="detail-retrieval-line2d_95" />
+     <g id="detail-retrieval-text_70">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1353.535566" transform="rotate(-0 94.42 1353.535566)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_32">
+     <g id="detail-retrieval-line2d_96" />
+     <g id="detail-retrieval-text_71">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1378.003345" transform="rotate(-0 94.42 1378.003345)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-7" aria-label="Ultrasound · PUMIT: 36.70 %" tabindex="0" role="img">
+    <title>Ultrasound · PUMIT: 36.70 %</title><path d="M 97.92 1291.560846  L 207.52128 1291.560846  L 207.52128 1306.241513  L 97.92 1306.241513  z " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-7" aria-label="Ultrasound · MedVAE: 35.90 %" tabindex="0" role="img">
+    <title>Ultrasound · MedVAE: 35.90 %</title><path d="M 97.92 1316.028625  L 194.43456 1316.028625  L 194.43456 1330.709292  L 97.92 1330.709292  z " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-7" aria-label="Ultrasound · MedITok: 46.01 %" tabindex="0" role="img">
+    <title>Ultrasound · MedITok: 46.01 %</title><path d="M 97.92 1340.496404  L 359.817984 1340.496404  L 359.817984 1355.177071  L 97.92 1355.177071  z " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-7" aria-label="Ultrasound · MedVTok: 47.61 %" tabindex="0" role="img">
+    <title>Ultrasound · MedVTok: 47.61 %</title><path d="M 97.92 1364.964183  L 385.991424 1364.964183  L 385.991424 1379.64485  L 97.92 1379.64485  z " clip-path="url(#detail-retrieval-p3dfca0f488)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_72">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="1275.156646" transform="rotate(-0 97.92 1275.156646)">Ultrasound</text>
+   </g>
+  </g>
+  <g id="detail-retrieval-axes_9">
+   <g id="detail-retrieval-patch_10">
+    <path d="M 97.92 1563.3  L 506.88 1563.3  L 506.88 1466.407595  L 97.92 1466.407595  L 97.92 1563.3  z " style="fill: none" />
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_17">
+    <g id="detail-retrieval-xtick_33">
+     <g id="detail-retrieval-line2d_97">
+      <path d="M 97.92 1563.3  L 97.92 1466.407595  " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_98" />
+     <g id="detail-retrieval-text_73">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="97.92" y="1578.197656" transform="rotate(-0 97.92 1578.197656)">70</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_34">
+     <g id="detail-retrieval-line2d_99">
+      <path d="M 234.24 1563.3  L 234.24 1466.407595  " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_100" />
+     <g id="detail-retrieval-text_74">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="234.24" y="1578.197656" transform="rotate(-0 234.24 1578.197656)">80</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_35">
+     <g id="detail-retrieval-line2d_101">
+      <path d="M 370.56 1563.3  L 370.56 1466.407595  " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_102" />
+     <g id="detail-retrieval-text_75">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="370.56" y="1578.197656" transform="rotate(-0 370.56 1578.197656)">90</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-xtick_36">
+     <g id="detail-retrieval-line2d_103">
+      <path d="M 506.88 1563.3  L 506.88 1466.407595  " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: none; stroke: #e5eaf3; stroke-width: 0.8; stroke-linecap: square" />
+     </g>
+     <g id="detail-retrieval-line2d_104" />
+     <g id="detail-retrieval-text_76">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: middle; fill: #687992" x="506.88" y="1578.197656" transform="rotate(-0 506.88 1578.197656)">100</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-matplotlib.axis_18">
+    <g id="detail-retrieval-ytick_33">
+     <g id="detail-retrieval-line2d_105" />
+     <g id="detail-retrieval-text_77">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1483.850957" transform="rotate(-0 94.42 1483.850957)">PUMIT</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_34">
+     <g id="detail-retrieval-line2d_106" />
+     <g id="detail-retrieval-text_78">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1508.318736" transform="rotate(-0 94.42 1508.318736)">MedVAE</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_35">
+     <g id="detail-retrieval-line2d_107" />
+     <g id="detail-retrieval-text_79">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1532.786515" transform="rotate(-0 94.42 1532.786515)">MedITok</text>
+     </g>
+    </g>
+    <g id="detail-retrieval-ytick_36">
+     <g id="detail-retrieval-line2d_108" />
+     <g id="detail-retrieval-text_80">
+      <text style="font-size: 15px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: end; fill: #687992" x="94.42" y="1557.254294" transform="rotate(-0 94.42 1557.254294)">MedVTok</text>
+     </g>
+    </g>
+   </g>
+   <g id="detail-retrieval-bar-0-8" aria-label="X-ray · PUMIT: 83.49 %" tabindex="0" role="img">
+    <title>X-ray · PUMIT: 83.49 %</title><path d="M 97.92 1470.811795  L 281.81568 1470.811795  L 281.81568 1485.492463  L 97.92 1485.492463  z " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: #e0e6f4" />
+   </g>
+   <g id="detail-retrieval-bar-1-8" aria-label="X-ray · MedVAE: 76.28 %" tabindex="0" role="img">
+    <title>X-ray · MedVAE: 76.28 %</title><path d="M 97.92 1495.279574  L 183.52896 1495.279574  L 183.52896 1509.960242  L 97.92 1509.960242  z " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: #c7d2eb" />
+   </g>
+   <g id="detail-retrieval-bar-2-8" aria-label="X-ray · MedITok: 92.15 %" tabindex="0" role="img">
+    <title>X-ray · MedITok: 92.15 %</title><path d="M 97.92 1519.747353  L 399.8688 1519.747353  L 399.8688 1534.428021  L 97.92 1534.428021  z " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: #a9bae0" />
+   </g>
+   <g id="detail-retrieval-bar-3-8" aria-label="X-ray · MedVTok: 95.19 %" tabindex="0" role="img">
+    <title>X-ray · MedVTok: 95.19 %</title><path d="M 97.92 1544.215132  L 441.31008 1544.215132  L 441.31008 1558.8958  L 97.92 1558.8958  z " clip-path="url(#detail-retrieval-p401a2ac284)" style="fill: #465c9b" />
+   </g>
+   <g id="detail-retrieval-text_81">
+    <text style="font-size: 18px; font-family: 'DejaVu Sans', 'Arial', sans-serif; text-anchor: start; fill: #26364f" x="97.92" y="1454.407595" transform="rotate(-0 97.92 1454.407595)">X-ray</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="detail-retrieval-p8d273ab8e0">
+   <rect x="97.92" y="32.4" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p6704301e00">
+   <rect x="97.92" y="211.650949" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p1186000dcb">
+   <rect x="97.92" y="390.901899" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-pc87439d5c0">
+   <rect x="97.92" y="570.152848" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p7abf3a1fcb">
+   <rect x="97.92" y="749.403797" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p88a3ef31d3">
+   <rect x="97.92" y="928.654747" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-pfca5247932">
+   <rect x="97.92" y="1107.905696" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p3dfca0f488">
+   <rect x="97.92" y="1287.156646" width="408.96" height="96.892405" />
+  </clipPath>
+  <clipPath id="detail-retrieval-p401a2ac284">
+   <rect x="97.92" y="1466.407595" width="408.96" height="96.892405" />
+  </clipPath>
+ </defs>
+</svg>
