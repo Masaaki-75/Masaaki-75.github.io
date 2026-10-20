@@ -1,39 +1,116 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
-  <title id="title">MERA aligns shared semantics and preserves native expert knowledge</title>
-  <desc id="desc">Shared-space contrastive loss matches the tokenizer feature r_i to the projected modality expert feature p_m(e_i) for the same sample while contrasting other samples. Expert-space loss maps r_i through a modality-specific backprojector q_m and matches q_m(r_i) to the original expert feature e_i by cosine similarity.</desc>
-  <defs>
-    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="m1 1 6 3-6 3" fill="none" stroke="#aab7dc" stroke-width="1.3" />
-    </marker>
-  </defs>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="start" fill="#bac6eb" font-size="16px" class="section" x="26" y="25">01 / Shared-space contrastive loss</text>
-  <rect x="22" y="40" width="636" height="144" rx="14" fill="#20212b" stroke="#383d50" />
-  <path d="M169 108 488 69M169 108 565 64" fill="none" stroke="#70788f" stroke-width="1.1" stroke-dasharray="4 5" />
-  <circle cx="500" cy="67" r="9" fill="#69728d" />
-  <circle cx="578" cy="61" r="9" fill="#69728d" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="367" y="66">− different samples</text>
-  <path fill="none" stroke="#aab7dc" stroke-width="1.5" marker-end="url(#arrow)" class="flow" d="M180 112h307" marker-start="url(#arrow)" />
-  <rect x="254" y="89" width="160" height="39" rx="7" fill="#20212b" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#dce5ff" font-size="16px" class="label" x="334" y="113">+ same sample</text>
-  <circle fill="#bac6eb" stroke="#e1e8fa" stroke-width="1.2" class="feature" cx="150" cy="112" r="17" />
-  <circle fill="#bac6eb" stroke="#e1e8fa" stroke-width="1.2" class="feature" cx="516" cy="112" r="17" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="150" y="159">MedVTok rᵢ</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="516" y="159">Projected expert pₘ(eᵢ)</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="start" fill="#bac6eb" font-size="16px" class="section" x="26" y="224">02 / Expert-space complementary loss</text>
-  <rect x="22" y="240" width="636" height="112" rx="14" fill="#242029" stroke="#4b3b4d" />
-  <circle cx="87" cy="292" r="16" fill="#bac6eb" />
-  <path fill="none" stroke="#aab7dc" stroke-width="1.5" marker-end="url(#arrow)" class="flow" d="M111 292h75M292 292h65" />
-  <rect x="194" y="267" width="92" height="50" rx="10" fill="#393047" stroke="#b995b4" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#edc2d2" x="240" y="290" font-size="21">qₘ</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="240" y="308">back-project</text>
-  <circle cx="383" cy="292" r="16" fill="#d9aac8" />
-  <path d="M409 292h128" fill="none" stroke="#edc2d2" stroke-width="1.5" stroke-dasharray="4 4" />
-  <rect x="440" y="277" width="69" height="28" rx="6" fill="#242029" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#edc2d2" x="475" y="298" font-size="24">≈</text>
-  <circle cx="567" cy="292" r="16" fill="#d9aac8" />
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="475" y="265">cosine match</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="87" y="335">rᵢ</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="383" y="335">qₘ(rᵢ)</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="567" y="335">Native expert eᵢ</text>
-  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#bbc6e4" x="340" y="382" font-size="17">Each modality learns from its corresponding frozen specialist.</text>
+  <title id="title">MERA: foundation-model spaces to MedVTok, then MedVTok to each foundation-model space</title>
+  <desc id="desc">In the first direction, separate projectors p1, p2 and pm map features from multiple foundation-model spaces into the shared MedVTok representation space for contrastive alignment. In the second direction, separate backprojectors q1, q2 and qm map MedVTok features into the corresponding native foundation-model spaces for complementary cosine alignment. Colors identify the same foundation model in both directions. Filled dots indicate foundation-model features; open rings indicate MedVTok features.</desc>
+  <text x="24" y="25" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="start" fill="#bac6eb">01 / Foundation models → MedVTok</text>
+  <rect x="430" y="44" width="228" height="134" rx="18" fill="#262c3c" stroke="#98a9d4" stroke-width="1.2"/>
+  <text x="544" y="71" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#e0e7fc">MedVTok space</text>
+  <text x="24" y="70" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#a9d1b3">FM 1</text>
+  <ellipse cx="153" cy="65" rx="76" ry="19" fill="#25332c" stroke="#a9d1b3" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="130" cy="61" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="145" cy="64" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="162" cy="66" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="178" cy="70" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <path d="M235 65H282" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M276 61L282 65L276 69" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="290" y="52" width="55" height="26" rx="6" fill="#222630" stroke="#a9d1b3" stroke-opacity=".8"/>
+  <text x="317.5" y="70" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#a9d1b3">p₁</text>
+  <path d="M345 65C379 65 382 97 414 97H422" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 93L422 97L416 101" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="114" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#b3c7ee">FM 2</text>
+  <ellipse cx="153" cy="109" rx="76" ry="19" fill="#293240" stroke="#b3c7ee" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="131" cy="114" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="147" cy="102" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="161" cy="117" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="177" cy="105" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <path d="M235 109H282" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M276 105L282 109L276 113" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="290" y="96" width="55" height="26" rx="6" fill="#222630" stroke="#b3c7ee" stroke-opacity=".8"/>
+  <text x="317.5" y="114" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#b3c7ee">p₂</text>
+  <path d="M345 109C379 109 382 115 414 115H422" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 111L422 115L416 119" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="158" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#e7bb9e">FM m</text>
+  <ellipse cx="153" cy="153" rx="76" ry="19" fill="#3b2d28" stroke="#e7bb9e" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="129" cy="146" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="145" cy="156" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="162" cy="148" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="178" cy="160" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <path d="M235 153H282" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M276 149L282 153L276 157" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="290" y="140" width="55" height="26" rx="6" fill="#222630" stroke="#e7bb9e" stroke-opacity=".8"/>
+  <text x="317.5" y="158" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#e7bb9e">pₘ</text>
+  <path d="M345 153C379 153 382 133 414 133H422" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 129L422 133L416 137" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="480" cy="106" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="489" cy="111" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="498" cy="116" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="491" cy="109" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <circle cx="535" cy="132" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="544" cy="137" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="553" cy="142" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="546" cy="135" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <circle cx="595" cy="106" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="604" cy="111" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="613" cy="116" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="606" cy="109" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <text x="24" y="193" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" text-anchor="start" fill="#aab8d9">Shared-space contrastive alignment</text>
+  <circle cx="476" cy="188" r="3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <text x="487" y="193" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#a7aec4">FM feature</text>
+  <circle cx="568" cy="188" r="3.5" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <text x="578" y="193" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#a7aec4">MedVTok</text>
+  <path d="M24 205H656" fill="none" stroke="#353844" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="24" y="230" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="start" fill="#bac6eb">02 / MedVTok → Foundation models</text>
+  <rect x="24" y="248" width="215" height="114" rx="18" fill="#262c3c" stroke="#98a9d4" stroke-width="1.2"/>
+  <text x="131.5" y="275" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#e0e7fc">MedVTok space</text>
+  <circle cx="73" cy="303" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="80" cy="308" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="87" cy="313" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="82" cy="306" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <circle cx="125" cy="324" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="132" cy="329" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="139" cy="334" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="134" cy="327" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <circle cx="178" cy="302" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="185" cy="307" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="192" cy="312" r="3" fill="#20242f" stroke="#a9b7db" stroke-width="1.5"/>
+  <circle cx="187" cy="305" r="5.2" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <path d="M247 284C269 284 281 271 306 271" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 267L306 271L300 275" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="314" y="258" width="55" height="26" rx="6" fill="#222630" stroke="#a9d1b3" stroke-opacity=".8"/>
+  <text x="341.5" y="276" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#a9d1b3">q₁</text>
+  <path d="M369 271H450" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M444 267L450 271L444 275" fill="none" stroke="#a9d1b3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="539" cy="271" rx="76" ry="19" fill="#25332c" stroke="#a9d1b3" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="516" cy="267" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="531" cy="270" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="548" cy="272" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="564" cy="276" r="3.3" fill="#a9d1b3" stroke="#a9d1b3" stroke-width="0.6"/>
+  <circle cx="549" cy="273" r="4.6" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <text x="625" y="276" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#a9d1b3">FM 1</text>
+  <path d="M247 306C269 306 281 313 306 313" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 309L306 313L300 317" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="314" y="300" width="55" height="26" rx="6" fill="#222630" stroke="#b3c7ee" stroke-opacity=".8"/>
+  <text x="341.5" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#b3c7ee">q₂</text>
+  <path d="M369 313H450" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M444 309L450 313L444 317" fill="none" stroke="#b3c7ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="539" cy="313" rx="76" ry="19" fill="#293240" stroke="#b3c7ee" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="517" cy="318" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="533" cy="306" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="547" cy="321" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="563" cy="309" r="3.3" fill="#b3c7ee" stroke="#b3c7ee" stroke-width="0.6"/>
+  <circle cx="549" cy="315" r="4.6" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <text x="625" y="318" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#b3c7ee">FM 2</text>
+  <path d="M247 330C269 330 281 355 306 355" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 351L306 355L300 359" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="314" y="342" width="55" height="26" rx="6" fill="#222630" stroke="#e7bb9e" stroke-opacity=".8"/>
+  <text x="341.5" y="360" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="normal" text-anchor="middle" fill="#e7bb9e">qₘ</text>
+  <path d="M369 355H450" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M444 351L450 355L444 359" fill="none" stroke="#e7bb9e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="539" cy="355" rx="76" ry="19" fill="#3b2d28" stroke="#e7bb9e" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="515" cy="348" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="531" cy="358" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="548" cy="350" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="564" cy="362" r="3.3" fill="#e7bb9e" stroke="#e7bb9e" stroke-width="0.6"/>
+  <circle cx="549" cy="357" r="4.6" fill="#20242f" stroke="#f1f3fc" stroke-width="1.5"/>
+  <text x="625" y="360" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" text-anchor="start" fill="#e7bb9e">FM m</text>
+  <text x="24" y="390" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" text-anchor="start" fill="#aab8d9">Complementary alignment in each native foundation-model space</text>
 </svg>
