@@ -1,160 +1,201 @@
 "use strict";
 
-// Filling this anchor's href later enables the Paper button automatically.
+// The page remains a buildless GitHub Pages site, including file:// previews.
 const paperLink = document.getElementById("paper-link");
-if (paperLink) {
-  if (paperLink.getAttribute("href").trim()) {
-    paperLink.removeAttribute("aria-disabled");
-    paperLink.removeAttribute("tabindex");
-    paperLink.removeAttribute("title");
-  } else {
-    paperLink.addEventListener("click", (event) => event.preventDefault());
-  }
+if (paperLink.getAttribute("href").trim()) {
+  paperLink.removeAttribute("aria-disabled");
+  paperLink.removeAttribute("tabindex");
+  paperLink.removeAttribute("title");
+  paperLink.querySelector("span")?.remove();
+} else {
+  paperLink.addEventListener("click", (event) => event.preventDefault());
 }
 
-// Native lazy loading keeps offscreen figures idle. A selected panel loads immediately;
-// cube faces are decoded together so rotating does not reveal unloaded textures.
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.getElementById("site-navigation");
+function setMenu(open) {
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  navigation.classList.toggle("is-open", open);
+}
+menuButton.addEventListener("click", () => setMenu(menuButton.getAttribute("aria-expanded") !== "true"));
+navigation.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+    setMenu(false);
+    menuButton.focus();
+  }
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".navigation")) setMenu(false);
+});
+matchMedia("(max-width: 600px)").addEventListener("change", () => setMenu(false));
+if ("IntersectionObserver" in window) {
+  const navLinks = Array.from(navigation.querySelectorAll("a"));
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries.find((item) => item.isIntersecting);
+    if (!entry) return;
+    for (const link of navLinks) {
+      if (link.hash === `#${entry.target.id}`) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+  }, { rootMargin: "-10% 0px -65% 0px" });
+  for (const link of navLinks) observer.observe(document.querySelector(link.hash));
+}
+
 function primeImages(container) {
-  if (!container) return;
-  for (const image of container.querySelectorAll("img")) {
-    image.loading = "eager";
-    image.decoding = "async";
-    if (image.classList.contains("cube-face") && image.decode) image.decode().catch(() => {});
+  for (const img of container.querySelectorAll("img")) {
+    img.loading = "eager";
+    img.decoding = "async";
   }
 }
 
-// Plain JavaScript keeps file:// previews and static subdirectory hosting working.
-const tabs = Array.from(document.querySelectorAll("[data-tab]"));
-
-function activateTab(tab) {
-  for (const candidate of tabs) {
-    const selected = candidate === tab;
-    candidate.setAttribute("aria-selected", String(selected));
-    candidate.tabIndex = selected ? 0 : -1;
-    const panel = document.getElementById(candidate.getAttribute("aria-controls"));
-    panel.hidden = !selected;
-    if (selected) primeImages(panel);
+// Each tab group owns its panels and supports the standard arrow/Home/End keys.
+for (const group of document.querySelectorAll('[role="tablist"]')) {
+  const tabs = Array.from(group.querySelectorAll('[role="tab"]'));
+  function activate(tab) {
+    for (const item of tabs) {
+      const selected = item === tab;
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(item.getAttribute("aria-controls"));
+      panel.hidden = !selected;
+      if (selected) {
+        primeImages(panel);
+        panel.dispatchEvent(new CustomEvent("panel:activate"));
+      }
+    }
+  }
+  for (const [index, tab] of tabs.entries()) {
+    tab.addEventListener("click", () => activate(tab));
+    tab.addEventListener("keydown", (event) => {
+      let next;
+      if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
+      if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if (event.key === "Home") next = tabs[0];
+      if (event.key === "End") next = tabs[tabs.length - 1];
+      if (!next) return;
+      event.preventDefault();
+      activate(next);
+      next.focus({ preventScroll: true });
+      next.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
   }
 }
 
-for (const tab of tabs) {
-  tab.addEventListener("click", () => activateTab(tab));
-  tab.addEventListener("keydown", (event) => {
-    const index = tabs.indexOf(tab);
-    let next;
-    if (event.key === "ArrowRight") next = tabs[(index + 1) % tabs.length];
-    if (event.key === "ArrowLeft") next = tabs[(index - 1 + tabs.length) % tabs.length];
-    if (event.key === "Home") next = tabs[0];
-    if (event.key === "End") next = tabs[tabs.length - 1];
-    if (!next) return;
-    event.preventDefault();
-    activateTab(next);
-    next.focus();
-    next.scrollIntoView({ block: "nearest", inline: "nearest" });
-  });
+const trainingData = JSON.parse(document.getElementById("training-data").textContent);
+const corpus = document.getElementById("training-distribution");
+const selectedModality = { "2d": 0, "3d": 0 };
+let corpusDimension = "2d";
+function creditLink(label, href) {
+  const link = document.createElement("a");
+  link.textContent = label;
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener";
+  return link;
 }
+function renderCorpus() {
+  const collection = trainingData[corpusDimension];
+  const index = selectedModality[corpusDimension];
+  const modality = collection.modalities[index];
+  const media = modality.media;
+  const threeD = corpusDimension === "3d";
+  for (const button of corpus.querySelectorAll("[data-dimension]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.dimension === corpusDimension));
+  }
+  for (const panel of corpus.querySelectorAll("[data-corpus-panel]")) {
+    panel.hidden = panel.dataset.corpusPanel !== corpusDimension;
+    for (const button of panel.querySelectorAll("[data-modality]")) {
+      button.setAttribute("aria-pressed", String(Number(button.dataset.modality) === selectedModality[panel.dataset.corpusPanel]));
+    }
+  }
+  const total = document.getElementById("corpus-total");
+  const totalUnit = document.createElement("span");
+  totalUnit.textContent = collection.unit;
+  total.replaceChildren(document.createTextNode((corpusDimension === "2d" ? "28M+" : "70K+") + " "), totalUnit);
+  document.getElementById("corpus-dimension-label").textContent = threeD ? "Native 3D imaging" : "2D imaging";
+  document.getElementById("corpus-modality-title").textContent = modality.name;
+  const share = document.getElementById("corpus-modality-share");
+  const shareScope = document.createElement("span");
+  shareScope.textContent = `of the ${corpusDimension.toUpperCase()} corpus`;
+  share.replaceChildren(document.createTextNode(`${(modality.count / collection.total * 100).toFixed(1)}%`), shareScope);
+  document.getElementById("corpus-modality-description").textContent = modality.description;
+  const frame = document.getElementById("corpus-image");
+  frame.replaceChildren();
+  if (threeD) {
+    const views = document.createElement("div");
+    views.className = "corpus-volume";
+    for (const [axis, src] of Object.entries(media.faces)) {
+      const figure = document.createElement("figure");
+      const img = new Image();
+      img.src = src;
+      img.alt = `Illustrative ${modality.name} ${axis} view from 3D Slicer sample data`;
+      img.decoding = "async";
+      const caption = document.createElement("figcaption");
+      caption.textContent = axis.charAt(0).toUpperCase() + axis.slice(1);
+      figure.append(img, caption);
+      views.append(figure);
+    }
+    frame.append(views);
+  } else {
+    const img = new Image();
+    img.src = media.image;
+    img.alt = media.alt;
+    img.width = media.display?.size[0] || 500;
+    img.height = media.display?.size[1] || 500;
+    img.decoding = "async";
+    img.classList.toggle("is-flipped", Boolean(media.display?.flip_vertical));
+    frame.append(img);
+  }
+  document.getElementById("corpus-credit").replaceChildren(
+    document.createTextNode(threeD ? "Illustrative orthogonal views · " : "Illustrative image · "),
+    creditLink(media.author, media.source_url),
+    document.createTextNode(" · "),
+    creditLink(media.license, media.license_url)
+  );
+}
+corpus.addEventListener("click", (event) => {
+  const dimension = event.target.closest("[data-dimension]");
+  const modality = event.target.closest("[data-modality]");
+  if (dimension) corpusDimension = dimension.dataset.dimension;
+  else if (modality) selectedModality[corpusDimension] = Number(modality.dataset.modality);
+  else return;
+  renderCorpus();
+});
+renderCorpus();
 
-const dialog = document.getElementById("figure-dialog");
+// Native dialog keeps Escape, focus restoration, and full-resolution links usable.
+const figureDialog = document.getElementById("figure-dialog");
 const dialogImage = document.getElementById("dialog-image");
-const dialogCaption = document.getElementById("dialog-caption");
-const dialogOriginal = document.getElementById("dialog-original");
-const dialogModality = document.getElementById("dialog-modality-image");
-
 for (const link of document.querySelectorAll("[data-zoom]")) {
   link.addEventListener("click", (event) => {
-    // Preserve normal new-tab behavior and fall back to the image in older browsers.
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof figureDialog.showModal !== "function") return;
     event.preventDefault();
-    const modality = link.hasAttribute("data-modality-zoom");
-    dialog.classList.toggle("modality-dialog", modality);
-    dialogImage.hidden = modality;
-    dialogModality.hidden = !modality;
-    dialogModality.replaceChildren();
-    if (modality) {
-      const frame = link.querySelector(".modality-image").cloneNode(true);
-      frame.querySelector("img").loading = "eager";
-      dialogModality.append(frame);
-    } else {
-      dialogImage.src = link.href;
-      dialogImage.alt = link.querySelector("img").alt;
-      dialogImage.style.minWidth = `${link.dataset.minWidth || 900}px`;
-    }
-    dialogCaption.textContent = link.dataset.caption;
-    dialogOriginal.href = link.href;
-    dialogOriginal.textContent = modality ? "Open original image ↗" : "Open full-resolution figure ↗";
-    dialog.showModal();
+    dialogImage.src = link.href;
+    dialogImage.alt = link.querySelector("img").alt;
+    const minimumWidth = Number(link.dataset.minWidth || 900);
+    dialogImage.style.width = `${Number(link.dataset.displayWidth) || Math.max(minimumWidth, Math.min(1200, window.innerWidth - 100))}px`;
+    document.getElementById("dialog-caption").textContent = link.dataset.caption || dialogImage.alt;
+    document.getElementById("dialog-original").href = link.href;
+    figureDialog.showModal();
     document.body.classList.add("dialog-open");
-    const viewport = dialog.querySelector(".dialog-image-wrap");
-    requestAnimationFrame(() => {
-      viewport.scrollLeft = modality ? (viewport.scrollWidth - viewport.clientWidth) / 2 : 0;
-      viewport.scrollTop = 0;
-    });
+    const viewport = figureDialog.querySelector(".dialog-image-wrap");
+    viewport.scrollTop = 0;
+    viewport.scrollLeft = 0;
   });
 }
-
-// Compose rotations around the view axes so dragging can pass through any angle.
-// Each modality keeps its own orientation when its panel is hidden and reopened.
-for (const stage of document.querySelectorAll(".volume-stage")) {
-  const cube = stage.querySelector(".volume-cube");
-  const initialOrientation = () => new DOMMatrix().rotate(-23, -34, 0);
-  let orientation = initialOrientation();
-  let pointer = null;
-  let previousX = 0;
-  let previousY = 0;
-  let frame = 0;
-  function paint() {
-    frame = 0;
-    cube.style.transform = orientation.toString();
-  }
-  function render() {
-    if (!frame) frame = requestAnimationFrame(paint);
-  }
-  function flush() {
-    if (frame) cancelAnimationFrame(frame);
-    paint();
-  }
-  function rotate(dx, dy) {
-    const distance = Math.hypot(dx, dy);
-    if (!distance) return;
-    orientation = new DOMMatrix().rotateAxisAngle(-dy, dx, 0, distance * .55).multiply(orientation);
-    render();
-  }
-  function finishDrag(event) {
-    if (event.pointerId !== pointer) return;
-    flush();
-    pointer = null;
-    stage.classList.remove("is-dragging");
-    if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
-  }
-  stage.addEventListener("pointerdown", (event) => {
-    if (!event.isPrimary || event.button !== 0 || pointer !== null) return;
-    event.preventDefault();
-    pointer = event.pointerId;
-    previousX = event.clientX;
-    previousY = event.clientY;
-    stage.focus({preventScroll: true});
-    stage.setPointerCapture(pointer);
-    stage.classList.add("is-dragging");
-  });
-  stage.addEventListener("pointermove", (event) => {
-    if (event.pointerId !== pointer) return;
-    rotate(event.clientX - previousX, event.clientY - previousY);
-    previousX = event.clientX;
-    previousY = event.clientY;
-  });
-  for (const type of ["pointerup", "pointercancel", "lostpointercapture"]) stage.addEventListener(type, finishDrag);
-  stage.addEventListener("dblclick", () => { orientation = initialOrientation(); render(); });
-  stage.addEventListener("keydown", (event) => {
-    const distance = event.shiftKey ? 8 : 24;
-    const deltas = {ArrowLeft:[-distance,0], ArrowRight:[distance,0], ArrowUp:[0,-distance], ArrowDown:[0,distance]};
-    if (event.key === "Home") { event.preventDefault(); orientation = initialOrientation(); render(); }
-    else if (deltas[event.key]) { event.preventDefault(); rotate(...deltas[event.key]); }
-  });
-  new ResizeObserver(() => {
-    if (stage.clientWidth) stage.style.setProperty("--cube-size", `${Math.min(160,stage.clientWidth * .48)}px`);
-  }).observe(stage);
-  paint();
-}
+figureDialog.querySelector(".dialog-close").addEventListener("click", () => figureDialog.close());
+figureDialog.addEventListener("click", (event) => {
+  const box = figureDialog.getBoundingClientRect();
+  if (event.target === figureDialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) figureDialog.close();
+});
+figureDialog.addEventListener("close", () => {
+  document.body.classList.remove("dialog-open");
+  dialogImage.removeAttribute("src");
+});
 
 // Discrete experiments from the paper, with no interpolated experiment values.
 const ablationData = document.getElementById("ablation-data");
@@ -178,6 +219,7 @@ if (ablationData) {
     selectedIndex = index;
     const study = studies[studyKey];
     const metric = activeMetric();
+    document.getElementById("ablation-scope").textContent = study.scope + " Each point is measured; lines only guide the eye.";
     document.getElementById("ablation-plot").dataset.unavailable = String(study.points.some(point => point.values[metricKey] === null));
     const point = study.points[index];
     const value = point.values[metricKey];
@@ -199,14 +241,6 @@ if (ablationData) {
       button.setAttribute("aria-pressed", String(i === index));
       xLabels.children[i].classList.toggle("selected", i === index);
     }
-    const experiment = point.experiment || (/^E\d+$/.test(point.label) ? point.label : null);
-    for (const button of document.querySelectorAll("[data-experiment]")) {
-      button.setAttribute("aria-pressed", String(button.dataset.experiment === experiment));
-      const strip = button.parentElement;
-      if (button.dataset.experiment === experiment && strip.scrollWidth > strip.clientWidth) {
-        strip.scrollLeft = Math.max(0, button.offsetLeft - (strip.clientWidth - button.offsetWidth) / 2);
-      }
-    }
     if (focus) plotPoints.children[index].focus({ preventScroll: true });
   }
 
@@ -221,7 +255,7 @@ if (ablationData) {
       return 6 + fraction * 88;
     };
     document.getElementById("ablation-chart-title").textContent = metric.title;
-    explorer.style.setProperty("--chart-color", study.color);
+    explorer.style.setProperty("--chart-color", studyKey === "build" ? "#bac6eb" : "#a9cfca");
     plotGrid.replaceChildren();
     plotPoints.replaceChildren();
     xLabels.replaceChildren();
@@ -246,11 +280,6 @@ if (ablationData) {
       return command;
     });
     document.getElementById("ablation-line").setAttribute("d", segments.join(" "));
-    // The dashed bridge marks new 3D capability; E6 still has no measured score.
-    const capabilityPath = studyKey === "continuity" && study.points[0].values[metricKey] === null
-      ? `M${coordinates[0].join(",")} L${coordinates[1].join(",")}`
-      : "";
-    document.getElementById("ablation-capability-line").setAttribute("d", capabilityPath);
     for (const [index, point] of study.points.entries()) {
       const [x, y] = coordinates[index];
       const button = document.createElement("button");
@@ -309,217 +338,11 @@ if (ablationData) {
   }
 
   for (const button of studyButtons) button.addEventListener("click", () => switchStudy(button.dataset.study));
-  for (const button of document.querySelectorAll("[data-experiment]")) {
-    button.addEventListener("click", () => switchStudy(button.dataset.experimentStudy, Number(button.dataset.experimentIndex)));
-  }
   switchStudy(studyKey);
   document.getElementById("ablation-static").hidden = true;
   explorer.hidden = false;
 }
 
-const benchmarkData = JSON.parse(document.getElementById("benchmark-data").textContent);
-const taskRing = document.getElementById("task-ring");
-const taskDetail = document.getElementById("task-detail");
-const taskCard = taskRing.closest(".radial-card");
-const taskOverview = document.getElementById("task-overview");
-let taskTrigger = null;
-
-function renderLegend(id, models) {
-  const legend = document.getElementById(id);
-  legend.replaceChildren();
-  for (const model of models) {
-    const item = document.createElement("span");
-    if (model === "MedVTok") item.className = "legend-ours";
-    const swatch = document.createElement("i");
-    swatch.style.background = benchmarkData.colors[model];
-    swatch.setAttribute("aria-hidden", "true");
-    item.append(swatch, document.createTextNode(model));
-    legend.append(item);
-  }
-}
-
-function showBarReadout(id, bar) {
-  if (!bar) return;
-  const element = document.getElementById(id);
-  const key = [bar.dataset.category, bar.dataset.model, bar.dataset.value, bar.dataset.metric, bar.dataset.unit].join("|");
-  if (element.dataset.valueKey === key) return;
-  element.dataset.valueKey = key;
-  const heading = document.createElement("strong");
-  heading.textContent = bar.dataset.category;
-  const scope = document.createElement("span");
-  scope.textContent = bar.dataset.metric;
-  element.replaceChildren(heading, document.createTextNode(`${bar.dataset.model} · ${bar.dataset.value} ${bar.dataset.unit}`), scope);
-}
-
-function openTask(key) {
-  const task = benchmarkData.tasks.find((candidate) => candidate.key === key);
-  if (!task) return;
-  taskDetail.hidden = false;
-  taskTrigger = taskRing.querySelector(`.radial-sector[data-task="${key}"]`);
-  taskOverview.inert = true;
-  taskCard.classList.add("detail-open");
-  taskDetail.dataset.activeTask = key;
-  const group = key === "report" ? "by CT region" : key === "vqa" ? "by benchmark" : "by modality";
-  document.getElementById("task-detail-title").textContent = `${task.title} ${group}`;
-  document.getElementById("task-detail-scale").textContent = task.metric;
-  for (const panel of document.querySelectorAll("[data-task-breakdown]")) panel.hidden = panel.dataset.taskBreakdown !== key;
-  for (const sector of taskRing.querySelectorAll(".radial-sector")) {
-    const active = sector.dataset.task === key;
-    sector.classList.toggle("is-selected", active);
-    sector.setAttribute("aria-expanded", String(active));
-  }
-  const bar = taskRing.querySelector(`[data-task="${key}"][data-model="MedVTok"]`);
-  showBarReadout("task-ring-readout", bar);
-  document.getElementById("task-detail-scroll").scrollTop = 0;
-  document.getElementById("close-task-detail").focus({preventScroll: true});
-}
-
-taskRing.addEventListener("click", (event) => {
-  const sector = event.target.closest("[data-task]");
-  if (sector) openTask(sector.dataset.task);
-});
-taskRing.addEventListener("keydown", (event) => {
-  if (event.key !== "Enter" && event.key !== " ") return;
-  const sector = event.target.closest('.radial-sector[data-task]');
-  if (sector) {
-    event.preventDefault();
-    openTask(sector.dataset.task);
-  }
-});
-taskRing.addEventListener("pointerover", (event) => showBarReadout("task-ring-readout", event.target.closest(".radial-bar")));
-function closeTask() {
-  taskOverview.inert = false;
-  taskCard.classList.remove("detail-open");
-  taskDetail.hidden = true;
-  taskOverview.animate([{opacity:.25,transform:"scale(.97)"},{opacity:1,transform:"scale(1)"}], {duration:matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 260,easing:"ease-out"});
-  for (const sector of taskRing.querySelectorAll(".radial-sector")) {
-    sector.setAttribute("aria-expanded", "false");
-    sector.classList.remove("is-selected");
-  }
-  taskTrigger?.focus({preventScroll: true});
-}
-document.getElementById("close-task-detail").addEventListener("click", closeTask);
-taskDetail.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") { event.preventDefault(); closeTask(); }
-});
-renderLegend("task-ring-legend", benchmarkData.task_models);
-showBarReadout("task-ring-readout", taskRing.querySelector('[data-task="classification"][data-model="MedVTok"]'));
-
-// Native SVG pies and local image assets also work in an offline file:// preview.
-const training = document.getElementById("training-distribution");
-function primeTrainingPanel(panel) {
-  primeImages(panel.querySelector("[data-training-detail]:not([hidden])"));
-}
-// A small, targeted warmup when the visitor is about to select 3D.
-for (const button of training.querySelectorAll('[data-training-dimension="3d"]')) {
-  const warmVolume = () => {
-    if (!navigator.connection?.saveData) primeTrainingPanel(training.querySelector('[data-training-panel="3d"]'));
-  };
-  button.addEventListener("pointerenter", warmVolume, {once: true});
-  button.addEventListener("focus", warmVolume, {once: true});
-}
-
-function selectTrainingModality(panel, index) {
-  for (const statistic of panel.querySelectorAll("[data-training-stat]")) {
-    statistic.hidden = statistic.dataset.trainingStat !== index;
-  }
-  for (const detail of panel.querySelectorAll("[data-training-detail]")) {
-    detail.hidden = detail.dataset.trainingDetail !== index;
-  }
-  for (const item of panel.querySelectorAll("[data-training-modality]")) {
-    const selected = item.dataset.trainingModality === index;
-    item.setAttribute("aria-pressed", String(selected));
-    item.classList.toggle("is-selected", selected);
-  }
-  const active = panel.querySelector(`[data-training-detail="${index}"]`);
-  primeImages(active);
-  // Avoid animating the ancestor of a 3D scene, which can flatten its layers.
-  if (!active.querySelector(".volume-stage") && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    active.animate([{opacity:.2,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], {duration:250,easing:"ease-out"});
-  }
-}
-training.addEventListener("click", (event) => {
-  const dimensionButton = event.target.closest("[data-training-dimension]");
-  if (dimensionButton) {
-    const dimension = dimensionButton.dataset.trainingDimension;
-    for (const panel of training.querySelectorAll("[data-training-panel]")) {
-      panel.hidden = panel.dataset.trainingPanel !== dimension;
-      if (!panel.hidden) primeTrainingPanel(panel);
-    }
-    for (const button of training.querySelectorAll("[data-training-dimension]")) button.setAttribute("aria-pressed", String(button === dimensionButton));
-    const total = document.getElementById("training-total");
-    const count = document.createElement("strong");count.textContent = dimension === "2d" ? "> 28M" : "> 70K";
-    total.replaceChildren(count, document.createTextNode(dimension === "2d" ? " images" : " volumes"));
-  }
-  const slice = event.target.closest("[data-training-modality]");
-  if (slice) selectTrainingModality(slice.closest("[data-training-panel]"), slice.dataset.trainingModality);
-});
-training.addEventListener("keydown", (event) => {
-  const slice = event.target.closest(".training-slice");
-  if (!slice) return;
-  const panel = slice.closest("[data-training-panel]");
-  const slices = Array.from(panel.querySelectorAll(".training-slice"));
-  let index = slices.indexOf(slice);
-  if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectTrainingModality(panel, slice.dataset.trainingModality); }
-  else if (["ArrowRight","ArrowLeft","Home","End"].includes(event.key)) {
-    event.preventDefault();
-    index = event.key === "Home" ? 0 : event.key === "End" ? slices.length-1 : (index+(event.key === "ArrowRight" ? 1 : -1)+slices.length)%slices.length;
-    slices[index].focus();selectTrainingModality(panel, slices[index].dataset.trainingModality);
-  }
-});
-
-let reconstructionDimension = "2d";
-let reconstructionMetric = "psnr";
-function showReconstruction() {
-  for (const panel of document.querySelectorAll("[data-reconstruction-panel]")) {
-    panel.hidden = panel.dataset.reconstructionPanel !== `${reconstructionDimension}-${reconstructionMetric}`;
-  }
-  for (const button of document.querySelectorAll("[data-reconstruction-dimension]")) {
-    button.setAttribute("aria-pressed", String(button.dataset.reconstructionDimension === reconstructionDimension));
-  }
-  for (const button of document.querySelectorAll("[data-reconstruction-metric]")) {
-    button.setAttribute("aria-pressed", String(button.dataset.reconstructionMetric === reconstructionMetric));
-  }
-  renderLegend("reconstruction-ring-legend", benchmarkData.reconstruction[reconstructionDimension].models);
-  const current = document.querySelector(`[data-reconstruction-panel="${reconstructionDimension}-${reconstructionMetric}"]`);
-  showBarReadout("reconstruction-readout", current.querySelector('[data-model="MedVTok"]'));
-}
-for (const button of document.querySelectorAll("[data-reconstruction-dimension]")) {
-  button.addEventListener("click", () => {
-    reconstructionDimension = button.dataset.reconstructionDimension;
-    showReconstruction();
-  });
-}
-for (const button of document.querySelectorAll("[data-reconstruction-metric]")) {
-  button.addEventListener("click", () => {
-    reconstructionMetric = button.dataset.reconstructionMetric;
-    showReconstruction();
-  });
-}
-const reconstructionRings = document.getElementById("reconstruction-rings");
-for (const event of ["pointerover", "click"]) reconstructionRings.addEventListener(event, (action) => showBarReadout("reconstruction-readout", action.target.closest(".radial-bar")));
-showReconstruction();
-
-function clearFigureState() {
-  document.body.classList.remove("dialog-open");
-  dialogModality.replaceChildren();
-}
-
-function closeFigure() {
-  dialog.close();
-  clearFigureState();
-}
-
-dialog.querySelector(".dialog-close").addEventListener("click", closeFigure);
-dialog.addEventListener("cancel", clearFigureState);
-dialog.addEventListener("close", () => {
-  if (!dialog.open) clearFigureState();
-});
-dialog.addEventListener("click", (event) => {
-  const bounds = dialog.getBoundingClientRect();
-  if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right ||
-      event.clientY < bounds.top || event.clientY > bounds.bottom)) closeFigure();
-});
 
 function fallbackCopy(text) {
   const activeElement = document.activeElement;

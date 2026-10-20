@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
+  <title id="title">MERA aligns shared semantics and preserves native expert knowledge</title>
+  <desc id="desc">Shared-space contrastive loss matches the tokenizer feature r_i to the projected modality expert feature p_m(e_i) for the same sample while contrasting other samples. Expert-space loss maps r_i through a modality-specific backprojector q_m and matches q_m(r_i) to the original expert feature e_i by cosine similarity.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="m1 1 6 3-6 3" fill="none" stroke="#aab7dc" stroke-width="1.3" />
+    </marker>
+  </defs>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="start" fill="#bac6eb" font-size="16px" class="section" x="26" y="25">01 / Shared-space contrastive loss</text>
+  <rect x="22" y="40" width="636" height="144" rx="14" fill="#20212b" stroke="#383d50" />
+  <path d="M169 108 488 69M169 108 565 64" fill="none" stroke="#70788f" stroke-width="1.1" stroke-dasharray="4 5" />
+  <circle cx="500" cy="67" r="9" fill="#69728d" />
+  <circle cx="578" cy="61" r="9" fill="#69728d" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="367" y="66">− different samples</text>
+  <path fill="none" stroke="#aab7dc" stroke-width="1.5" marker-end="url(#arrow)" class="flow" d="M180 112h307" marker-start="url(#arrow)" />
+  <rect x="254" y="89" width="160" height="39" rx="7" fill="#20212b" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#dce5ff" font-size="16px" class="label" x="334" y="113">+ same sample</text>
+  <circle fill="#bac6eb" stroke="#e1e8fa" stroke-width="1.2" class="feature" cx="150" cy="112" r="17" />
+  <circle fill="#bac6eb" stroke="#e1e8fa" stroke-width="1.2" class="feature" cx="516" cy="112" r="17" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="150" y="159">MedVTok rᵢ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="516" y="159">Projected expert pₘ(eᵢ)</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="start" fill="#bac6eb" font-size="16px" class="section" x="26" y="224">02 / Expert-space complementary loss</text>
+  <rect x="22" y="240" width="636" height="112" rx="14" fill="#242029" stroke="#4b3b4d" />
+  <circle cx="87" cy="292" r="16" fill="#bac6eb" />
+  <path fill="none" stroke="#aab7dc" stroke-width="1.5" marker-end="url(#arrow)" class="flow" d="M111 292h75M292 292h65" />
+  <rect x="194" y="267" width="92" height="50" rx="10" fill="#393047" stroke="#b995b4" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#edc2d2" x="240" y="290" font-size="21">qₘ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="240" y="308">back-project</text>
+  <circle cx="383" cy="292" r="16" fill="#d9aac8" />
+  <path d="M409 292h128" fill="none" stroke="#edc2d2" stroke-width="1.5" stroke-dasharray="4 4" />
+  <rect x="440" y="277" width="69" height="28" rx="6" fill="#242029" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#edc2d2" x="475" y="298" font-size="24">≈</text>
+  <circle cx="567" cy="292" r="16" fill="#d9aac8" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#9ca6c1" font-size="14px" class="small" x="475" y="265">cosine match</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="87" y="335">rᵢ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="383" y="335">qₘ(rᵢ)</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ccd3e9" font-size="16px" class="label" x="567" y="335">Native expert eᵢ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#bbc6e4" x="340" y="382" font-size="17">Each modality learns from its corresponding frozen specialist.</text>
+</svg>

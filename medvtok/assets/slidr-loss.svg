@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
+  <title id="title">SliDR matches the input's changes across slices</title>
+  <desc id="desc">First- and second-order differences are computed separately for three neighboring input slices and reconstructed slices. L1 losses match the corresponding differences, preserving observed transitions and curvature rather than forcing adjacent slices to be identical.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="m1 1 6 3-6 3" fill="none" stroke="#8d96b5" stroke-width="1.3" />
+    </marker>
+    <path id="anatomy" d="M-19-1C-24-15-13-25-3-19C10-28 23-13 20-2C28 12 14 25 3 19C-12 26-27 14-19-1Z" />
+  </defs>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#c9cee3" font-size="17px" class="label" x="206" y="25">Input volume x</text>
+  <g transform="translate(104 50)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use fill="#4b587c" stroke="#bcc9ef" stroke-width="1.4" href="#anatomy" class="shape" transform="translate(32 35) scale(.8)" />
+  </g>
+  <g transform="translate(184 50)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use fill="#4b587c" stroke="#bcc9ef" stroke-width="1.4" href="#anatomy" class="shape" transform="translate(32 35) scale(.95)" />
+  </g>
+  <g transform="translate(264 50)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use fill="#4b587c" stroke="#bcc9ef" stroke-width="1.4" href="#anatomy" class="shape" transform="translate(32 35) scale(1.08)" />
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="136" y="141">xₖ₋₁</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="216" y="141">xₖ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="296" y="141">xₖ₊₁</text>
+  <path fill="none" stroke="#8d96b5" stroke-width="1.3" marker-end="url(#arrow)" class="flow" d="M338 85h45" />
+  <path fill="none" stroke="#8d96b5" stroke-width="1.3" marker-end="url(#arrow)" class="flow" d="M354 85V33h238v10" />
+  <rect fill="#252a3a" stroke="#7886ad" stroke-width="1.2" class="operation" x="394" y="50" width="104" height="70" rx="11" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#e1e7fa" font-size="25px" class="symbol" x="446" y="80">Δx</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="446" y="105">1st order</text>
+  <rect fill="#252a3a" stroke="#7886ad" stroke-width="1.2" class="operation" x="540" y="50" width="104" height="70" rx="11" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#e1e7fa" font-size="25px" class="symbol" x="592" y="80">Δ²x</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="592" y="105">2nd order</text>
+  <path fill="none" stroke="#bac6eb" stroke-width="1.6" stroke-dasharray="4 5" marker-start="url(#arrow)" marker-end="url(#arrow)" class="match" d="M446 133v101M592 133v101" />
+  <rect x="402" y="166" width="88" height="32" rx="7" fill="#18181e" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#c9cee3" font-size="17px" class="label" x="446" y="188">L1 match</text>
+  <rect x="548" y="166" width="88" height="32" rx="7" fill="#18181e" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#c9cee3" font-size="17px" class="label" x="592" y="188">L1 match</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#c9cee3" font-size="17px" class="label" x="206" y="224">Reconstruction x̂</text>
+  <g transform="translate(104 250)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use fill="#4b587c" stroke="#bcc9ef" stroke-width="1.4" href="#anatomy" class="shape" transform="translate(32 35) scale(.82)" />
+  </g>
+  <g transform="translate(184 250)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use href="#anatomy" transform="translate(32 35) scale(1.23 .95)" fill="#674b65" stroke="#edc2d2" stroke-width="1.4" />
+  </g>
+  <g transform="translate(264 250)">
+    <rect fill="#242735" stroke="#4f5876" stroke-width="1.2" class="slice" width="64" height="70" rx="9" />
+    <use fill="#4b587c" stroke="#bcc9ef" stroke-width="1.4" href="#anatomy" class="shape" transform="translate(32 35) scale(1.07)" />
+  </g>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="136" y="341">x̂ₖ₋₁</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="216" y="341">x̂ₖ</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="296" y="341">x̂ₖ₊₁</text>
+  <path fill="none" stroke="#8d96b5" stroke-width="1.3" marker-end="url(#arrow)" class="flow" d="M338 285h45" />
+  <path fill="none" stroke="#8d96b5" stroke-width="1.3" marker-end="url(#arrow)" class="flow" d="M354 285V233h238v10" />
+  <rect fill="#252a3a" stroke="#7886ad" stroke-width="1.2" class="operation" x="394" y="250" width="104" height="70" rx="11" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#e1e7fa" font-size="25px" class="symbol" x="446" y="280">Δx̂</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="446" y="305">1st order</text>
+  <rect fill="#252a3a" stroke="#7886ad" stroke-width="1.2" class="operation" x="540" y="250" width="104" height="70" rx="11" />
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#e1e7fa" font-size="25px" class="symbol" x="592" y="280">Δ²x̂</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a2a8bf" font-size="14px" class="small" x="592" y="305">2nd order</text>
+  <text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#bac6eb" x="340" y="376" font-size="18">Match the observed transitions and through-plane curvature.</text>
+</svg>

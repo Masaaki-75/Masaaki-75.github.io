@@ -6,6 +6,7 @@
 /medvtok/assets/radial-*.svg
 /medvtok/assets/training-*.svg
 /medvtok/tools
+/medvtok/tmp
 
 # Python caches, editor settings, and temporary files.
 __pycache__/
