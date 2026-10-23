@@ -175,7 +175,7 @@ for (const link of document.querySelectorAll("[data-zoom]")) {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof figureDialog.showModal !== "function") return;
     event.preventDefault();
     dialogImage.src = link.href;
-    dialogImage.alt = link.querySelector("img").alt;
+    dialogImage.alt = link.querySelector("img")?.alt || link.querySelector(".method-scene desc")?.textContent || link.getAttribute("aria-label") || "Figure";
     const minimumWidth = Number(link.dataset.minWidth || 900);
     dialogImage.style.width = `${Number(link.dataset.displayWidth) || Math.max(minimumWidth, Math.min(1200, window.innerWidth - 100))}px`;
     document.getElementById("dialog-caption").textContent = link.dataset.caption || dialogImage.alt;

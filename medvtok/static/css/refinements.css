@@ -1,26 +1,413 @@
-/* Focused updates: loss diagrams, paired reconstructions, and report cases. */
+/* Editorial concepts, paired reconstructions, and report cases. */
 .method-pair > .method-article {
   min-width: 0;
 }
-.loss-illustration {
+.concept-illustration {
   display: block;
+  min-height: 0;
   max-width: 100%;
-  padding: 36px 8px 12px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
+  margin-inline: 0;
+  padding: 36px 8px 28px;
+  overflow: hidden;
 }
-.loss-illustration > img {
+.concept-illustration img {
   display: block;
   width: 100%;
-  min-width: 530px;
-  max-width: none;
   height: auto;
 }
-.loss-diagram-hint {
-  display: none;
-  margin-top: 10px;
-  color: var(--faint);
+.concept-zoom {
+  display: block;
+  cursor: zoom-in;
+}
+.concept-zoom:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.concept-illustration .concept-zoom-icon {
+  position: absolute;
+  top: 11px;
+  right: 16px;
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: #a9afc3;
+  stroke-width: 1.5;
+}
+.method-scene {
+  display: block;
+  height: auto;
+}
+.method-motion-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: #a9afc3;
+  background: #18181e;
+  border: 1px solid #3b3e4c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.method-motion-toggle[hidden] { display: none; }
+.method-motion-toggle:hover { color: #e0e6f5; border-color: #737e9a; }
+.method-motion-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.concept-illustration .method-motion-toggle svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.method-motion-toggle .motion-play,
+.method-motion-toggle[aria-pressed="true"] .motion-pause { display: none; }
+.method-motion-toggle[aria-pressed="true"] .motion-play { display: block; }
+
+/* Four real slice pairs: both volumes and both differences change together. */
+.motion-ready .slidr-frame {
+  animation: slidr-slices 16s linear infinite;
+  animation-delay: var(--frame-delay);
+}
+.motion-ready .slidr-flow { animation: slidr-difference 4s linear infinite; }
+.motion-ready .slidr-match { animation: slidr-pair 4s linear infinite; }
+.motion-ready .slidr-map-edge { animation: slidr-edge 4s ease-in-out infinite; }
+.motion-ready .slidr-match-point { animation: slidr-point 4s ease-in-out infinite; }
+@keyframes slidr-slices {
+  0%, 22% { opacity: 1; }
+  25%, 97% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slidr-difference {
+  0%, 8% { opacity: 0; stroke-dashoffset: 28; }
+  14% { opacity: .95; stroke-dashoffset: 28; }
+  48% { opacity: .95; stroke-dashoffset: var(--travel); }
+  54%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes slidr-pair {
+  0%, 48% { opacity: 0; stroke-dashoffset: 28; }
+  54% { opacity: .9; stroke-dashoffset: 28; }
+  76% { opacity: .9; stroke-dashoffset: var(--travel); }
+  82%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes slidr-edge {
+  0%, 32%, 90%, 100% { stroke-opacity: .3; }
+  50%, 75% { stroke-opacity: .85; }
+}
+@keyframes slidr-point {
+  0%, 58%, 96%, 100% { opacity: .4; }
+  76% { opacity: 1; }
+}
+
+/* Alternating directions explain joint training objectives, not stages. */
+.motion-ready .mera-in { animation: mera-to-shared 10s linear infinite; }
+.motion-ready .mera-surface-flow { animation: mera-through-shared 10s linear infinite; }
+.motion-ready .mera-surface-return { animation: mera-from-shared 10s linear infinite; }
+.motion-ready .mera-out { animation: mera-to-experts 10s linear infinite; }
+.motion-ready .mera-expert-detail { animation: mera-expertise 10s ease-in-out infinite; }
+@keyframes mera-to-shared {
+  0% { opacity: 0; stroke-dashoffset: 28; }
+  5% { opacity: 1; stroke-dashoffset: 28; }
+  28% { opacity: 1; stroke-dashoffset: var(--travel); }
+  34%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes mera-through-shared {
+  0%, 23% { opacity: 0; stroke-dashoffset: 42; }
+  28% { opacity: .9; stroke-dashoffset: 42; }
+  43% { opacity: .9; stroke-dashoffset: var(--travel); }
+  48%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes mera-to-experts {
+  0%, 58% { opacity: 0; stroke-dashoffset: 28; }
+  62% { opacity: 1; stroke-dashoffset: 28; }
+  86% { opacity: 1; stroke-dashoffset: var(--travel); }
+  92%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes mera-from-shared {
+  0%, 45% { opacity: 0; stroke-dashoffset: 42; }
+  49% { opacity: .9; stroke-dashoffset: 42; }
+  62% { opacity: .9; stroke-dashoffset: var(--travel); }
+  67%, 100% { opacity: 0; stroke-dashoffset: var(--travel); }
+}
+@keyframes mera-expertise {
+  0%, 100% { opacity: .76; }
+  5% { opacity: .9; }
+  20%, 65% { opacity: .58; }
+  88%, 94% { opacity: 1; }
+}
+.motion-ready :is(.slidr-frame, .method-flow, .slidr-map-edge, .slidr-match-point, .mera-expert-detail) {
+  animation-play-state: paused;
+}
+.is-playing :is(.slidr-frame, .method-flow, .slidr-map-edge, .slidr-match-point, .mera-expert-detail) {
+  animation-play-state: running;
+}
+@media (prefers-reduced-motion: reduce) {
+  .method-scene * { animation: none !important; }
+}
+
+/* The common space takes the visual lead; all imagery remains legible. */
+.interface-map.interface-landscape {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.05fr) minmax(0, .95fr);
+  gap: 26px;
+  padding: 42px 0 36px;
+  border: 0;
+  border-block: 1px solid #30303a;
+  border-radius: 0;
+  background: transparent;
+}
+.interface-landscape > * {
+  min-width: 0;
+}
+.interface-landscape .interface-input,
+.interface-landscape .interface-output {
+  grid-column: auto;
+  grid-row: auto;
+}
+.interface-landscape .interface-core {
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  text-align: center;
+}
+.interface-landscape .interface-core .diagram-label {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  text-transform: none;
+  color: #e0e5f4;
+}
+.latent-stage {
+  position: relative;
+  margin: 0 -10px;
+}
+.latent-landscape {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.interface-landscape .interface-core h3 {
+  margin-top: -12px;
+  font-size: 17px;
+  font-weight: 450;
+  letter-spacing: -.025em;
+}
+.interface-landscape .interface-core > p:last-child {
+  margin-top: 8px;
   font-size: 10px;
+  color: #969bae;
+  line-height: 1.6;
+}
+.interface-landscape .modality-mosaic {
+  gap: 6px;
+}
+.interface-landscape .modality-mosaic figure {
+  border-radius: 3px;
+}
+.interface-landscape .modality-mosaic img {
+  opacity: .92;
+}
+.interface-landscape .modality-mosaic figcaption {
+  font-size: 8px;
+  padding: 17px 5px 5px;
+}
+.interface-landscape .interface-output {
+  border: 0;
+  padding: 0;
+}
+.interface-landscape .interface-output ul {
+  display: block;
+}
+.interface-landscape .interface-output li {
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid #2e2f39;
+  gap: 14px;
+  padding-block: 9px;
+  font-size: 11px;
+}
+.interface-landscape .task-vignette {
+  display: block;
+  flex: 0 0 auto;
+  width: 94px;
+  height: auto;
+}
+.interface-landscape .interface-output .task-output-label {
+  min-width: 0;
+  padding: 0;
+  color: #d2d6e4;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.interface-landscape .interface-output li:first-child {
+  border-top: 1px solid #2e2f39;
+}
+.interface-caption {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 24px;
+}
+.interface-caption .interface-note {
+  margin: 0;
+  text-align: left;
+  max-width: 690px;
+  font-size: 13px;
+}
+.interface-motion-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0 7px 12px;
+  border: 0;
+  background: transparent;
+  color: #a9aec1;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+.interface-motion-toggle[hidden] {
+  display: none;
+}
+.interface-motion-toggle:hover {
+  color: #e3e8fb;
+}
+.interface-motion-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+.interface-motion-toggle svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.interface-motion-toggle .motion-play,
+.interface-motion-toggle[aria-pressed="true"] .motion-pause {
+  display: none;
+}
+.interface-motion-toggle[aria-pressed="true"] .motion-play {
+  display: block;
+}
+.latent-stream {
+  animation: latent-current 12s linear infinite;
+  animation-delay: var(--stream-phase, 0s);
+  animation-play-state: paused;
+}
+/* Retain the current phase when a reader pauses or scrolls away. */
+.is-flowing .latent-stream {
+  animation-play-state: running;
+}
+@keyframes latent-current {
+  from { stroke-dashoffset: var(--stream-length); }
+  to { stroke-dashoffset: 0; }
+}
+@media (max-width: 1000px) and (min-width: 601px) {
+  .interface-map.interface-landscape {
+    grid-template-columns: minmax(180px, .75fr) minmax(0, 1.65fr);
+    gap: 30px;
+  }
+  .interface-landscape .interface-output {
+    grid-column: 1 / -1;
+    border-top: 1px solid #2e2f39;
+    padding-top: 25px;
+  }
+  .interface-landscape .interface-output ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 24px;
+  }
+  .interface-landscape .interface-output li:first-child {
+    border-top: 0;
+  }
+  .interface-landscape .task-vignette {
+    width: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .interface-map.interface-landscape {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 28px 0;
+  }
+  .interface-landscape .modality-mosaic {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .interface-landscape .modality-mosaic img {
+    aspect-ratio: 4 / 3;
+  }
+  .interface-landscape .modality-mosaic figcaption {
+    font-size: 9px;
+  }
+  .interface-landscape .interface-core {
+    padding-block: 9px 18px;
+  }
+  .interface-landscape .interface-core .diagram-label {
+    font-size: 25px;
+  }
+  .interface-landscape .interface-core h3 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+  .interface-landscape .interface-core > p:last-child {
+    font-size: 10px;
+  }
+  .interface-landscape .interface-output ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+  }
+  .interface-landscape .interface-output li:first-child {
+    border-top: 0;
+  }
+  .interface-landscape .interface-output li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding-block: 15px;
+  }
+  .interface-landscape .task-vignette {
+    width: 112px;
+    max-width: 100%;
+  }
+  .interface-landscape .interface-output .task-output-label {
+    font-size: 11px;
+  }
+  .interface-caption {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .interface-caption .interface-note {
+    font-size: 12px;
+  }
+  .interface-motion-toggle {
+    padding-left: 0;
+  }
+}
+@media (max-width: 800px) {
+  .method-pair {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 44px;
+  }
+  .interface-landscape .interface-output ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .latent-stream {
+    animation: none !important;
+  }
+  .interface-motion-toggle {
+    display: none;
+  }
 }
 #panel-recon2d, #panel-recon3d {
   overflow: visible;
@@ -340,9 +727,6 @@
   }
 }
 @media (max-width: 600px) {
-  .loss-diagram-hint {
-    display: block;
-  }
   .recon-2d-grid {
     grid-template-columns: 1fr;
     gap: 26px;
