@@ -149,6 +149,9 @@
 
 /* The common space takes the visual lead; all imagery remains legible. */
 .interface-map.interface-landscape {
+  --flow-duration: 8s;
+  position: relative;
+  isolation: isolate;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.05fr) minmax(0, .95fr);
   gap: 26px;
   padding: 42px 0 36px;
@@ -158,7 +161,34 @@
   background: transparent;
 }
 .interface-landscape > * {
+  position: relative;
+  z-index: 1;
   min-width: 0;
+}
+.interface-landscape > .interface-flow {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.flow-guide,
+.flow-packet {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+}
+.flow-guide {
+  stroke-width: 1;
+  opacity: .22;
+}
+.flow-packet {
+  stroke-width: 1.6;
+  stroke-dasharray: 1 199;
+  stroke-dashoffset: 2;
+  opacity: 0;
 }
 .interface-landscape .interface-input,
 .interface-landscape .interface-output {
@@ -179,18 +209,18 @@
   text-transform: none;
   color: #e0e5f4;
 }
-.latent-stage {
+.visual-token-stage {
   position: relative;
-  margin: 0 -10px;
+  margin: 10px -10px 0;
 }
-.latent-landscape {
+.visual-token-module {
   display: block;
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 .interface-landscape .interface-core h3 {
-  margin-top: -12px;
+  margin-top: 0;
   font-size: 17px;
   font-weight: 450;
   letter-spacing: -.025em;
@@ -222,6 +252,7 @@
   display: block;
 }
 .interface-landscape .interface-output li {
+  position: relative;
   align-items: center;
   border: 0;
   border-bottom: 1px solid #2e2f39;
@@ -295,18 +326,81 @@
 .interface-motion-toggle[aria-pressed="true"] .motion-play {
   display: block;
 }
-.latent-stream {
-  animation: latent-current 12s linear infinite;
-  animation-delay: var(--stream-phase, 0s);
+.flow-ready .modality-mosaic figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #bac6eb;
+  border-radius: inherit;
+  background-image: linear-gradient(#bac6eb80 1px, transparent 1px), linear-gradient(90deg, #bac6eb80 1px, transparent 1px);
+  background-size: 20% 20%;
+  pointer-events: none;
+  opacity: 0;
+  animation: interface-source var(--flow-duration) ease-in-out infinite;
   animation-play-state: paused;
 }
-/* Retain the current phase when a reader pauses or scrolls away. */
-.is-flowing .latent-stream {
+.flow-ready .interface-output li::after {
+  content: "";
+  position: absolute;
+  inset: 3px -6px;
+  border: 1px solid var(--flow-color);
+  border-radius: 4px;
+  background: linear-gradient(90deg, #bac6eb0a, transparent);
+  pointer-events: none;
+  opacity: 0;
+  animation: interface-task var(--flow-duration) ease-in-out infinite;
+  animation-play-state: paused;
+}
+.flow-ready .flow-packet {
+  animation: interface-transit var(--flow-duration) linear infinite,
+    interface-particle-visibility var(--flow-duration) ease-in-out infinite;
+  animation-play-state: paused;
+}
+.flow-ready .flow-packet-branch {
+  animation-name: interface-transit, interface-branch-visibility;
+}
+.visual-token-activation {
+  opacity: 0;
+}
+.flow-ready .visual-token-activation {
+  animation: visual-token-encode var(--flow-duration) ease-in-out infinite;
+  animation-delay: var(--token-delay, 0s);
+  animation-play-state: paused;
+}
+/* Every stage shares one clock, including pause and offscreen suspension. */
+.is-flowing .flow-packet,
+.is-flowing .visual-token-activation,
+.is-flowing .modality-mosaic figure::after,
+.is-flowing .interface-output li::after {
   animation-play-state: running;
 }
-@keyframes latent-current {
-  from { stroke-dashoffset: var(--stream-length); }
-  to { stroke-dashoffset: 0; }
+@keyframes interface-source {
+  0%, 24%, 100% { opacity: 0; }
+  8% { opacity: .2; }
+}
+@keyframes interface-transit {
+  0% { stroke-dashoffset: 2; }
+  4% { stroke-dashoffset: 0; }
+  30% { stroke-dashoffset: var(--flow-entry); }
+  58% { stroke-dashoffset: var(--flow-exit); }
+  92% { stroke-dashoffset: -100; }
+  100% { stroke-dashoffset: -102; }
+}
+@keyframes visual-token-encode {
+  0%, 28%, 44%, 100% { opacity: 0; }
+  35% { opacity: .28; }
+}
+@keyframes interface-particle-visibility {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: .55; }
+}
+@keyframes interface-branch-visibility {
+  0%, 30%, 100% { opacity: 0; }
+  36%, 90% { opacity: .55; }
+}
+@keyframes interface-task {
+  0%, 85%, 100% { opacity: 0; }
+  94% { opacity: .22; }
 }
 @media (max-width: 1000px) and (min-width: 601px) {
   .interface-map.interface-landscape {
@@ -348,6 +442,9 @@
   }
   .interface-landscape .interface-core {
     padding-block: 9px 18px;
+  }
+  .visual-token-module {
+    aspect-ratio: 6 / 5;
   }
   .interface-landscape .interface-core .diagram-label {
     font-size: 25px;
@@ -402,7 +499,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .latent-stream {
+  .flow-ready .visual-token-activation,
+  .flow-ready .flow-packet,
+  .flow-ready .modality-mosaic figure::after,
+  .flow-ready .interface-output li::after {
     animation: none !important;
   }
   .interface-motion-toggle {

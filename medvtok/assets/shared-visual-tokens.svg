@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="visual-token-module" viewBox="0 0 720 400" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="visual-tokens-title visual-tokens-desc">
+  <title id="visual-tokens-title">A shared grid of visual patch tokens</title>
+  <desc id="visual-tokens-desc">Medical images are divided into patches and flow into a shared grid of visual tokens. The grid lights up as the patches are encoded, then sends the shared representation to all six downstream tasks at the same time. This is a conceptual illustration, not a fixed model token count or measured feature map.</desc>
+  <defs>
+    <radialGradient id="token-module-halo">
+      <stop stop-color="#8b9bc9" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#8b9bc9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="token-module-surface" x2=".8" y2="1">
+      <stop stop-color="#222431"/>
+      <stop offset="1" stop-color="#16171e"/>
+    </linearGradient>
+    <pattern id="token-layer-grid" width="40" height="40" patternUnits="userSpaceOnUse" x="231" y="87">
+      <rect width="34" height="34" rx="2" fill="#bac6eb" fill-opacity=".035" stroke="#bac6eb" stroke-opacity=".15"/>
+    </pattern>
+    <g id="visual-token-cell">
+      <rect width="34" height="34" rx="2" fill="currentColor" fill-opacity=".16" stroke="currentColor" stroke-opacity=".5"/>
+      <path d="M5 28h7m3 0h4m3 0h7" fill="none" stroke="currentColor" stroke-opacity=".36"/>
+    </g>
+  </defs>
+  <ellipse cx="360" cy="204" rx="270" ry="190" fill="url(#token-module-halo)"/>
+
+  <!-- Offset planes suggest a reusable token module, with a face-on patch grid. -->
+  <g class="visual-token-stack">
+  <g transform="translate(24 -24)" opacity=".4">
+    <rect x="216" y="72" width="264" height="264" rx="5" fill="#171a23" stroke="#7d8baa"/>
+    <rect x="231" y="87" width="234" height="234" fill="url(#token-layer-grid)"/>
+  </g>
+  <g transform="translate(12 -12)" opacity=".7">
+    <rect x="216" y="72" width="264" height="264" rx="5" fill="#1a1c26" stroke="#697795"/>
+    <rect x="231" y="87" width="234" height="234" fill="url(#token-layer-grid)"/>
+  </g>
+  <rect x="216" y="76" width="264" height="264" rx="5" fill="#08090d" fill-opacity=".7"/>
+  <rect class="visual-token-frame" x="216" y="72" width="264" height="264" rx="5" fill="url(#token-module-surface)" stroke="#8693b5" stroke-opacity=".75"/>
+  <g color="#bac6eb">
+    <use href="#visual-token-cell" x="231" y="87"/>
+    <use href="#visual-token-cell" x="271" y="87" opacity=".7"/>
+    <use href="#visual-token-cell" x="311" y="87"/>
+    <use href="#visual-token-cell" x="351" y="87" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="391" y="87" opacity=".65"/>
+    <use href="#visual-token-cell" x="431" y="87"/>
+    <use href="#visual-token-cell" x="231" y="127" opacity=".7"/>
+    <use href="#visual-token-cell" x="271" y="127"/>
+    <use href="#visual-token-cell" x="311" y="127" color="#edc2d2"/>
+    <use href="#visual-token-cell" x="351" y="127"/>
+    <use href="#visual-token-cell" x="391" y="127" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="431" y="127" opacity=".65"/>
+    <use href="#visual-token-cell" x="231" y="167" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="271" y="167"/>
+    <use href="#visual-token-cell" x="311" y="167"/>
+    <use href="#visual-token-cell" x="351" y="167" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="391" y="167"/>
+    <use href="#visual-token-cell" x="431" y="167" opacity=".8"/>
+    <use href="#visual-token-cell" x="231" y="207"/>
+    <use href="#visual-token-cell" x="271" y="207" color="#edc2d2"/>
+    <use href="#visual-token-cell" x="311" y="207"/>
+    <use href="#visual-token-cell" x="351" y="207" opacity=".65"/>
+    <use href="#visual-token-cell" x="391" y="207"/>
+    <use href="#visual-token-cell" x="431" y="207" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="231" y="247" opacity=".65"/>
+    <use href="#visual-token-cell" x="271" y="247"/>
+    <use href="#visual-token-cell" x="311" y="247" color="#a9cfca"/>
+    <use href="#visual-token-cell" x="351" y="247"/>
+    <use href="#visual-token-cell" x="391" y="247" color="#edc2d2"/>
+    <use href="#visual-token-cell" x="431" y="247"/>
+    <use href="#visual-token-cell" x="231" y="287"/>
+    <use href="#visual-token-cell" x="271" y="287" opacity=".65"/>
+    <use href="#visual-token-cell" x="311" y="287"/>
+    <use href="#visual-token-cell" x="351" y="287" color="#edc2d2"/>
+    <use href="#visual-token-cell" x="391" y="287"/>
+    <use href="#visual-token-cell" x="431" y="287" opacity=".7"/>
+  </g>
+  <g class="visual-token-activations" fill="currentColor" fill-opacity=".48" stroke="currentColor" stroke-opacity=".95" color="#bac6eb"></g>
+  </g>
+</svg>
