@@ -37,35 +37,6 @@
   display: block;
   height: auto;
 }
-.method-motion-toggle {
-  position: absolute;
-  right: 12px;
-  bottom: 8px;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  color: #a9afc3;
-  background: #18181e;
-  border: 1px solid #3b3e4c;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.method-motion-toggle[hidden] { display: none; }
-.method-motion-toggle:hover { color: #e0e6f5; border-color: #737e9a; }
-.method-motion-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.concept-illustration .method-motion-toggle svg {
-  width: 12px;
-  height: 12px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-}
-.method-motion-toggle .motion-play,
-.method-motion-toggle[aria-pressed="true"] .motion-pause { display: none; }
-.method-motion-toggle[aria-pressed="true"] .motion-play { display: block; }
-
 /* Four real slice pairs: both volumes and both differences change together. */
 .motion-ready .slidr-frame {
   animation: slidr-slices 16s linear infinite;
@@ -144,7 +115,7 @@
   animation-play-state: running;
 }
 @media (prefers-reduced-motion: reduce) {
-  .method-scene * { animation: none !important; }
+  [data-method-motion]:not(.motion-enabled) .method-scene * { animation: none !important; }
 }
 
 /* The common space takes the visual lead; all imagery remains legible. */
@@ -288,43 +259,6 @@
   text-align: left;
   max-width: 690px;
   font-size: 13px;
-}
-.interface-motion-toggle {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 0 7px 12px;
-  border: 0;
-  background: transparent;
-  color: #a9aec1;
-  font: inherit;
-  font-size: 10px;
-  cursor: pointer;
-}
-.interface-motion-toggle[hidden] {
-  display: none;
-}
-.interface-motion-toggle:hover {
-  color: #e3e8fb;
-}
-.interface-motion-toggle:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 5px;
-}
-.interface-motion-toggle svg {
-  width: 13px;
-  height: 13px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-}
-.interface-motion-toggle .motion-play,
-.interface-motion-toggle[aria-pressed="true"] .motion-pause {
-  display: none;
-}
-.interface-motion-toggle[aria-pressed="true"] .motion-play {
-  display: block;
 }
 .flow-ready .modality-mosaic figure::after {
   content: "";
@@ -485,9 +419,6 @@
   .interface-caption .interface-note {
     font-size: 12px;
   }
-  .interface-motion-toggle {
-    padding-left: 0;
-  }
 }
 @media (max-width: 800px) {
   .method-pair {
@@ -499,14 +430,11 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .flow-ready .visual-token-activation,
-  .flow-ready .flow-packet,
-  .flow-ready .modality-mosaic figure::after,
-  .flow-ready .interface-output li::after {
+  .flow-ready:not(.motion-enabled) .visual-token-activation,
+  .flow-ready:not(.motion-enabled) .flow-packet,
+  .flow-ready:not(.motion-enabled) .modality-mosaic figure::after,
+  .flow-ready:not(.motion-enabled) .interface-output li::after {
     animation: none !important;
-  }
-  .interface-motion-toggle {
-    display: none;
   }
 }
 #panel-recon2d, #panel-recon3d {

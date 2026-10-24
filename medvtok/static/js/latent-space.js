@@ -4,17 +4,14 @@
 // Measure the real layout so the paths still join their targets after reflow.
 (() => {
   const scene = document.querySelector(".interface-landscape");
-  const toggle = document.getElementById("latent-motion-toggle");
   const module = scene?.querySelector(".visual-token-module");
-  if (!scene || !toggle || !module) return;
+  if (!scene || !module) return;
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const sources = [...scene.querySelectorAll(".modality-mosaic figure")];
   const tasks = [...scene.querySelectorAll(".interface-output li")];
   const colors = ["#bac6eb", "#a9cfca", "#edc2d2"];
   const ns = "http://www.w3.org/2000/svg";
   let visible = false;
-  let paused = false;
 
   function svgElement(name, attributes = {}) {
     const element = document.createElementNS(ns, name);
@@ -193,19 +190,11 @@
   layout();
 
   function update() {
-    scene.classList.toggle("is-flowing", visible && !paused && !reducedMotion.matches && !document.hidden);
-    toggle.hidden = reducedMotion.matches;
-    toggle.setAttribute("aria-pressed", String(paused));
-    toggle.setAttribute("aria-label", paused ? "Resume the image-to-token-to-task animation" : "Pause the image-to-token-to-task animation");
-    toggle.querySelector("span").textContent = paused ? "Resume motion" : "Pause motion";
+    scene.classList.add("motion-enabled");
+    scene.classList.toggle("is-flowing", visible && !document.hidden);
   }
 
-  toggle.addEventListener("click", () => {
-    paused = !paused;
-    update();
-  });
   document.addEventListener("visibilitychange", update);
-  reducedMotion.addEventListener("change", update);
 
   if ("IntersectionObserver" in window) {
     new IntersectionObserver((entries) => {

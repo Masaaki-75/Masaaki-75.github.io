@@ -2928,7 +2928,10 @@ body.dialog-open {
   html {
     scroll-behavior: auto;
   }
-  *,*::before,*::after {
+  /* The explanatory diagrams loop automatically; other UI follows this preference. */
+  *:not(.motion-enabled, .motion-enabled *),
+  *:not(.motion-enabled, .motion-enabled *)::before,
+  *:not(.motion-enabled, .motion-enabled *)::after {
     animation: none!important;
     transition: none!important;
   }

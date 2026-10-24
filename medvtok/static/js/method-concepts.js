@@ -1,31 +1,32 @@
 "use strict";
 
-// CSS owns the timelines. Keep a reader's chosen phase when paused/offscreen;
-// reduced motion instead restores the complete, legible static illustration.
+// The diagrams loop in view; preserve their phase while offscreen/in the background.
 (() => {
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  // Keep the medical rasters out of the initial document/download path.
+  function loadImages(scene) {
+    for (const image of scene.querySelectorAll("image[data-image-src]")) {
+      image.setAttribute("href", image.dataset.imageSrc);
+      image.removeAttribute("data-image-src");
+    }
+  }
+  const imageObserver = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      loadImages(entry.target);
+      imageObserver.unobserve(entry.target);
+    }
+  }, { rootMargin: "600px 0px" }) : null;
   for (const scene of document.querySelectorAll("[data-method-motion]")) {
-    const toggle = scene.querySelector(".method-motion-toggle");
-    if (!toggle) continue;
     let visible = false;
-    let paused = false;
+    if (imageObserver) imageObserver.observe(scene);
+    else loadImages(scene);
 
     function update() {
-      scene.classList.toggle("motion-ready", !reducedMotion.matches);
-      scene.classList.toggle("is-playing", visible && !paused && !reducedMotion.matches && !document.hidden);
-      toggle.hidden = reducedMotion.matches;
-      toggle.setAttribute("aria-pressed", String(paused));
-      const label = `${paused ? "Resume" : "Pause"} the ${scene.dataset.methodMotion} animation`;
-      toggle.setAttribute("aria-label", label);
-      toggle.title = label;
+      scene.classList.add("motion-enabled", "motion-ready");
+      scene.classList.toggle("is-playing", visible && !document.hidden);
     }
 
-    toggle.addEventListener("click", () => {
-      paused = !paused;
-      update();
-    });
     document.addEventListener("visibilitychange", update);
-    reducedMotion.addEventListener("change", update);
     if ("IntersectionObserver" in window) {
       new IntersectionObserver((entries) => {
         visible = entries.some((entry) => entry.isIntersecting);
