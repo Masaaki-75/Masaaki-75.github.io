@@ -1,0 +1,109 @@
+/* Both alignment objectives share one framework and one set of source nodes. */
+.mera-heading { margin-bottom: 42px; }
+.mera-heading strong { color: var(--text); font-weight: 550; }
+.mera-framework { --mera-box-height: 44px; --mera-box-width: 228px; --mera-font-size: 12px; max-width: 1040px; margin: 0 auto; padding: 24px 32px; }
+.mera-footer { margin-left: 0; }
+.mera-network-viewport { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #363947 transparent; }
+.mera-network { position: relative; display: grid; max-width: 800px; margin-inline: auto; padding-inline: 32px; grid-template-columns: minmax(0,1fr) 28px minmax(0,1fr); grid-template-rows: var(--mera-box-height) 24px var(--mera-box-height) 24px var(--mera-box-height) 40px var(--mera-box-height) 40px var(--mera-box-height) 52px var(--mera-box-height) 28px; isolation: isolate; }
+.mera-wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: -1; pointer-events: none; }
+.mera-wires path { fill: none; stroke: #525a6b; stroke-width: 1.15; stroke-linecap: round; stroke-linejoin: round; }
+.mera-wires .mera-token-wire { stroke: #7c89a7; }
+.mera-wires .mera-wire-a { stroke: #74829d; }
+.mera-wires .mera-wire-b { stroke: #6f897c; }
+.mera-wires .mera-wire-c { stroke: #93798b; }
+.mera-wires .mera-wire-d { stroke: #7e8199; }
+.mera-wires .mera-wire-e { stroke: #92836e; }
+.mera-wires .mera-match-wire { stroke-dasharray: 3 5; }
+.mera-wires .mera-signal { stroke: #aab7d3; stroke-width: 1.9; opacity: 0; pointer-events: none; }
+.mera-wires .mera-signal.mera-wire-a { stroke: #a5b3cb; }
+.mera-wires .mera-signal.mera-wire-b { stroke: #a0bdad; }
+.mera-wires .mera-signal.mera-wire-c { stroke: #bba2b3; }
+.mera-wires .mera-signal.mera-wire-d { stroke: #abadc5; }
+.mera-wires .mera-signal.mera-wire-e { stroke: #b9ab91; }
+.mera-wires .mera-comparison-signal { stroke-width: 2.2; }
+.mera-wires .mera-match-wire { transition: stroke 220ms ease, stroke-width 220ms ease; }
+.mera-wires .mera-match-wire.is-aligning { stroke: #9ba8c2; stroke-width: 1.5; }
+.mera-wires .mera-match-wire.mera-wire-b.is-aligning { stroke: #91ad9e; }
+.mera-node { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-width: 0; height: var(--mera-box-height); border: 1px solid #495366; border-radius: 8px; background: #1b1f29; color: #c9d1e2; font-size: var(--mera-font-size); line-height: 18px; padding: 8px 12px; text-align: center; }
+.mera-node small { color: #929db1; font-size: 11px; }
+.mera-input { grid-column: 1 / 4; grid-row: 1; width: min(100%, var(--mera-box-width)); justify-self: center; align-self: center; }
+.mera-encoder, .mera-tokens { grid-column: 1 / 4; width: min(100%, var(--mera-box-width)); justify-self: center; }
+.mera-encoder { grid-row: 3; }
+.mera-tokens { grid-row: 5; }
+.mera-alignment-stage { position: relative; grid-column: 1 / 4; grid-row: 7; width: min(100%, var(--mera-box-width)); justify-self: center; }
+.mera-shared-space { display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; line-height: 18px; align-items: center; justify-content: center; height: 100%; border: 1px solid #5a6681; border-radius: 8px; background: #202532; color: #d0d9ed; font-size: var(--mera-font-size); }
+.mera-projections { grid-column: 1 / 4; grid-row: 11; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; height: 100%; }
+.mera-projection { display: flex; flex-direction: column; gap: 3px; align-items: center; justify-content: center; border: 1px dashed var(--expert-line); border-radius: 8px; background: #14171d; color: var(--expert-color); font-size: var(--mera-font-size); line-height: 18px; padding: 8px 12px; }
+.mera-expert-a { --expert-color: #b1c0db; --expert-line: #485b77; --expert-bg: #1b222e; }
+.mera-expert-b { --expert-color: #b6cdbf; --expert-line: #456353; --expert-bg: #1a241f; }
+.mera-expert-c { --expert-color: #cdb5c6; --expert-line: #665061; --expert-bg: #251e26; }
+.mera-expert-d { --expert-color: #bdc0d5; --expert-line: #555b75; --expert-bg: #20212c; }
+.mera-expert-e { --expert-color: #cec0a9; --expert-line: #675c4a; --expert-bg: #25221d; }
+.mera-expert-panel { position: relative; grid-column: 1 / 4; grid-row: 9; display: grid; min-width: 0; }
+.mera-expert-panel::before { content: ""; position: absolute; inset: -12px -10px; border: 1px solid #353943; border-radius: 10px; pointer-events: none; }
+.mera-expert-panel-label { position: absolute; left: 4px; bottom: -12px; z-index: 1; transform: translateY(50%); padding: 0 6px; background: var(--bg); color: #929db1; font-size: 10px; line-height: 14px; }
+.mera-expert-bank { position: relative; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; }
+.mera-panel-expert { position: relative; display: flex; flex-direction: column; gap: 3px; align-items: center; justify-content: center; min-width: 0; border: 1px solid var(--expert-line); border-radius: 8px; background: var(--expert-bg); color: var(--expert-color); font-size: var(--mera-font-size); line-height: 16px; text-align: center; padding: 4px 6px; }
+.mera-frozen-icon { position: absolute; top: 3px; right: 4px; width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: .8; }
+.mera-expert-placeholder > span { font-size: 18px; letter-spacing: 2px; }
+.mera-shared-alignment { --expert-color: #a7b4ce; }
+.mera-alignment-marker { position: absolute; z-index: 1; display: flex; align-items: center; gap: 5px; transform: translate(-50%,-50%); padding: 4px 7px; border: 1px solid transparent; border-radius: 6px; background: var(--bg); color: var(--expert-color); font-size: 10px; line-height: 1.3; white-space: nowrap; pointer-events: none; }
+.mera-alignment-marker > span { font-size: 14px; line-height: 1; }
+.mera-footer { margin-top: 18px; color: #929db1; font-size: 10px; line-height: 17px; text-align: center; }
+
+/* Quiet arrival cues accompany the packets; alignment remains simultaneous. */
+.mera-node, .mera-shared-space, .mera-panel-expert, .mera-projection, .mera-expert-panel::before { transition: border-color 220ms ease; }
+.mera-node.is-receiving, .mera-shared-space.is-receiving { border-color: #7c89a5; }
+.mera-panel-expert.is-receiving { border-color: color-mix(in srgb, var(--expert-line) 70%, var(--expert-color)); }
+.mera-expert-panel.is-receiving::before { border-color: #4b5262; }
+.mera-projection.is-receiving { border-color: #6e8f7b; }
+.mera-alignment-marker { transition: color 220ms ease, border-color 220ms ease, background-color 220ms ease; }
+.mera-alignment-marker.is-aligning { color: color-mix(in srgb, var(--expert-color) 84%, white); border-color: color-mix(in srgb, var(--expert-color) 55%, var(--bg)); background: color-mix(in srgb, var(--expert-color) 12%, var(--bg)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mera-wires .mera-signal { display: none; }
+  .mera-network *, .mera-expert-panel::before { transition: none; }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .mera-framework { padding: 24px; }
+}
+@media (max-width: 1050px) {
+  .mera-framework { --mera-font-size: 11px; }
+}
+@media (max-width: 900px) {
+  .mera-framework { --mera-font-size: 12px; }
+  .mera-heading { margin-bottom: 30px; }
+  .mera-framework { padding: 20px 16px 24px; }
+  .mera-footer { margin-left: 0; }
+  .mera-network { padding-inline: 32px; }
+  .mera-encoder, .mera-tokens { grid-column: 1 / 4; }
+  .mera-encoder { grid-row: 3; }
+  .mera-tokens { grid-row: 5; }
+  .mera-alignment-stage { grid-column: 1 / 4; grid-row: 7; }
+  .mera-expert-panel { grid-column: 1 / 4; grid-row: 9; }
+  .mera-projections { grid-column: 1 / 4; grid-row: 11; }
+  .mera-projections, .mera-expert-bank { gap: 12px; }
+  .mera-footer { margin-right: 24px; margin-left: 24px; }
+}
+@media (max-width: 520px) {
+  .mera-framework { --mera-font-size: 11px; }
+}
+@media (max-width: 460px) {
+  .mera-framework { padding-inline: 8px; }
+  .mera-network { padding-inline: 24px; grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr); }
+
+  .mera-projection { padding-inline: 4px; }
+  .mera-panel-expert { padding-inline: 4px; }
+  .mera-projections, .mera-expert-bank { gap: 12px; }
+  .mera-footer { margin-left: 16px; margin-right: 16px; }
+  .mera-alignment-marker { gap: 3px; padding-inline: 3px; font-size: 8px; }
+}
+
+
+/* Show the CT projection under its expert; keep the full expert panel. */
+.mera-projection.mera-expert-b { grid-column: 3; }
+
+@media (max-width: 600px) {
+  .mera-network { min-width: 560px; }
+}

@@ -1,208 +1,191 @@
 "use strict";
 
-// Each light streak follows one timeline, occluded by the token module.
-// Measure the real layout so the paths still join their targets after reflow.
+// RadWorld-style bus connections, adapted to MedVTok's shared visual interface.
 (() => {
-  const scene = document.querySelector(".interface-landscape");
-  const module = scene?.querySelector(".visual-token-module");
-  if (!scene || !module) return;
+  const scene = document.querySelector(".med-overview");
+  if (!scene) return;
 
-  const sources = [...scene.querySelectorAll(".modality-mosaic figure")];
-  const tasks = [...scene.querySelectorAll(".interface-output li")];
-  const colors = ["#bac6eb", "#a9cfca", "#edc2d2"];
+  const diagram = scene.querySelector(".med-overview-diagram");
+  const wires = scene.querySelector(".med-overview-wires");
+  const sourceGrid = scene.querySelector(".med-modality-grid");
+  const sources = [...sourceGrid.querySelectorAll(".med-modality")];
+  const inputTokens = scene.querySelector(".med-input-patches .med-token-grid");
+  const outputTokens = scene.querySelector(".med-shared-tokens .med-token-grid");
+  const inputStage = scene.querySelector(".med-input-patches");
+  const outputStage = scene.querySelector(".med-shared-tokens");
+  const model = scene.querySelector(".med-model");
+  const coreArrows = [...scene.querySelectorAll(".med-core-arrow")];
+  const buttons = [...scene.querySelectorAll("[data-overview-task]")];
+  const ports = [...scene.querySelectorAll(".med-task")];
+  const compact = window.matchMedia("(max-width: 900px)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const ns = "http://www.w3.org/2000/svg";
-  let visible = false;
+  const cycleDuration = 4200;
+  let selectedIndex = 0;
+  let pendingFrame;
+  let animationFrame;
+  let previousTime = null;
+  let elapsed = 0;
+  let inView = !("IntersectionObserver" in window);
+  let inputPackets = [];
+  let sharedPacket;
+  let outputPaths = [];
 
-  function svgElement(name, attributes = {}) {
-    const element = document.createElementNS(ns, name);
-    Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
-    return element;
+  function updateSelection() {
+    ports.forEach((port, index) => {
+      const active = index === selectedIndex;
+      port.classList.toggle("is-active", active);
+      if (port.matches("button")) port.setAttribute("aria-pressed", String(active));
+    });
+    outputPaths.forEach(({ guide }, index) => {
+      guide.classList.toggle("is-active", index === selectedIndex);
+    });
+    const activeGuide = outputPaths[selectedIndex]?.guide;
+    if (activeGuide) activeGuide.parentNode.append(activeGuide);
   }
 
-  const overlay = svgElement("svg", { class: "interface-flow", "aria-hidden": "true", focusable: "false" });
-  const defs = svgElement("defs");
-  const mask = svgElement("mask", { id: "interface-flow-mask", maskUnits: "userSpaceOnUse" });
-  const maskBackground = svgElement("rect", { fill: "white" });
-  mask.append(maskBackground);
-  const tokenMask = svgElement("rect", { class: "flow-token-mask", fill: "black" });
-  mask.append(tokenMask);
-  const labels = [...scene.querySelectorAll(".diagram-label, .diagram-footnote, .interface-core h3, .interface-core > p:last-child")];
-  const labelMasks = labels.map(() => {
-    const rect = svgElement("rect", { fill: "black", rx: 3 });
-    mask.append(rect);
-    return rect;
-  });
-  defs.append(mask);
-  overlay.append(defs);
-  const paths = svgElement("g", { mask: "url(#interface-flow-mask)" });
-  overlay.append(paths);
-  scene.prepend(overlay);
-
-  function makeRoute(kind, index) {
-    const color = colors[kind === "input" ? index : Math.floor(index / 2)];
-    const group = svgElement("g", { class: `flow-${kind}`, color });
-    const guide = svgElement("path", { class: "flow-guide" });
-    group.append(guide);
-    paths.append(group);
-    return { guide };
+  function movePacket(packet, progress) {
+    if (!packet) return;
+    const visible = progress !== null && progress > 0 && progress < 1;
+    packet.style.opacity = visible ? String(.65 * Math.min(progress / .12, (1 - progress) / .12, 1)) : "0";
+    if (visible) packet.style.strokeDashoffset = String(10 - progress * 110);
   }
-  const inputRoutes = colors.map((_, index) => makeRoute("input", index));
-  const outputRoutes = tasks.map((task, index) => {
-    task.style.setProperty("--flow-color", colors[Math.floor(index / 2)]);
-    return makeRoute("output", index);
-  });
-  const particles = tasks.map((_, index) => {
-    const packet = svgElement("path", {
-      class: `flow-packet${index % 2 ? " flow-packet-branch" : ""}`,
-      color: colors[Math.floor(index / 2)], pathLength: 100,
-    });
-    paths.append(packet);
-    return packet;
-  });
 
-  const activations = module.querySelector(".visual-token-activations");
-  const tokenActivations = [...module.querySelectorAll("use")].map(cell => {
-    const activation = svgElement("rect", {
-      class: "visual-token-activation", x: cell.getAttribute("x"), y: cell.getAttribute("y"),
-      width: 34, height: 34, rx: 2, color: cell.getAttribute("color") || colors[0],
+  function renderFlow(phase) {
+    const between = (start, end) => phase !== null && phase >= start && phase < end;
+    inputPackets.forEach(packet => movePacket(packet, phase === null ? null : phase / .27));
+    movePacket(sharedPacket, phase === null ? null : (phase - .27) / .08);
+    outputPaths.forEach(({ packet }, index) => {
+      movePacket(packet, phase !== null && index === selectedIndex ? (phase - .55) / .36 : null);
     });
-    activations.append(activation);
-    return activation;
-  });
+    inputStage.classList.toggle("is-flowing", between(.32, .41));
+    coreArrows[0].classList.toggle("is-flowing", between(.36, .43));
+    model.classList.toggle("is-flowing", between(.4, .49));
+    coreArrows[1].classList.toggle("is-flowing", between(.45, .52));
+    outputStage.classList.toggle("is-flowing", between(.47, .56));
+  }
 
-  function layout() {
-    // The overlay sits inside the scene's border; use its own pixel coordinates.
-    const bounds = overlay.getBoundingClientRect();
+  function animate(time) {
+    if (previousTime !== null) elapsed += time - previousTime;
+    previousTime = time;
+    if (elapsed >= cycleDuration) {
+      const steps = Math.floor(elapsed / cycleDuration);
+      selectedIndex = (selectedIndex + steps) % ports.length;
+      elapsed %= cycleDuration;
+      updateSelection();
+    }
+    renderFlow(elapsed / cycleDuration);
+    animationFrame = requestAnimationFrame(animate);
+  }
+
+  function updateMotion() {
+    const playing = inView && !document.hidden && !reducedMotion.matches;
+    if (playing && animationFrame === undefined) {
+      previousTime = null;
+      animationFrame = requestAnimationFrame(animate);
+    } else if (!playing) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = undefined;
+      previousTime = null;
+      renderFlow(null);
+    }
+  }
+
+  function draw() {
+    wires.replaceChildren();
+    inputPackets = [];
+    sharedPacket = undefined;
+    outputPaths = [];
+    if (compact.matches) return;
+    const bounds = diagram.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
-    const relative = (element) => {
+    wires.setAttribute("viewBox", `0 0 ${bounds.width} ${bounds.height}`);
+    const guides = document.createElementNS(ns, "g");
+    const packets = document.createElementNS(ns, "g");
+    wires.append(guides, packets);
+
+    function relative(element) {
       const rect = element.getBoundingClientRect();
-      return { left: rect.left - bounds.left, right: rect.right - bounds.left,
-        top: rect.top - bounds.top, bottom: rect.bottom - bounds.top, width: rect.width, height: rect.height };
-    };
-    const frame = relative(module.querySelector(".visual-token-frame"));
-    const stack = relative(module.querySelector(".visual-token-stack"));
-    const mosaic = relative(scene.querySelector(".modality-mosaic"));
-    const input = relative(scene.querySelector(".interface-input"));
-    const core = relative(scene.querySelector(".interface-core"));
-    const output = relative(scene.querySelector(".interface-output"));
-    const stackedInput = mosaic.bottom < frame.top;
-    const stackedOutput = output.top >= core.bottom;
-    overlay.setAttribute("viewBox", `0 0 ${bounds.width} ${bounds.height}`);
-    mask.setAttribute("x", -16);
-    mask.setAttribute("y", 0);
-    mask.setAttribute("width", bounds.width + 32);
-    mask.setAttribute("height", bounds.height);
-    Object.entries({ x: -16, y: 0, width: bounds.width + 32, height: bounds.height }).forEach(([key, value]) => maskBackground.setAttribute(key, value));
-    // Hide both the grid and its offset backing planes without restarting motion.
-    Object.entries({ x: stack.left - 2, y: stack.top - 2, width: stack.width + 4, height: stack.height + 4 })
-      .forEach(([key, value]) => tokenMask.setAttribute(key, value));
+      return {
+        left: rect.left - bounds.left, right: rect.right - bounds.left,
+        top: rect.top - bounds.top, bottom: rect.bottom - bounds.top,
+        centerY: rect.top + rect.height / 2 - bounds.top,
+      };
+    }
+    function path(d, className, layer = guides) {
+      const element = document.createElementNS(ns, "path");
+      element.setAttribute("d", d);
+      element.setAttribute("class", className);
+      layer.append(element);
+      return element;
+    }
+    function packet(d) {
+      const element = path(d, "med-overview-packet", packets);
+      element.setAttribute("pathLength", "100");
+      element.setAttribute("stroke-dasharray", "10 100");
+      return element;
+    }
 
-    inputRoutes.forEach((route, index) => {
-      let d, tx, ty;
-      if (stackedInput) {
-        const source = relative(sources[6 + index]);
-        const sx = source.left + source.width / 2, sy = source.bottom + 3;
-        tx = frame.left + frame.width * (index + 1) / 4;
-        ty = frame.top;
-        const bend = (sy + ty) / 2;
-        d = `M${sx} ${sy}C${sx} ${bend} ${tx} ${bend} ${tx} ${ty}`;
-      } else {
-        const source = relative(sources[index * 3 + 2]);
-        const sx = source.right + 3, sy = source.top + source.height / 2;
-        tx = frame.left;
-        ty = frame.top + frame.height * (index + 1) / 4;
-        const bend = (sx + tx) / 2;
-        d = `M${sx} ${sy}C${bend} ${sy} ${bend} ${ty} ${tx} ${ty}`;
-      }
-      route.guide.setAttribute("d", d);
-      route.end = { x: tx, y: ty };
+    const incoming = relative(inputTokens);
+    const outgoing = relative(outputTokens);
+    const sourceBounds = sources.map(relative);
+    const tokenX = incoming.left - 6;
+    const inputBus = (Math.max(...sourceBounds.map(source => source.right)) + tokenX) / 2;
+    sourceBounds.forEach(source => {
+      const branch = `M${source.right} ${source.centerY}H${inputBus}V${incoming.centerY}`;
+      path(`${branch}H${tokenX}`, "med-overview-wire");
+      inputPackets.push(packet(branch));
     });
+    sharedPacket = packet(`M${inputBus} ${incoming.centerY}H${tokenX}`);
 
-    outputRoutes.forEach((route, index) => {
-      const target = relative(tasks[index].querySelector(".task-vignette"));
-      const tx = target.left - 2, ty = target.top + target.height / 2;
-      let curve, sx, sy;
-      if (stackedOutput) {
-        sx = frame.left + frame.width * (index + .5) / tasks.length;
-        sy = frame.bottom;
-        const lane = target.left - 10, bend = Math.max(core.bottom, input.bottom) + 12;
-        curve = `C${sx} ${bend} ${lane} ${bend} ${lane} ${bend + 12}V${ty - 10}Q${lane} ${ty} ${tx} ${ty}`;
-      } else {
-        sx = frame.right;
-        sy = frame.top + frame.height * (index + .5) / tasks.length;
-        const bend = (sx + tx) / 2;
-        curve = `C${bend} ${sy} ${bend} ${ty} ${tx} ${ty}`;
-      }
-      route.guide.setAttribute("d", `M${sx} ${sy}${curve}`);
-      route.start = { x: sx, y: sy };
-      route.curve = curve;
+    const targets = ports.map(button => ({
+      button, bounds: relative(button),
+    }));
+    const startX = outgoing.right + 6;
+    const outputBus = (startX + Math.min(...targets.map(target => target.bounds.left))) / 2;
+    targets.forEach(({ button, bounds: target }) => {
+      const targetX = target.left;
+      const route = `M${startX} ${outgoing.centerY}H${outputBus}V${target.centerY}H${targetX}`;
+      outputPaths.push({ guide: path(route, "med-overview-wire"), packet: packet(route) });
     });
-
-    particles.forEach((packet, index) => {
-      const incoming = inputRoutes[Math.floor(index / 2)];
-      const outgoing = outputRoutes[index];
-      const entry = incoming.end, exit = outgoing.start;
-      const c1 = stackedInput
-        ? { x: entry.x, y: entry.y + frame.height * .4 }
-        : { x: entry.x + frame.width * .4, y: entry.y };
-      const c2 = stackedOutput
-        ? { x: exit.x, y: exit.y - frame.height * .4 }
-        : { x: exit.x - frame.width * .4, y: exit.y };
-      const throughGrid = `C${c1.x} ${c1.y} ${c2.x} ${c2.y} ${exit.x} ${exit.y}`;
-      packet.setAttribute("d", incoming.guide.getAttribute("d") + throughGrid + outgoing.curve);
-      const length = packet.getTotalLength();
-      const entryDistance = incoming.guide.getTotalLength() / length * 100;
-      const exitDistance = (length - outgoing.guide.getTotalLength()) / length * 100;
-      packet.style.setProperty("--flow-entry", -entryDistance);
-      packet.style.setProperty("--flow-exit", -exitDistance);
-      // Match the approach illustrations' thin, rounded light streak (~28 SVG units at .8 scale).
-      const dash = 22 / length * 100;
-      packet.style.strokeDasharray = `${dash} ${200 - dash}`;
-    });
-    tokenActivations.forEach((activation, index) => {
-      const step = stackedInput ? Math.floor(index / 6) : index % 6;
-      activation.style.setProperty("--token-delay", `${step * .36}s`);
-    });
-
-    labels.forEach((label, index) => {
-      const range = document.createRange();
-      range.selectNodeContents(label);
-      const rect = range.getBoundingClientRect();
-      Object.entries({ x: rect.left - bounds.left - 6, y: rect.top - bounds.top - 4,
-        width: rect.width + 12, height: rect.height + 8 }).forEach(([key, value]) => labelMasks[index].setAttribute(key, value));
-    });
-    scene.classList.add("flow-ready");
+    updateSelection();
+    renderFlow(animationFrame === undefined ? null : elapsed / cycleDuration);
   }
 
-  // Updating path geometry leaves the common animation timeline intact.
-  let resizeFrame;
-  function queueLayout() {
-    cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(layout);
-  }
-  if ("ResizeObserver" in window) {
-    const observer = new ResizeObserver(queueLayout);
-    [scene, module, ...sources, ...tasks].forEach(element => observer.observe(element));
-  } else {
-    window.addEventListener("resize", queueLayout);
-  }
-  document.fonts?.ready.then(queueLayout);
-  layout();
-
-  function update() {
-    scene.classList.add("motion-enabled");
-    scene.classList.toggle("is-flowing", visible && !document.hidden);
+  function queueDraw() {
+    cancelAnimationFrame(pendingFrame);
+    pendingFrame = requestAnimationFrame(draw);
   }
 
-  document.addEventListener("visibilitychange", update);
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      selectedIndex = ports.indexOf(button);
+      elapsed = 0;
+      previousTime = null;
+      updateSelection();
+      renderFlow(animationFrame === undefined ? null : 0);
+    });
+  });
 
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver((entries) => {
-      visible = entries.some((entry) => entry.isIntersecting);
-      update();
-    }, { threshold: 0 }).observe(scene);
-  } else {
-    visible = true;
+    const observer = new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      updateMotion();
+    }, { threshold: .1 });
+    observer.observe(scene);
   }
-  update();
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(queueDraw);
+    [diagram, sourceGrid, inputTokens, outputTokens, ...sources, ...ports].forEach(element => observer.observe(element));
+  } else {
+    window.addEventListener("resize", queueDraw, { passive: true });
+  }
+  compact.addEventListener("change", queueDraw);
+  reducedMotion.addEventListener("change", updateMotion);
+  document.addEventListener("visibilitychange", updateMotion);
+  document.fonts?.ready.then(queueDraw);
+  updateSelection();
+  updateMotion();
+  queueDraw();
 })();

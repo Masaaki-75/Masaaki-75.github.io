@@ -89,7 +89,18 @@
             96.9
           ]
         },
-        "description": "Paper-reported Accuracy (%) ↑ across the evaluated imaging modalities."
+        "description": "Paper-reported Accuracy (%) ↑ across the evaluated imaging modalities.",
+        "benchmarks": [
+          "JSIEC",
+          "ChestCTScan",
+          "HAM10K",
+          "PolypDiag",
+          "BRISC",
+          "OCTDL",
+          "LungHist700",
+          "BUSBRA",
+          "Kermany"
+        ]
       }
     },
     {
@@ -167,7 +178,18 @@
             95.19
           ]
         },
-        "description": "Paper-reported Recall@1 (%) ↑ across the evaluated imaging modalities."
+        "description": "Paper-reported Recall@1 (%) ↑ across the evaluated imaging modalities.",
+        "benchmarks": [
+          "JSIEC",
+          "ChestCTScan",
+          "HAM10K",
+          "PolypDiag",
+          "BRISC",
+          "OCTDL",
+          "LungHist700",
+          "BUSBRA",
+          "Kermany"
+        ]
       }
     },
     {
@@ -240,7 +262,17 @@
             61.13
           ]
         },
-        "description": "Paper-reported Dice (%) ↑ across the evaluated imaging modalities."
+        "description": "Paper-reported Dice (%) ↑ across the evaluated imaging modalities.",
+        "benchmarks": [
+          "MaplesDR",
+          "MosMedDataPlus",
+          "HAM10K",
+          "PolypDB",
+          "BRISC",
+          "PanNuke",
+          "BUSBRA",
+          "VinDr-RibCXR"
+        ]
       }
     },
     {
@@ -308,7 +340,16 @@
             69.17
           ]
         },
-        "description": "Paper-reported FID ↓ across the evaluated imaging modalities."
+        "description": "Paper-reported FID ↓ across the evaluated imaging modalities.",
+        "benchmarks": [
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M",
+          "GMAI-VL-5.5M"
+        ]
       }
     },
     {
@@ -427,7 +468,12 @@
             0.515
           ]
         },
-        "description": "GREEN scores for CT report generation, broken down by anatomical region. All three regions use the same CT modality."
+        "description": "GREEN scores for CT report generation, broken down by anatomical region. All three regions use the same CT modality.",
+        "benchmarks": [
+          "AMOS-MM",
+          "AMOS-MM",
+          "AMOS-MM"
+        ]
       }
     }
   ],
@@ -564,7 +610,18 @@
           98.28,
           97.21
         ]
-      }
+      },
+      "benchmarks": [
+        "JSIEC",
+        "ChestCTScan",
+        "HAM10K",
+        "PolypDiag",
+        "BRISC",
+        "OCTDL",
+        "LungHist700",
+        "BUSBRA",
+        "Kermany"
+      ]
     },
     "3d": {
       "modalities": [
@@ -612,7 +669,43 @@
           87.79,
           95.65
         ]
-      }
+      },
+      "benchmarks": [
+        "MRISegmenter",
+        "AMOS-MM"
+      ]
     }
+  },
+  "benchmark_name_source": {
+    "document": "MedVTok: A General-Purpose Medical Visual Tokenizer",
+    "table": "Table 8: Evaluation datasets grouped by downstream task",
+    "page": 28,
+    "corroborating_section": "Section 4.2, page 5",
+    "notes": "Dataset names are task-specific. Image synthesis rows are modality subsets of GMAI-VL-5.5M. Report generation rows are anatomical regions within AMOS-MM."
+  },
+  "benchmark_references": {
+    "JSIEC": "https://www.nature.com/articles/s41467-021-25138-w",
+    "ChestCTScan": "https://data.mendeley.com/datasets/5kbjrgsncf/3",
+    "HAM10K": "https://doi.org/10.1038/sdata.2018.161",
+    "PolypDiag": "https://arxiv.org/abs/2203.12121",
+    "BRISC": "https://arxiv.org/abs/2506.14318",
+    "OCTDL": "https://www.nature.com/articles/s41597-024-03182-7",
+    "LungHist700": "https://doi.org/10.1038/s41597-024-03944-3",
+    "BUSBRA": "https://zenodo.org/records/8231412",
+    "Kermany": "https://doi.org/10.1016/j.cell.2018.02.010",
+    "MRISegmenter": "https://pubs.rsna.org/doi/10.1148/radiol.241979",
+    "AMOS-MM": "https://era-ai-biomed.github.io/amos/dataset.html",
+    "MaplesDR": "https://www.nature.com/articles/s41597-024-03739-6",
+    "MosMedDataPlus": "https://github.com/HUANGLIZI/LViT#1-data-preparation",
+    "PolypDB": "https://arxiv.org/abs/2409.00045",
+    "PanNuke": "https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke/",
+    "VinDr-RibCXR": "https://arxiv.org/abs/2107.01327",
+    "GMAI-VL-5.5M": "https://huggingface.co/datasets/General-Medical-AI/GMAI-VL-5.5M",
+    "Fundus-MMBench": "https://huggingface.co/datasets/MeteorElf/Fundus-MMBench",
+    "MM-Skin": "https://arxiv.org/abs/2505.06152",
+    "Kvasir-VQA-x1": "https://datasets.simula.no/kvasir-vqa-x1/",
+    "PathVQA": "https://arxiv.org/abs/2003.10286",
+    "SLAKE": "https://www.med-vqa.com/slake/",
+    "GMAI-MMBench": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ab7e02fd60e47e2a379d567f6b54f04e-Abstract-Datasets_and_Benchmarks_Track.html"
   }
 }

@@ -32,18 +32,41 @@ document.addEventListener("click", (event) => {
   if (!event.target.closest(".navigation")) setMenu(false);
 });
 matchMedia("(max-width: 600px)").addEventListener("change", () => setMenu(false));
-if ("IntersectionObserver" in window) {
-  const navLinks = Array.from(navigation.querySelectorAll("a"));
-  const observer = new IntersectionObserver((entries) => {
-    const entry = entries.find((item) => item.isIntersecting);
-    if (!entry) return;
-    for (const link of navLinks) {
-      if (link.hash === `#${entry.target.id}`) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
-    }
-  }, { rootMargin: "-10% 0px -65% 0px" });
-  for (const link of navLinks) observer.observe(document.querySelector(link.hash));
+// Follow the heading below the sticky navigation at every viewport size.
+const navLinks = Array.from(navigation.querySelectorAll("a"));
+const navItems = navLinks.flatMap((link) =>
+  (link.dataset.navSections || link.hash.slice(1)).split(/\s+/).map((id) => ({
+    link,
+    heading: document.getElementById(id)?.querySelector(".kicker, h2"),
+  }))
+).filter((item) => item.heading);
+let navUpdatePending = false;
+function updateNavLocation() {
+  navUpdatePending = false;
+  const readingLine = document.querySelector(".site-header").getBoundingClientRect().bottom + 24;
+  let currentLink = null;
+  for (const { link, heading } of navItems) {
+    if (heading.getBoundingClientRect().top <= readingLine) currentLink = link;
+  }
+  // The final section may be too short to reach the heading threshold.
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+    currentLink = navItems[navItems.length - 1]?.link || null;
+  }
+  for (const link of navLinks) {
+    if (link === currentLink) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  }
 }
+function queueNavUpdate() {
+  if (navUpdatePending) return;
+  navUpdatePending = true;
+  requestAnimationFrame(updateNavLocation);
+}
+window.addEventListener("scroll", queueNavUpdate, { passive: true });
+window.addEventListener("resize", queueNavUpdate);
+window.addEventListener("load", queueNavUpdate);
+document.fonts?.ready.then(queueNavUpdate);
+queueNavUpdate();
 
 function primeImages(container) {
   for (const img of container.querySelectorAll("img")) {
@@ -84,88 +107,6 @@ for (const group of document.querySelectorAll('[role="tablist"]')) {
     });
   }
 }
-
-const trainingData = JSON.parse(document.getElementById("training-data").textContent);
-const corpus = document.getElementById("training-distribution");
-const selectedModality = { "2d": 0, "3d": 0 };
-let corpusDimension = "2d";
-function creditLink(label, href) {
-  const link = document.createElement("a");
-  link.textContent = label;
-  link.href = href;
-  link.target = "_blank";
-  link.rel = "noopener";
-  return link;
-}
-function renderCorpus() {
-  const collection = trainingData[corpusDimension];
-  const index = selectedModality[corpusDimension];
-  const modality = collection.modalities[index];
-  const media = modality.media;
-  const threeD = corpusDimension === "3d";
-  for (const button of corpus.querySelectorAll("[data-dimension]")) {
-    button.setAttribute("aria-pressed", String(button.dataset.dimension === corpusDimension));
-  }
-  for (const panel of corpus.querySelectorAll("[data-corpus-panel]")) {
-    panel.hidden = panel.dataset.corpusPanel !== corpusDimension;
-    for (const button of panel.querySelectorAll("[data-modality]")) {
-      button.setAttribute("aria-pressed", String(Number(button.dataset.modality) === selectedModality[panel.dataset.corpusPanel]));
-    }
-  }
-  const total = document.getElementById("corpus-total");
-  const totalUnit = document.createElement("span");
-  totalUnit.textContent = collection.unit;
-  total.replaceChildren(document.createTextNode((corpusDimension === "2d" ? "28M+" : "70K+") + " "), totalUnit);
-  document.getElementById("corpus-dimension-label").textContent = threeD ? "Native 3D imaging" : "2D imaging";
-  document.getElementById("corpus-modality-title").textContent = modality.name;
-  const share = document.getElementById("corpus-modality-share");
-  const shareScope = document.createElement("span");
-  shareScope.textContent = `of the ${corpusDimension.toUpperCase()} corpus`;
-  share.replaceChildren(document.createTextNode(`${(modality.count / collection.total * 100).toFixed(1)}%`), shareScope);
-  document.getElementById("corpus-modality-description").textContent = modality.description;
-  const frame = document.getElementById("corpus-image");
-  frame.replaceChildren();
-  if (threeD) {
-    const views = document.createElement("div");
-    views.className = "corpus-volume";
-    for (const [axis, src] of Object.entries(media.faces)) {
-      const figure = document.createElement("figure");
-      const img = new Image();
-      img.src = src;
-      img.alt = `Illustrative ${modality.name} ${axis} view from 3D Slicer sample data`;
-      img.decoding = "async";
-      const caption = document.createElement("figcaption");
-      caption.textContent = axis.charAt(0).toUpperCase() + axis.slice(1);
-      figure.append(img, caption);
-      views.append(figure);
-    }
-    frame.append(views);
-  } else {
-    const img = new Image();
-    img.src = media.image;
-    img.alt = media.alt;
-    img.width = media.display?.size[0] || 500;
-    img.height = media.display?.size[1] || 500;
-    img.decoding = "async";
-    img.classList.toggle("is-flipped", Boolean(media.display?.flip_vertical));
-    frame.append(img);
-  }
-  document.getElementById("corpus-credit").replaceChildren(
-    document.createTextNode(threeD ? "Illustrative orthogonal views · " : "Illustrative image · "),
-    creditLink(media.author, media.source_url),
-    document.createTextNode(" · "),
-    creditLink(media.license, media.license_url)
-  );
-}
-corpus.addEventListener("click", (event) => {
-  const dimension = event.target.closest("[data-dimension]");
-  const modality = event.target.closest("[data-modality]");
-  if (dimension) corpusDimension = dimension.dataset.dimension;
-  else if (modality) selectedModality[corpusDimension] = Number(modality.dataset.modality);
-  else return;
-  renderCorpus();
-});
-renderCorpus();
 
 // Native dialog keeps Escape, focus restoration, and full-resolution links usable.
 const figureDialog = document.getElementById("figure-dialog");
@@ -378,6 +319,8 @@ for (const button of document.querySelectorAll("[data-copy]")) {
       button.textContent = "Copied ✓";
       status.textContent = button.dataset.copy === "bibtex" ? "BibTeX copied to clipboard." : "Inference example copied to clipboard.";
     } catch {
+      const hiddenContainer = source.closest("[hidden]");
+      if (hiddenContainer) hiddenContainer.hidden = false;
       const selection = window.getSelection();
       const range = document.createRange();
       range.selectNodeContents(source);

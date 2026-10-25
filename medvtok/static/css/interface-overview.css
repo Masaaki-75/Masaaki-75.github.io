@@ -1,0 +1,310 @@
+/* The compact model, token arrays and bus connections follow RadWorld's overview. */
+.med-overview {
+  --overview-inset: 20px;
+  max-width: 1060px;
+  margin-inline: auto;
+  padding-top: var(--overview-inset);
+  scroll-margin-top: calc(0px - var(--overview-inset));
+}
+
+.med-overview-diagram {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 38px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.med-overview-diagram > div {
+  position: relative;
+  min-width: 0;
+  z-index: 1;
+}
+
+.med-overview-inputs,.med-overview-outputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.med-overview-wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.med-overview-wire {
+  fill: none;
+  stroke: #343640;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke .2s ease;
+}
+
+.med-overview-wire.is-active {
+  stroke: #4c5364;
+}
+
+.med-overview-packet {
+  fill: none;
+  stroke: #8995ad;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+}
+
+.med-token-stage.is-flowing .med-token-grid i {
+  opacity: .7;
+  border-color: #8995ad99;
+  background: #8496c32b;
+}
+
+.med-model.is-flowing {
+  border-color: #77839e;
+}
+
+.med-core-arrow.is-flowing {
+  stroke: #8995ad;
+}
+
+.med-overview-label {
+  margin-bottom: 20px;
+  color: #b3b8c9;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+}
+
+.med-overview-footnote {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--faint);
+  font-size: 10px;
+  line-height: 17px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.med-overview-core {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.med-core-content {
+  margin-block: auto;
+}
+
+.med-core-chain {
+  display: grid;
+  grid-template-columns: 60px 16px 148px 16px 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.med-token-stage {
+  position: relative;
+  min-width: 0;
+}
+
+.med-token-stage > span {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  width: 80px;
+  transform: translateX(-50%);
+  color: #a5a9b9;
+  font-size: 10px;
+  line-height: 14px;
+  text-wrap: balance;
+}
+
+.med-token-grid {
+  display: grid;
+  grid-template-columns: repeat(3,6px);
+  gap: 3px;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.med-token-grid i {
+  width: 6px;
+  height: 6px;
+  border: .75px solid #b4c0e4aa;
+  border-radius: .75px;
+  background: #8496c333;
+  opacity: .7;
+}
+
+.med-token-grid i:nth-child(3n) { opacity: .45; }
+.med-token-grid i:nth-child(5n) { opacity: .9; }
+.med-input-patches i:nth-child(4n) { background: #a9cfca33; border-color: #a9cfcaaa; }
+.med-input-patches i:nth-child(7n) { background: #edc2d233; border-color: #edc2d2aa; }
+
+.med-core-arrow {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #77839f;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.med-model {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding: 12px;
+  border: 1px solid #66718e;
+  border-radius: 9px;
+  background: #20232d;
+  transition: border-color .2s ease,background-color .2s ease;
+}
+
+.med-model h3 {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.med-model-label {
+  position: absolute;
+  bottom: calc(100% + 22px);
+  left: 50%;
+  width: max-content;
+  margin: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.med-core-qualities {
+  margin-top: 22px;
+  color: #9fa7bc;
+  font-size: 10px;
+  line-height: 18px;
+}
+
+.med-modality-grid,.med-task-list {
+  display: grid;
+  flex: 1;
+  align-self: center;
+  width: min(100%,228px);
+  max-width: 100%;
+  align-content: space-between;
+  gap: 9px;
+}
+
+.med-modality,.med-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #363947;
+  border-radius: 8px;
+  background: #17181f;
+  color: #bdc1d0;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  transition: color .2s ease,border-color .2s ease,background-color .2s ease;
+}
+
+.med-task:hover,.med-task:focus-visible {
+  color: #c7cbd7;
+  border-color: #485063;
+  background: #191b22;
+}
+
+.med-task.is-active {
+  color: #d3d8e5;
+  border-color: #66718e;
+  background: #1c1e26;
+}
+
+.med-task-more,.med-task-more:hover {
+  color: #989fb3;
+  border-color: #363947;
+  border-style: dashed;
+  background: #15161c;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.med-task-more.is-active {
+  color: #d3d8e5;
+  border-color: #66718e;
+  background: #1c1e26;
+}
+
+.med-overview-down {
+  display: none;
+}
+
+@media(max-width:1050px) {
+  .med-overview-diagram {
+    gap: 25px;
+  }
+  .med-core-chain {
+    grid-template-columns: 48px 12px 120px 12px 48px;
+  }
+  .med-token-grid { grid-template-columns: repeat(3,5px); gap: 2px; }
+  .med-token-grid i { width: 5px; height: 5px; }
+  .med-core-arrow { width: 12px; }
+  .med-modality,.med-task { font-size: 11px; }
+  .med-task-more { font-size: 20px; }
+}
+
+@media(max-width:900px) {
+  .med-overview { --overview-inset: 6px; max-width: 620px; }
+  .med-overview-diagram { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .med-overview-wires { display: none; }
+  .med-overview-inputs { width: 100%; }
+  .med-overview-footnote { margin-top: 16px; padding-top: 0; }
+  .med-overview-down { display: block; justify-self: center; color: #77839f; font-size: 24px; line-height: 24px; }
+  .med-overview-core { justify-self: center; }
+  .med-core-chain { grid-template-columns: 60px 16px 148px 16px 60px; }
+  .med-token-grid { grid-template-columns: repeat(3,6px); gap: 3px; }
+  .med-token-grid i { width: 6px; height: 6px; }
+  .med-core-arrow { width: 16px; }
+  .med-core-qualities { margin-top: 18px; }
+  .med-modality-grid,.med-task-list { grid-template-columns: repeat(3,minmax(0,1fr)); width: 100%; gap: 14px 18px; }
+  .med-modality,.med-task { height: 56px; padding: 8px 10px; font-size: 12px; }
+  .med-task-more { grid-column: 1 / -1; justify-self: center; width: calc((100% - 36px) / 3); font-size: 20px; }
+}
+
+@media(max-width:520px) {
+  .med-overview-label { font-size: 12px; }
+  .med-core-chain { grid-template-columns: 56px 12px 122px 12px 56px; gap: 5px; }
+  .med-core-arrow { width: 12px; }
+  .med-modality-grid,.med-task-list { gap: 16px 8px; }
+  .med-modality,.med-task { height: 70px; font-size: 11px; line-height: 17px; }
+  .med-task-more { width: calc((100% - 16px) / 3); font-size: 20px; line-height: 1; }
+}
+
+@media(max-width:359px) {
+  .med-core-chain { grid-template-columns: 48px 10px 110px 10px 48px; }
+  .med-token-grid { grid-template-columns: repeat(3,5px); gap: 2px; }
+  .med-token-grid i { width: 5px; height: 5px; }
+  .med-core-arrow { width: 10px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .med-modality,.med-task,.med-model,.med-overview-wire { transition: none; }
+}
