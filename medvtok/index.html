@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="static/css/interface-overview.css?v=anchor-alignment-1">
   <link rel="stylesheet" href="static/css/method-overview.css?v=centered-experts-45">
   <link rel="stylesheet" href="static/css/fidelity-benchmarks.css?v=summary-benchmarks-10">
-  <script defer src="static/js/latent-space.js?v=subtle-flow-1"></script>
+  <script defer src="static/js/latent-space.js?v=parallel-tasks-1"></script>
   <script defer src="static/js/method-overview.js?v=alignment-timing-41"></script>
   <script defer src="static/js/main.js?v=grouped-navigation-6"></script>
   <script defer src="static/js/fidelity-benchmarks.js?v=summary-benchmarks-10"></script>
@@ -168,7 +168,6 @@
               <div class="med-modality" role="listitem"><span>Ultrasound</span></div>
               <div class="med-modality" role="listitem"><span>OCT</span></div>
             </div>
-            <p class="med-overview-footnote">9 modalities · 2D images &amp; 3D volumes</p>
           </div>
           <span class="med-overview-down" aria-hidden="true">↓</span>
           <div class="med-overview-core">
@@ -190,16 +189,15 @@
           <span class="med-overview-down" aria-hidden="true">↓</span>
           <div class="med-overview-outputs">
             <p class="med-overview-label">Downstream tasks</p>
-            <div class="med-task-list" role="group" aria-label="Select a downstream task">
-              <button class="med-task is-active" type="button" data-overview-task="classification" aria-pressed="true"><span>Classification</span></button>
-              <button class="med-task" type="button" data-overview-task="retrieval" aria-pressed="false"><span>Retrieval</span></button>
-              <button class="med-task" type="button" data-overview-task="segmentation" aria-pressed="false"><span>Segmentation</span></button>
-              <button class="med-task" type="button" data-overview-task="synthesis" aria-pressed="false"><span>Image synthesis</span></button>
-              <button class="med-task" type="button" data-overview-task="vqa" aria-pressed="false"><span>Visual question answering</span></button>
-              <button class="med-task" type="button" data-overview-task="report" aria-pressed="false"><span>Report generation</span></button>
+            <div class="med-task-list" role="group" aria-label="Replay the shared-token flow to all downstream tasks">
+              <button class="med-task" type="button" data-overview-task="classification" title="Replay flow to all tasks"><span>Classification</span></button>
+              <button class="med-task" type="button" data-overview-task="retrieval" title="Replay flow to all tasks"><span>Retrieval</span></button>
+              <button class="med-task" type="button" data-overview-task="segmentation" title="Replay flow to all tasks"><span>Segmentation</span></button>
+              <button class="med-task" type="button" data-overview-task="synthesis" title="Replay flow to all tasks"><span>Image synthesis</span></button>
+              <button class="med-task" type="button" data-overview-task="vqa" title="Replay flow to all tasks"><span>Visual question answering</span></button>
+              <button class="med-task" type="button" data-overview-task="report" title="Replay flow to all tasks"><span>Report generation</span></button>
               <div class="med-task med-task-more" aria-hidden="true">…</div>
             </div>
-            <p class="med-overview-footnote">Frozen tokenizer · task-specific models</p>
           </div>
         </div>
       </div>
@@ -241,7 +239,7 @@
           </div>
         </div>
         </div>
-        <figcaption class="mera-footer" id="mera-framework-caption">CT example · One input, one corresponding expert, two alignments.</figcaption>
+        <figcaption class="mera-footer" id="mera-framework-caption">One input, one corresponding expert, two alignments.</figcaption>
       </figure>
     </div>
     <a class="section-next" href="#data" aria-label="Next section: The corpus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
@@ -340,7 +338,6 @@
             </tr>
           </tbody>
         </table>
-        <p class="corpus-stat-note" id="corpus-stat-note">Rounded sample counts · Percentages within each dimension · — Not included</p>
       </div>
     </div>
     <a class="section-next" href="#reconstruction" aria-label="Next section: Token fidelity"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
@@ -552,8 +549,7 @@
 </tr></tbody></table></div>
         </div>
         <div class="benchmark-notes">
-          <p>↑ Higher is better. <strong>Bold</strong> marks the best score in each row. — Not reported.</p>
-          <a href="assets/benchmark-data.json" download="medvtok-benchmark-data.json">Benchmark data</a>
+          <p>↑ Higher is better.</p>
         </div>
       </div>
     </div>
@@ -678,7 +674,7 @@
 </tbody></table></div>
         </div>
         <div class="benchmark-notes">
-          <p>Paper-reported scores with the tokenizer frozen. ↑ Higher is better; ↓ lower is better. <strong>Bold</strong> marks the best score in each row.</p>
+          <p>Evaluated with the tokenizer frozen. ↑ Higher is better; ↓ lower is better.</p>
           <a href="assets/benchmark-data.json" download="medvtok-benchmark-data.json">Benchmark data</a>
         </div>
       </div>

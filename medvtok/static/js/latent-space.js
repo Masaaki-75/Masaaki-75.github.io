@@ -21,7 +21,6 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const ns = "http://www.w3.org/2000/svg";
   const cycleDuration = 4200;
-  let selectedIndex = 0;
   let pendingFrame;
   let animationFrame;
   let previousTime = null;
@@ -31,17 +30,13 @@
   let sharedPacket;
   let outputPaths = [];
 
-  function updateSelection() {
-    ports.forEach((port, index) => {
-      const active = index === selectedIndex;
+  function updateActivation(active) {
+    ports.forEach(port => {
       port.classList.toggle("is-active", active);
-      if (port.matches("button")) port.setAttribute("aria-pressed", String(active));
     });
-    outputPaths.forEach(({ guide }, index) => {
-      guide.classList.toggle("is-active", index === selectedIndex);
+    outputPaths.forEach(({ guide }) => {
+      guide.classList.toggle("is-active", active);
     });
-    const activeGuide = outputPaths[selectedIndex]?.guide;
-    if (activeGuide) activeGuide.parentNode.append(activeGuide);
   }
 
   function movePacket(packet, progress) {
@@ -55,9 +50,11 @@
     const between = (start, end) => phase !== null && phase >= start && phase < end;
     inputPackets.forEach(packet => movePacket(packet, phase === null ? null : phase / .27));
     movePacket(sharedPacket, phase === null ? null : (phase - .27) / .08);
-    outputPaths.forEach(({ packet }, index) => {
-      movePacket(packet, phase !== null && index === selectedIndex ? (phase - .55) / .36 : null);
+    outputPaths.forEach(({ packet }) => {
+      movePacket(packet, phase === null ? null : (phase - .55) / .36);
     });
+    // Every task receives the same shared representation in this cycle.
+    updateActivation(between(.87, 1));
     inputStage.classList.toggle("is-flowing", between(.32, .41));
     coreArrows[0].classList.toggle("is-flowing", between(.36, .43));
     model.classList.toggle("is-flowing", between(.4, .49));
@@ -69,10 +66,7 @@
     if (previousTime !== null) elapsed += time - previousTime;
     previousTime = time;
     if (elapsed >= cycleDuration) {
-      const steps = Math.floor(elapsed / cycleDuration);
-      selectedIndex = (selectedIndex + steps) % ports.length;
       elapsed %= cycleDuration;
-      updateSelection();
     }
     renderFlow(elapsed / cycleDuration);
     animationFrame = requestAnimationFrame(animate);
@@ -148,7 +142,6 @@
       const route = `M${startX} ${outgoing.centerY}H${outputBus}V${target.centerY}H${targetX}`;
       outputPaths.push({ guide: path(route, "med-overview-wire"), packet: packet(route) });
     });
-    updateSelection();
     renderFlow(animationFrame === undefined ? null : elapsed / cycleDuration);
   }
 
@@ -159,10 +152,8 @@
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      selectedIndex = ports.indexOf(button);
       elapsed = 0;
       previousTime = null;
-      updateSelection();
       renderFlow(animationFrame === undefined ? null : 0);
     });
   });
@@ -185,7 +176,6 @@
   reducedMotion.addEventListener("change", updateMotion);
   document.addEventListener("visibilitychange", updateMotion);
   document.fonts?.ready.then(queueDraw);
-  updateSelection();
   updateMotion();
   queueDraw();
 })();
