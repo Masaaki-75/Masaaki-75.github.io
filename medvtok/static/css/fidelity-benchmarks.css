@@ -50,9 +50,15 @@
 .recon-2d-grid .figure-link img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
 .recon-2d-grid .figure-link:hover { border-color: var(--accent); }
 #panel-recon3d .volume-toolbar { margin-top: 24px; }
+#panel-recon3d .volume-toolbar h3 { font-size: 17px; }
+#panel-recon3d .volume-case + .volume-case { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); }
+#panel-recon3d .volume-card > h4 { margin: 0; font-size: 12px; font-weight: 500; color: #b7bdd5; }
+#panel-recon3d .volume-card:last-child > h4 { color: var(--accent); }
 #panel-recon3d .volume-card:last-child { border-color: #596682; }
 #panel-recon3d .volume-reset { border-radius: 7px; }
 #panel-recon3d [data-volume-retry] { margin-top: 12px; }
+#panel-recon3d .volume-status { margin-top: 14px; color: var(--muted); font-size: 11px; }
+#panel-recon3d .volume-status:empty { display: none; }
 @media (max-width: 760px) {
   #fidelity-benchmarks .benchmark-table { min-width: 600px; }
   #fidelity-benchmarks .benchmark-label-column { width: 28%; }
@@ -63,8 +69,6 @@
 @media (max-width: 520px) {
   #fidelity-benchmarks .benchmark-metric-controls { flex-wrap: wrap; gap: 10px; }
   #fidelity-benchmarks .benchmark-metric-switch button { padding-inline: 12px; }
-  #panel-recon3d .benchmark-filter { width: auto; }
-  #panel-recon3d .benchmark-filter select { min-width: 155px; }
   .benchmark-toolbar { align-items: flex-start; flex-direction: column; gap: 14px; }
   .benchmark-filter { width: 100%; }
   .benchmark-filter > span { display: none; }

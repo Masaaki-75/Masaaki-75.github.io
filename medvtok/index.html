@@ -18,12 +18,12 @@
   <link rel="stylesheet" href="static/css/hero-gallery.css?v=smaller-tiles-3">
   <link rel="stylesheet" href="static/css/interface-overview.css?v=anchor-alignment-1">
   <link rel="stylesheet" href="static/css/method-overview.css?v=centered-experts-45">
-  <link rel="stylesheet" href="static/css/fidelity-benchmarks.css?v=reconstruction-dimensions-2">
+  <link rel="stylesheet" href="static/css/fidelity-benchmarks.css?v=combined-volumes-3">
   <script defer src="static/js/latent-space.js?v=parallel-tasks-1"></script>
   <script defer src="static/js/method-overview.js?v=alignment-timing-41"></script>
   <script defer src="static/js/main.js?v=grouped-navigation-6"></script>
-  <script defer src="static/js/reconstruction.js?v=lazy-volume-pair-2"></script>
-  <script defer src="static/js/fidelity-benchmarks.js?v=reconstruction-dimensions-2"></script>
+  <script defer src="static/js/reconstruction.js?v=combined-volumes-3"></script>
+  <script defer src="static/js/fidelity-benchmarks.js?v=combined-volumes-3"></script>
 </head>
 <body>
 <a class="skip-link" href="#overview">Skip to content</a>
@@ -557,130 +557,218 @@
           </div>
           <div id="panel-recon2d" class="recon-2d-grid" role="region" aria-label="Input and MedVTok reconstruction across nine 2D modalities">
             <article class="recon-case">
-              <div class="recon-case-header"><h3>Fundus</h3><span>JSIEC</span></div>
+              <div class="recon-case-header"><h3>Fundus</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/fundus-gt.webp" data-zoom data-display-width="512" data-caption="Fundus · JSIEC · Input" aria-label="Enlarge Fundus · Input"><img data-reconstruction-src="assets/reconstruction/2d/fundus-gt.webp" alt="Fundus · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/fundus-gt.webp" data-zoom data-display-width="512" data-caption="Fundus · Input" aria-label="Enlarge Fundus · Input"><img data-reconstruction-src="assets/reconstruction/2d/fundus-gt.webp" alt="Fundus · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/fundus-reconstruction.webp" data-zoom data-display-width="512" data-caption="Fundus · JSIEC · MedVTok" aria-label="Enlarge Fundus · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/fundus-reconstruction.webp" alt="Fundus · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/fundus-reconstruction.webp" data-zoom data-display-width="512" data-caption="Fundus · MedVTok" aria-label="Enlarge Fundus · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/fundus-reconstruction.webp" alt="Fundus · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>CT</h3><span>ChestCTScan</span></div>
+              <div class="recon-case-header"><h3>CT</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/ct-gt.webp" data-zoom data-display-width="512" data-caption="CT · ChestCTScan · Input" aria-label="Enlarge CT · Input"><img data-reconstruction-src="assets/reconstruction/2d/ct-gt.webp" alt="CT · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/ct-gt.webp" data-zoom data-display-width="512" data-caption="CT · Input" aria-label="Enlarge CT · Input"><img data-reconstruction-src="assets/reconstruction/2d/ct-gt.webp" alt="CT · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/ct-reconstruction.webp" data-zoom data-display-width="512" data-caption="CT · ChestCTScan · MedVTok" aria-label="Enlarge CT · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/ct-reconstruction.webp" alt="CT · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/ct-reconstruction.webp" data-zoom data-display-width="512" data-caption="CT · MedVTok" aria-label="Enlarge CT · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/ct-reconstruction.webp" alt="CT · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>Dermoscopy</h3><span>HAM10K</span></div>
+              <div class="recon-case-header"><h3>Dermoscopy</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/dermoscopy-gt.webp" data-zoom data-display-width="512" data-caption="Dermoscopy · HAM10K · Input" aria-label="Enlarge Dermoscopy · Input"><img data-reconstruction-src="assets/reconstruction/2d/dermoscopy-gt.webp" alt="Dermoscopy · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/dermoscopy-gt.webp" data-zoom data-display-width="512" data-caption="Dermoscopy · Input" aria-label="Enlarge Dermoscopy · Input"><img data-reconstruction-src="assets/reconstruction/2d/dermoscopy-gt.webp" alt="Dermoscopy · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/dermoscopy-reconstruction.webp" data-zoom data-display-width="512" data-caption="Dermoscopy · HAM10K · MedVTok" aria-label="Enlarge Dermoscopy · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/dermoscopy-reconstruction.webp" alt="Dermoscopy · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/dermoscopy-reconstruction.webp" data-zoom data-display-width="512" data-caption="Dermoscopy · MedVTok" aria-label="Enlarge Dermoscopy · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/dermoscopy-reconstruction.webp" alt="Dermoscopy · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>Endoscopy</h3><span>PolypDiag</span></div>
+              <div class="recon-case-header"><h3>Endoscopy</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/endoscopy-gt.webp" data-zoom data-display-width="512" data-caption="Endoscopy · PolypDiag · Input" aria-label="Enlarge Endoscopy · Input"><img data-reconstruction-src="assets/reconstruction/2d/endoscopy-gt.webp" alt="Endoscopy · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/endoscopy-gt.webp" data-zoom data-display-width="512" data-caption="Endoscopy · Input" aria-label="Enlarge Endoscopy · Input"><img data-reconstruction-src="assets/reconstruction/2d/endoscopy-gt.webp" alt="Endoscopy · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/endoscopy-reconstruction.webp" data-zoom data-display-width="512" data-caption="Endoscopy · PolypDiag · MedVTok" aria-label="Enlarge Endoscopy · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/endoscopy-reconstruction.webp" alt="Endoscopy · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/endoscopy-reconstruction.webp" data-zoom data-display-width="512" data-caption="Endoscopy · MedVTok" aria-label="Enlarge Endoscopy · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/endoscopy-reconstruction.webp" alt="Endoscopy · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>MRI</h3><span>BRISC</span></div>
+              <div class="recon-case-header"><h3>MRI</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/mri-gt.webp" data-zoom data-display-width="512" data-caption="MRI · BRISC · Input" aria-label="Enlarge MRI · Input"><img data-reconstruction-src="assets/reconstruction/2d/mri-gt.webp" alt="MRI · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/mri-gt.webp" data-zoom data-display-width="512" data-caption="MRI · Input" aria-label="Enlarge MRI · Input"><img data-reconstruction-src="assets/reconstruction/2d/mri-gt.webp" alt="MRI · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/mri-reconstruction.webp" data-zoom data-display-width="512" data-caption="MRI · BRISC · MedVTok" aria-label="Enlarge MRI · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/mri-reconstruction.webp" alt="MRI · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/mri-reconstruction.webp" data-zoom data-display-width="512" data-caption="MRI · MedVTok" aria-label="Enlarge MRI · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/mri-reconstruction.webp" alt="MRI · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>OCT</h3><span>OCTDL</span></div>
+              <div class="recon-case-header"><h3>OCT</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/oct-gt.webp" data-zoom data-display-width="512" data-caption="OCT · OCTDL · Input" aria-label="Enlarge OCT · Input"><img data-reconstruction-src="assets/reconstruction/2d/oct-gt.webp" alt="OCT · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/oct-gt.webp" data-zoom data-display-width="512" data-caption="OCT · Input" aria-label="Enlarge OCT · Input"><img data-reconstruction-src="assets/reconstruction/2d/oct-gt.webp" alt="OCT · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/oct-reconstruction.webp" data-zoom data-display-width="512" data-caption="OCT · OCTDL · MedVTok" aria-label="Enlarge OCT · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/oct-reconstruction.webp" alt="OCT · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/oct-reconstruction.webp" data-zoom data-display-width="512" data-caption="OCT · MedVTok" aria-label="Enlarge OCT · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/oct-reconstruction.webp" alt="OCT · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>Histopathology</h3><span>LungHist700</span></div>
+              <div class="recon-case-header"><h3>Histopathology</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/pathology-gt.webp" data-zoom data-display-width="512" data-caption="Histopathology · LungHist700 · Input" aria-label="Enlarge Histopathology · Input"><img data-reconstruction-src="assets/reconstruction/2d/pathology-gt.webp" alt="Histopathology · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/pathology-gt.webp" data-zoom data-display-width="512" data-caption="Histopathology · Input" aria-label="Enlarge Histopathology · Input"><img data-reconstruction-src="assets/reconstruction/2d/pathology-gt.webp" alt="Histopathology · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/pathology-reconstruction.webp" data-zoom data-display-width="512" data-caption="Histopathology · LungHist700 · MedVTok" aria-label="Enlarge Histopathology · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/pathology-reconstruction.webp" alt="Histopathology · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/pathology-reconstruction.webp" data-zoom data-display-width="512" data-caption="Histopathology · MedVTok" aria-label="Enlarge Histopathology · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/pathology-reconstruction.webp" alt="Histopathology · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>Ultrasound</h3><span>BUSBRA</span></div>
+              <div class="recon-case-header"><h3>Ultrasound</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/ultrasound-gt.webp" data-zoom data-display-width="512" data-caption="Ultrasound · BUSBRA · Input" aria-label="Enlarge Ultrasound · Input"><img data-reconstruction-src="assets/reconstruction/2d/ultrasound-gt.webp" alt="Ultrasound · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/ultrasound-gt.webp" data-zoom data-display-width="512" data-caption="Ultrasound · Input" aria-label="Enlarge Ultrasound · Input"><img data-reconstruction-src="assets/reconstruction/2d/ultrasound-gt.webp" alt="Ultrasound · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/ultrasound-reconstruction.webp" data-zoom data-display-width="512" data-caption="Ultrasound · BUSBRA · MedVTok" aria-label="Enlarge Ultrasound · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/ultrasound-reconstruction.webp" alt="Ultrasound · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/ultrasound-reconstruction.webp" data-zoom data-display-width="512" data-caption="Ultrasound · MedVTok" aria-label="Enlarge Ultrasound · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/ultrasound-reconstruction.webp" alt="Ultrasound · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
             <article class="recon-case">
-              <div class="recon-case-header"><h3>X-ray</h3><span>Kermany</span></div>
+              <div class="recon-case-header"><h3>X-ray</h3></div>
               <div class="recon-pair">
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/xray-gt.webp" data-zoom data-display-width="512" data-caption="X-ray · Kermany · Input" aria-label="Enlarge X-ray · Input"><img data-reconstruction-src="assets/reconstruction/2d/xray-gt.webp" alt="X-ray · Input" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/xray-gt.webp" data-zoom data-display-width="512" data-caption="X-ray · Input" aria-label="Enlarge X-ray · Input"><img data-reconstruction-src="assets/reconstruction/2d/xray-gt.webp" alt="X-ray · Input" width="512" height="512" decoding="async"></a>
                   <figcaption>Input</figcaption>
                 </figure>
                 <figure class="recon-image">
-                  <a class="figure-link" href="assets/reconstruction/2d/xray-reconstruction.webp" data-zoom data-display-width="512" data-caption="X-ray · Kermany · MedVTok" aria-label="Enlarge X-ray · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/xray-reconstruction.webp" alt="X-ray · MedVTok" width="512" height="512" decoding="async"></a>
+                  <a class="figure-link" href="assets/reconstruction/2d/xray-reconstruction.webp" data-zoom data-display-width="512" data-caption="X-ray · MedVTok" aria-label="Enlarge X-ray · MedVTok"><img data-reconstruction-src="assets/reconstruction/2d/xray-reconstruction.webp" alt="X-ray · MedVTok" width="512" height="512" decoding="async"></a>
                   <figcaption>MedVTok</figcaption>
                 </figure>
               </div>
             </article>
           </div>
           <div id="panel-recon3d" role="region" aria-label="Paired 3D reconstruction volumes" hidden>
-  <div class="volume-toolbar"><label class="benchmark-filter"><span>Volume</span><select data-volume-select aria-label="Choose a paired volume example"><option value="0">CT · AMOS-MM</option><option value="1">MRI · MRISegmenter</option></select></label><button type="button" class="volume-reset" data-volume-reset>Reset view ↺</button></div>
-  <div class="volume-case-summary"><p id="volume-case-label">CT · AMOS-MM · amos_0212</p><p id="volume-window-label">Matched CT soft-tissue window</p></div>
-  <div class="volume-comparison" id="volume-comparison" aria-busy="false"><article class="volume-card"><h3>Input</h3><div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="gt" aria-label="Input orthogonal-slice cube. Drag to rotate; arrow keys rotate, Home resets."><img class="volume-fallback" alt="Input, paired CT coronal slice" width="400" height="400" decoding="async"><div class="recon-volume"><i class="cube-wire front" aria-hidden="true"></i><i class="cube-wire back" aria-hidden="true"></i><i class="cube-wire left" aria-hidden="true"></i><i class="cube-wire right" aria-hidden="true"></i><i class="cube-wire top" aria-hidden="true"></i><i class="cube-wire bottom" aria-hidden="true"></i><canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas><canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas><canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas></div></div></article><article class="volume-card"><h3>MedVTok</h3><div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="reconstruction" aria-label="MedVTok orthogonal-slice cube. Drag to rotate; arrow keys rotate, Home resets."><img class="volume-fallback" alt="MedVTok, paired CT coronal slice" width="400" height="400" decoding="async"><div class="recon-volume"><i class="cube-wire front" aria-hidden="true"></i><i class="cube-wire back" aria-hidden="true"></i><i class="cube-wire left" aria-hidden="true"></i><i class="cube-wire right" aria-hidden="true"></i><i class="cube-wire top" aria-hidden="true"></i><i class="cube-wire bottom" aria-hidden="true"></i><canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas><canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas><canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas></div></div></article></div>
-  <div class="volume-axis-controls" role="group" aria-label="Synchronized slice positions"><label><span class="volume-axis-label">Sagittal<output data-slice-readout="sagittal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="sagittal" aria-label="Sagittal slice position"></label><label><span class="volume-axis-label">Coronal<output data-slice-readout="coronal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="coronal" aria-label="Coronal slice position"></label><label><span class="volume-axis-label">Axial<output data-slice-readout="axial"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="axial" aria-label="Axial slice position"></label></div>
-  <p id="volume-status" role="status" aria-live="polite"></p><button type="button" class="volume-reset" data-volume-retry hidden>Retry 3D view</button><p class="volume-instructions">Drag either cube to rotate both views freely. Move the sliders to inspect corresponding orthogonal slices. Both sides use the same spatial coordinates and intensity window. Arrow keys rotate; Home resets.</p>
-</div>
+            <p class="volume-instructions">Drag either view to rotate the pair.</p>
+            <section class="volume-case" data-volume-case="0" aria-label="CT input and reconstruction">
+              <div class="volume-toolbar"><h3>CT</h3><button type="button" class="volume-reset" data-volume-reset aria-label="Reset CT view">Reset view ↺</button></div>
+              <div class="volume-comparison" aria-busy="false">
+                <article class="volume-card">
+                  <h4>Input</h4>
+                  <div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="gt" aria-label="CT Input. Drag to rotate both views; arrow keys rotate, Home resets.">
+                    <img class="volume-fallback" alt="CT · Input" width="400" height="400" decoding="async">
+                    <div class="recon-volume">
+                      <i class="cube-wire front" aria-hidden="true"></i>
+                      <i class="cube-wire back" aria-hidden="true"></i>
+                      <i class="cube-wire left" aria-hidden="true"></i>
+                      <i class="cube-wire right" aria-hidden="true"></i>
+                      <i class="cube-wire top" aria-hidden="true"></i>
+                      <i class="cube-wire bottom" aria-hidden="true"></i>
+                      <canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas>
+                    </div>
+                  </div>
+                </article>
+                <article class="volume-card">
+                  <h4>MedVTok</h4>
+                  <div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="reconstruction" aria-label="CT MedVTok. Drag to rotate both views; arrow keys rotate, Home resets.">
+                    <img class="volume-fallback" alt="CT · MedVTok" width="400" height="400" decoding="async">
+                    <div class="recon-volume">
+                      <i class="cube-wire front" aria-hidden="true"></i>
+                      <i class="cube-wire back" aria-hidden="true"></i>
+                      <i class="cube-wire left" aria-hidden="true"></i>
+                      <i class="cube-wire right" aria-hidden="true"></i>
+                      <i class="cube-wire top" aria-hidden="true"></i>
+                      <i class="cube-wire bottom" aria-hidden="true"></i>
+                      <canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="volume-axis-controls" role="group" aria-label="CT synchronized slice positions">
+                <label><span class="volume-axis-label">Sagittal<output data-slice-readout="sagittal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="sagittal" aria-label="CT sagittal slice position"></label>
+                <label><span class="volume-axis-label">Coronal<output data-slice-readout="coronal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="coronal" aria-label="CT coronal slice position"></label>
+                <label><span class="volume-axis-label">Axial<output data-slice-readout="axial"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="axial" aria-label="CT axial slice position"></label>
+              </div>
+              <p class="volume-status" role="status" aria-live="polite"></p>
+              <button type="button" class="volume-reset" data-volume-retry hidden>Retry 3D view</button>
+            </section>
+            <section class="volume-case" data-volume-case="1" aria-label="MRI input and reconstruction">
+              <div class="volume-toolbar"><h3>MRI</h3><button type="button" class="volume-reset" data-volume-reset aria-label="Reset MRI view">Reset view ↺</button></div>
+              <div class="volume-comparison" aria-busy="false">
+                <article class="volume-card">
+                  <h4>Input</h4>
+                  <div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="gt" aria-label="MRI Input. Drag to rotate both views; arrow keys rotate, Home resets.">
+                    <img class="volume-fallback" alt="MRI · Input" width="400" height="400" decoding="async">
+                    <div class="recon-volume">
+                      <i class="cube-wire front" aria-hidden="true"></i>
+                      <i class="cube-wire back" aria-hidden="true"></i>
+                      <i class="cube-wire left" aria-hidden="true"></i>
+                      <i class="cube-wire right" aria-hidden="true"></i>
+                      <i class="cube-wire top" aria-hidden="true"></i>
+                      <i class="cube-wire bottom" aria-hidden="true"></i>
+                      <canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas>
+                    </div>
+                  </div>
+                </article>
+                <article class="volume-card">
+                  <h4>MedVTok</h4>
+                  <div class="recon-volume-stage" tabindex="0" role="group" data-volume-source="reconstruction" aria-label="MRI MedVTok. Drag to rotate both views; arrow keys rotate, Home resets.">
+                    <img class="volume-fallback" alt="MRI · MedVTok" width="400" height="400" decoding="async">
+                    <div class="recon-volume">
+                      <i class="cube-wire front" aria-hidden="true"></i>
+                      <i class="cube-wire back" aria-hidden="true"></i>
+                      <i class="cube-wire left" aria-hidden="true"></i>
+                      <i class="cube-wire right" aria-hidden="true"></i>
+                      <i class="cube-wire top" aria-hidden="true"></i>
+                      <i class="cube-wire bottom" aria-hidden="true"></i>
+                      <canvas class="recon-plane sagittal" data-plane="sagittal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane coronal" data-plane="coronal" width="192" height="192" aria-hidden="true"></canvas>
+                      <canvas class="recon-plane axial" data-plane="axial" width="192" height="192" aria-hidden="true"></canvas>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="volume-axis-controls" role="group" aria-label="MRI synchronized slice positions">
+                <label><span class="volume-axis-label">Sagittal<output data-slice-readout="sagittal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="sagittal" aria-label="MRI sagittal slice position"></label>
+                <label><span class="volume-axis-label">Coronal<output data-slice-readout="coronal"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="coronal" aria-label="MRI coronal slice position"></label>
+                <label><span class="volume-axis-label">Axial<output data-slice-readout="axial"></output></span><input type="range" min="0" max="63" value="32" step="1" data-slice-axis="axial" aria-label="MRI axial slice position"></label>
+              </div>
+              <p class="volume-status" role="status" aria-live="polite"></p>
+              <button type="button" class="volume-reset" data-volume-retry hidden>Retry 3D view</button>
+            </section>
+          </div>
         </div>
         <div class="benchmark-notes">
           <p>↑ Higher is better.</p>
