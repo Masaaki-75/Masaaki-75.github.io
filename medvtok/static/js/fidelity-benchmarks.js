@@ -72,6 +72,52 @@
     table.querySelector("caption").textContent = label;
   }
 
+  function initReconstructionVisualization(root) {
+    const buttons = Array.from(root.querySelectorAll("[data-reconstruction-dimension]"));
+    const gallery = root.querySelector("#panel-recon2d");
+    const volume = root.querySelector("#panel-recon3d");
+    let dimension = "2d";
+    let galleryInitialized = false;
+
+    function loadPair(card) {
+      for (const image of card.querySelectorAll("[data-reconstruction-src]")) {
+        image.src = image.dataset.reconstructionSrc;
+        delete image.dataset.reconstructionSrc;
+      }
+    }
+
+    function activate() {
+      if (dimension === "3d") {
+        volume.dispatchEvent(new CustomEvent("panel:activate"));
+      } else if (!galleryInitialized) {
+        galleryInitialized = true;
+        const cards = gallery.querySelectorAll(".recon-case");
+        // All nine pairs stay in the gallery; request images as their rows approach.
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              loadPair(entry.target);
+              observer.unobserve(entry.target);
+            }
+          }, { rootMargin: "200px" });
+          cards.forEach(card => observer.observe(card));
+        } else cards.forEach(loadPair);
+      }
+    }
+
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        dimension = button.dataset.reconstructionDimension;
+        for (const item of buttons) item.setAttribute("aria-pressed", String(item === button));
+        gallery.hidden = dimension !== "2d";
+        volume.hidden = dimension !== "3d";
+        activate();
+      });
+    }
+    return activate;
+  }
+
   function initFidelity() {
     const root = document.getElementById("fidelity-benchmarks");
     const source = document.getElementById("fidelity-benchmark-data");
@@ -80,6 +126,10 @@
     const models = ["MedVTok", "PUMIT", "MedVAE", "MedITok", "AToken"];
     const metricButtons = Array.from(root.querySelectorAll("[data-reconstruction-metric]"));
     const unit = root.querySelector(".benchmark-unit");
+    const table = root.querySelector(".benchmark-table-content");
+    const notes = root.querySelector(".benchmark-notes");
+    const visualization = root.querySelector(".reconstruction-visualization");
+    let activateVisualization;
     let metric = "psnr";
     function render() {
       const rows = [];
@@ -97,7 +147,15 @@
       button.addEventListener("click", () => {
         metric = button.dataset.reconstructionMetric;
         for (const item of metricButtons) item.setAttribute("aria-pressed", String(item === button));
-        render();
+        const showVisualization = metric === "visualization";
+        table.hidden = showVisualization;
+        notes.hidden = showVisualization;
+        unit.hidden = showVisualization;
+        visualization.hidden = !showVisualization;
+        if (showVisualization) {
+          if (!activateVisualization) activateVisualization = initReconstructionVisualization(visualization);
+          activateVisualization();
+        } else render();
       });
     }
     render();

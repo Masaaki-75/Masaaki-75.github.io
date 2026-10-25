@@ -12,6 +12,8 @@
   const cubes = stages.map((stage) => stage.querySelector(".recon-volume"));
   const controls = Array.from(panel.querySelectorAll("[data-slice-axis]"));
   const status = document.getElementById("volume-status");
+  const caseSelect = panel.querySelector("[data-volume-select]");
+  const retry = panel.querySelector("[data-volume-retry]");
   const axes = { sagittal: 0, coronal: 1, axial: 2 };
   let caseIndex = 0;
   let samples = { sagittal: 32, coronal: 32, axial: 32 };
@@ -45,6 +47,7 @@
   }
 
   function resize() {
+    if (!viewer.getClientRects().length) return;
     const data = cases[caseIndex];
     const maximum = Math.max(...data.extent);
     for (const stage of stages) {
@@ -90,14 +93,12 @@
     }
   }
 
-  function loadImage(src) {
-    return new Promise((resolve, reject) => {
-      const image = new Image();
-      image.decoding = "async";
-      image.onload = () => resolve(image);
-      image.onerror = () => reject(new Error(`Could not load ${src}`));
-      image.src = src;
-    });
+  async function loadImage(src) {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = src;
+    await image.decode();
+    return image;
   }
 
   async function selectCase(index) {
@@ -110,10 +111,11 @@
     samples = Object.fromEntries(Object.keys(axes).map((axis) => [axis, Math.floor(data.sampleCount / 2)]));
     viewer.classList.remove("is-ready");
     viewer.setAttribute("aria-busy", "true");
+    retry.hidden = true;
+    caseSelect.value = String(index);
     status.textContent = "Loading paired volume slices…";
     document.getElementById("volume-case-label").textContent = `${data.modality} · ${data.dataset} · ${data.sample}`;
     document.getElementById("volume-window-label").textContent = data.modality === "CT" ? "Matched CT soft-tissue window" : "Matched MRI intensity window";
-    for (const button of panel.querySelectorAll("[data-volume-case]")) button.setAttribute("aria-pressed", String(Number(button.dataset.volumeCase) === index));
     for (const stage of stages) {
       const source = stage.dataset.volumeSource;
       const fallback = stage.querySelector(".volume-fallback");
@@ -135,10 +137,12 @@
       if (token !== generation) return;
       viewer.setAttribute("aria-busy", "false");
       status.textContent = "The paired input and reconstruction are shown as static slices while the 3D view is unavailable.";
+      retry.hidden = false;
     }
   }
 
-  for (const button of panel.querySelectorAll("[data-volume-case]")) button.addEventListener("click", () => selectCase(Number(button.dataset.volumeCase)));
+  caseSelect.addEventListener("change", () => selectCase(Number(caseSelect.value)));
+  retry.addEventListener("click", () => selectCase(caseIndex));
   for (const control of controls) control.addEventListener("input", () => {
     samples[control.dataset.sliceAxis] = Number(control.value);
     updateSlices();
