@@ -143,7 +143,7 @@
         <h1 id="paper-title">MedV<span>Tok</span></h1>
         <p class="hero-subtitle">Medical imaging, unified at the token level.</p>
         <p class="hero-description">A shared foundation for medical images and volumes, preserving anatomical structure and clinical meaning across modalities.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#overview">Explore MedVTok <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button" href="https://huggingface.co/massaki75/medvtok/tree/main" target="_blank" rel="noopener">Model weights <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button" href="https://github.com/Masaaki-75/medvtok" target="_blank" rel="noopener">Code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button button-pending" id="paper-link" href="" aria-disabled="true" tabindex="-1" title="Paper link will be added when released">Paper <span>Soon</span></a></div>
+        <div class="hero-actions"><a class="button button-primary" href="#overview">Explore MedVTok <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button" href="https://huggingface.co/massaki75/medvtok/tree/main" target="_blank" rel="noopener">Model weights <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button" href="https://github.com/Masaaki-75/medvtok" target="_blank" rel="noopener">Code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="button" id="paper-link" href="https://arxiv.org/abs/2610.35842" target="_blank" rel="noopener">Paper <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
       </div>
       <div class="hero-bottom"><span>2D images &amp; 3D volumes</span><span>A spectrum of medical imaging</span></div>
       <a class="section-next" href="#overview" aria-label="Explore the shared visual interface"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
@@ -951,11 +951,13 @@
 </details>
 <div class="citation-actions"><button class="button" data-copy="bibtex" type="button">Copy citation</button></div>
 <div class="code-block citation-code" hidden>
-<pre><code id="bibtex">@inproceedings{ma2026medvtok,
+<pre><code id="bibtex">@misc{ma2026medvtok,
   title  = {MedVTok: A General-Purpose Medical Visual Tokenizer},
   author = {Ma, Chenglong and Ji, Yuanfeng and Ning, Junzhi and Liu, Jiyao and Wei, Yujie and Rui, Shaohao and Zhang, Chaoyang and Li, Wenjie and Tang, Wenhao and Tang, Cheng and Li, Wei and Gao, Shujian and Zhang, Yujie and Chen, Ying and Li, Zilong and Ge, Zongyuan and Song, Diping and Ye, Jin and Hu, Ming and He, Junjun and Shan, Hongming},
-  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
-  year   = {2026}
+  year   = {2026},
+  eprint = {2610.35842},
+  archivePrefix = {arXiv},
+  url    = {https://arxiv.org/abs/2610.35842}
 }</code></pre>
 </div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p><details class="evidence-details acknowledgments"><summary>Acknowledgments <span class="detail-icon" aria-hidden="true">+</span></summary><div class="prose">
 <p>We thank the teams behind <a href="https://github.com/SiyuanYan1/Derm1M" rel="noopener" target="_blank">DermLIP</a>, <a href="https://github.com/sStonemason/RET-CLIP" rel="noopener" target="_blank">RET-CLIP</a>, <a href="https://github.com/mahmoodlab/TITAN" rel="noopener" target="_blank">CONCH v1.5</a>, <a href="https://github.com/CAMMA-public/PeskaVLP" rel="noopener" target="_blank">PeskaVLP</a>, <a href="https://github.com/microsoft/healthcareai-examples" rel="noopener" target="_blank">MedImageInsight</a>, <a href="https://github.com/cclaess/SPECTRE" rel="noopener" target="_blank">SPECTRE</a>, <a href="https://github.com/zch0414/hlip" rel="noopener" target="_blank">HLIP</a>, <a href="https://github.com/StanfordMIMI/MedVAE" rel="noopener" target="_blank">MedVAE</a>, and <a href="https://github.com/apple-aiml-research/ml-atoken" rel="noopener" target="_blank">AToken</a> for their open-source contributions. The code for training MedVTok is adapted from <a href="https://github.com/Masaaki-75/meditok" rel="noopener" target="_blank">MedITok</a> and <a href="https://github.com/FoundationVision/UniTok" rel="noopener" target="_blank">UniTok</a>. </p>
